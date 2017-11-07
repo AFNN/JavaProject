@@ -1,1 +1,74 @@
 CREATION BASE : 
+
+CREATE TABLE "USERAPPLICATION" (
+	"LOGIN" VARCHAR(25) NOT NULL,
+	"PASSWORD" VARCHAR(255) NOT NULL,
+	"ADMIN" BOOLEAN 
+);
+
+CREATE TABLE "ETUDIANT" (
+	"MATRICULE" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+	"NOM" VARCHAR(255) NOT NULL,
+	"PRENOM" VARCHAR(255) NOT NULL,
+	"idClasse" INTEGER NOT NULL 
+);
+
+
+CREATE TABLE "IDENTITE" (
+	"DateNaissance" 	date
+	"VilleNaissance" VARCHAR(255) NOT NULL,
+	"PaysNaissance" VARCHAR(255) NOT NULL,
+	"Sexe (faire un enum F/H)
+	"DateInscription" date
+	"Etablissementpr" VARCHAR(255) NOT NULL,
+	"Matricule" int 
+);
+
+CREATE TABLE "COORDONNEES" (
+	"Adresse" VARCHAR(255) NOT NULL
+	"CodePostal" int(5)
+	"Ville" VARCHAR(255) NOT NULL,
+	"Teldom" int(10),
+	"Telmobile" int(10),
+	"Email" VARCHAR(255) NOT NULL
+	"Matricule" int
+);
+
+CREATE TABLE "SANTE" (
+	"MédecinTraitant" VARCHAR(255) NOT NULL,
+	"TelMedecin" int(10)
+	"Vaccinations" VARCHAR(255) NOT NULL,
+	"Allergies" VARCHAR(255) NOT NULL,
+	"RemarquesMedicales" varchar(255)
+);
+
+CREATE TABLE "RESPONSABLE" (
+	"idResponsable" int autoincrement
+	"Nom" VARCHAR(255) NOT NULL,
+	"Prenom" VARCHAR(255) NOT NULL,
+	"Adresse" VARCHAR(255) NOT NULL,
+	"Telephone" int(10)
+	"Email" VARCHAR(255) NOT NULL,
+	"Matricule" int
+);
+
+CREATE TABLE "NOTES" (
+	"moyenne" double(4)
+	"Matricule" int 
+	"idMatière" int 
+);
+
+CREATE TABLE "MATIERE" (
+	"idMatiere" int autoincrement
+	"nomMat" VARCHAR(255) NOT NULL,
+
+);
+
+CREATE TABLE "CLASSE" (
+	idClasse int autoincrement
+	NomClasse VARCHAR(255) NOT NULL,
+	idMatiere1 int 
+	idMatiere2 int	
+	idMatiere3 int 
+	idMatiere4 int 
+);
