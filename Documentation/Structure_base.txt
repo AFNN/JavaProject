@@ -1,4 +1,94 @@
 JAVA PROJET : 
 
-BASE : 
+BDD : 
 
+Table : 
+	UserApplication ( table contenant mdp et login ) // pas de connexion pour etudiant et parents 
+	Etudiant : ( Matricule , Nom , Prénom ,#idClasse )
+	Identite(DateNaissance,VilleNaissance,PaysNaissance,Sexe,DateInscription,Etablissementpr,#Matricule)
+	Coordonnees:(Adresse,CodePostal, Ville, Teldom,Telmobile,Email,#Matricule)
+	Sante(MédecinTraitant,TelMedecin,Vaccinations,Allergies,RemarquesMedicales)
+	Responsable:( idResponsable , Nom , Prenom, Adresse,Telephone,Email,#Matricule)
+	Notes(note1,note2,moyenne,#Matricule,#idMatière)
+	Matière(idMatiere,nomMat)
+	Classe(idClasse,NomClasse,Matiere1,Matiere2,Matiere3,Matiere4)
+
+	
+SQL : 
+
+UserApplication:
+Login : varchar(25)
+MDP: varchar(255) (voir pour encrypter) 
+Admin: boolean
+
+Etudiant : 
+Matricule int autoincrement
+Nom  varchar(255)
+Prénom varchar(255)
+#idClasse int 
+
+Identite:
+DateNaissance 	date
+VilleNaissance varchar(255)
+PaysNaissance varchar(255)
+Sexe (faire un enum F/H)
+DateInscription date
+Etablissementpr varchar(255)
+#Matricule int 
+
+Coordonnees:
+Adresse varchar(255)
+CodePostal int(5)
+Ville varchar(255)
+Teldom int(10)
+Telmobile int(10)
+Email varchar(255)
+#Matricule int
+
+Sante:
+MédecinTraitant varchar(255)
+TelMedecin int(10)
+Vaccinations varchar(255)
+Allergies varchar(255)
+RemarquesMedicales varchar(255)
+
+Responsable:
+idResponsable int autoincrement
+Nom varchar(255)
+Prenom varchar(255)
+Adresse varchar(255)
+Telephone int(10)
+Email varchar(255)
+#Matricule int
+
+Notes:
+moyenne double(4)
+#Matricule int 
+#idMatière int 
+
+
+Matière
+idMatiere int autoincrement
+nomMat varchar(255)
+
+
+Classe:
+idClasse int autoincrement
+NomClasse varchar(255)
+idMatiere1 int 
+idMatiere2 int	
+idMatiere3 int 
+idMatiere4 int 
+	
+
+//bonus possible : saisie de note ( plusieurs colonnes et calcul dynamique de la moyenne) 
+
+base : javaProject : administrator mdp : admin 
+
+
+CREATE TABLE `test`.`coucou` ( `int` INT(11) NOT NULL ,
+ `varchar` VARCHAR(255) NOT NULL ,
+ `intauto` INT NOT NULL AUTO_INCREMENT , PRIMARY KEY (`intauto`)
+ )
+ 
+ id_student INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
