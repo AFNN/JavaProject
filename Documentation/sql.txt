@@ -1,74 +1,85 @@
 CREATION BASE : 
 
+DROP DATABASE USERAPPLICATION;
+DROP DATABASE ETUDIANT;
+DROP DATABASE IDENTITE;
+DROP DATABASE COORDONNEES;
+DROP DATABASE SANTE;
+DROP DATABASE RESPONSABLE;
+DROP DATABASE NOTES;
+DROP DATABASE MATIERE;
+DROP DATABASE CLASSE;
+
+
 CREATE TABLE "USERAPPLICATION" (
 	"LOGIN" VARCHAR(25) NOT NULL,
 	"PASSWORD" VARCHAR(255) NOT NULL,
 	"ADMIN" BOOLEAN 
-);
+)
 
 CREATE TABLE "ETUDIANT" (
 	"MATRICULE" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	"NOM" VARCHAR(255) NOT NULL,
 	"PRENOM" VARCHAR(255) NOT NULL,
 	"idClasse" INTEGER NOT NULL 
-);
+)
 
 
 CREATE TABLE "IDENTITE" (
-	"DateNaissance" 	date
+	"DateNaissance" 	DATE NOT NULL,
 	"VilleNaissance" VARCHAR(255) NOT NULL,
 	"PaysNaissance" VARCHAR(255) NOT NULL,
-	"Sexe (faire un enum F/H)
-	"DateInscription" date
+	"Sexe"  VARCHAR(255) NOT NULL,
+	"DateInscription" DATE NOT NULL,
 	"Etablissementpr" VARCHAR(255) NOT NULL,
-	"Matricule" int 
-);
+	"Matricule"  INTEGER NOT NULL
+)
 
 CREATE TABLE "COORDONNEES" (
-	"Adresse" VARCHAR(255) NOT NULL
-	"CodePostal" int(5)
+	"Adresse" VARCHAR(255) NOT NULL,
+	"CodePostal" INTEGER NOT NULL,
 	"Ville" VARCHAR(255) NOT NULL,
-	"Teldom" int(10),
-	"Telmobile" int(10),
+	"Teldom" INTEGER NOT NULL,
+	"Telmobile" INTEGER NOT NULL,
 	"Email" VARCHAR(255) NOT NULL
-	"Matricule" int
-);
+	"Matricule" INTEGER NOT NULL
+)
 
 CREATE TABLE "SANTE" (
 	"MédecinTraitant" VARCHAR(255) NOT NULL,
-	"TelMedecin" int(10)
+	"TelMedecin" INTEGER NOT NULL,
 	"Vaccinations" VARCHAR(255) NOT NULL,
 	"Allergies" VARCHAR(255) NOT NULL,
 	"RemarquesMedicales" varchar(255)
-);
+)
 
 CREATE TABLE "RESPONSABLE" (
-	"idResponsable" int autoincrement
+	"idResponsable" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	"Nom" VARCHAR(255) NOT NULL,
 	"Prenom" VARCHAR(255) NOT NULL,
 	"Adresse" VARCHAR(255) NOT NULL,
-	"Telephone" int(10)
+	"Telephone" INTEGER NOT NULL,
 	"Email" VARCHAR(255) NOT NULL,
-	"Matricule" int
-);
+	"Matricule" INTEGER NOT NULL
+)
 
 CREATE TABLE "NOTES" (
-	"moyenne" double(4)
-	"Matricule" int 
-	"idMatière" int 
-);
+	"moyenne" DOUBLE NOT NULL,
+	"Matricule" INTEGER NOT NULL,
+	"idMatière" INTEGER NOT NULL
+)
 
 CREATE TABLE "MATIERE" (
-	"idMatiere" int autoincrement
+	"idMatiere" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	"nomMat" VARCHAR(255) NOT NULL,
 
-);
+)
 
 CREATE TABLE "CLASSE" (
-	idClasse int autoincrement
+	idClasse INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 	NomClasse VARCHAR(255) NOT NULL,
-	idMatiere1 int 
-	idMatiere2 int	
-	idMatiere3 int 
-	idMatiere4 int 
-);
+	idMatiere1 INTEGER NOT NULL,
+	idMatiere2 INTEGER NOT NULL,
+	idMatiere3 INTEGER NOT NULL,
+	idMatiere4 INTEGER NOT NULL
+)
