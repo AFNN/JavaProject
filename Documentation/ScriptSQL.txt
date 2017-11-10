@@ -1,0 +1,153 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: UserApplication
+#------------------------------------------------------------
+
+CREATE TABLE UserApplication(
+        ID       int (11) Auto_increment  NOT NULL ,
+        Login    Varchar (255) ,
+        Password Varchar (255) ,
+        Admin    Bool ,
+        PRIMARY KEY (ID )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Etudiant
+#------------------------------------------------------------
+
+CREATE TABLE Etudiant(
+        Matricule int (11) Auto_increment  NOT NULL ,
+        Nom       Varchar (255) ,
+        Prenom    Varchar (255) ,
+        IdClasse  Int ,
+        PRIMARY KEY (Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Identite
+#------------------------------------------------------------
+
+CREATE TABLE Identite(
+        DateNaissance      Date ,
+        VilleNaissance     Varchar (255) ,
+        PaysNaissance      Varchar (255) ,
+        Sexe               Bool ,
+        DateInscription    Date ,
+        Etablissement      Varchar (255) NOT NULL ,
+        Matricule          Int ,
+        Matricule_Etudiant Int NOT NULL ,
+        PRIMARY KEY (Matricule_Etudiant ) ,
+        INDEX (Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Coordonnees
+#------------------------------------------------------------
+
+CREATE TABLE Coordonnees(
+        Adresse            Varchar (255) ,
+        CodePostal         Int ,
+        Ville              Varchar (255) ,
+        TelDom             Int ,
+        TelMobile          Int ,
+        Email              Varchar (255) ,
+        Matricule          Int NOT NULL ,
+        Matricule_Etudiant Int NOT NULL ,
+        PRIMARY KEY (Matricule_Etudiant ) ,
+        INDEX (Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Sante
+#------------------------------------------------------------
+
+CREATE TABLE Sante(
+        MedecinTraitant    Varchar (255) ,
+        TelMedecin         Integer ,
+        Vaccinations       Varchar (255) ,
+        Allergies          Varchar (255) ,
+        RemarquesMedicales Varchar (255) ,
+        Matricule          Int ,
+        Matricule_Etudiant Int NOT NULL ,
+        PRIMARY KEY (Matricule_Etudiant ) ,
+        INDEX (Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Responsable
+#------------------------------------------------------------
+
+CREATE TABLE Responsable(
+        idResponsable      int (11) Auto_increment  NOT NULL ,
+        Nom                Varchar (255) ,
+        Prenom             Varchar (255) ,
+        Adresse            Varchar (255) ,
+        Telephone          Int ,
+        Email              Varchar (255) ,
+        Matricule          Int NOT NULL ,
+        Matricule_Etudiant Int NOT NULL ,
+        PRIMARY KEY (idResponsable ,Matricule_Etudiant ) ,
+        INDEX (Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Notes
+#------------------------------------------------------------
+
+CREATE TABLE Notes(
+        Moyenne            Double ,
+        Matricule          Int ,
+        IdMatiere          Int ,
+        Matricule_Etudiant Int NOT NULL ,
+        PRIMARY KEY (Matricule_Etudiant ) ,
+        INDEX (Matricule ,IdMatiere )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Matiere
+#------------------------------------------------------------
+
+CREATE TABLE Matiere(
+        idMatiere int (11) Auto_increment  NOT NULL ,
+        nomMat    Varchar (255) ,
+        Matricule Int NOT NULL ,
+        PRIMARY KEY (idMatiere ,Matricule )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Classe
+#------------------------------------------------------------
+
+CREATE TABLE Classe(
+        idClasse   int (11) Auto_increment  ,
+        NomClasse  Varchar (255) ,
+        idMatiere1 Int ,
+        idMatiere2 Int ,
+        idMatiere3 Int ,
+        idMatiere4 Int ,
+        idMatiere  Int NOT NULL ,
+        Matricule  Int NOT NULL ,
+        PRIMARY KEY (idMatiere ,Matricule ) ,
+        INDEX (idMatiere1 ,idMatiere2 ,idMatiere3 ,idMatiere4 )
+)ENGINE=InnoDB;
+
+ALTER TABLE Identite ADD CONSTRAINT FK_Identite_Matricule_Etudiant FOREIGN KEY (Matricule_Etudiant) REFERENCES Etudiant(Matricule);
+ALTER TABLE Coordonnees ADD CONSTRAINT FK_Coordonnees_Matricule_Etudiant FOREIGN KEY (Matricule_Etudiant) REFERENCES Etudiant(Matricule);
+ALTER TABLE Sante ADD CONSTRAINT FK_Sante_Matricule_Etudiant FOREIGN KEY (Matricule_Etudiant) REFERENCES Etudiant(Matricule);
+ALTER TABLE Responsable ADD CONSTRAINT FK_Responsable_Matricule_Etudiant FOREIGN KEY (Matricule_Etudiant) REFERENCES Etudiant(Matricule);
+ALTER TABLE Notes ADD CONSTRAINT FK_Notes_Matricule_Etudiant FOREIGN KEY (Matricule_Etudiant) REFERENCES Etudiant(Matricule);
+ALTER TABLE Matiere ADD CONSTRAINT FK_Matiere_Matricule FOREIGN KEY (Matricule) REFERENCES Etudiant(Matricule);
+ALTER TABLE Classe ADD CONSTRAINT FK_Classe_idMatiere FOREIGN KEY (idMatiere) REFERENCES Matiere(idMatiere);
+ALTER TABLE Classe ADD CONSTRAINT FK_Classe_Matricule FOREIGN KEY (Matricule) REFERENCES Etudiant(Matricule);
