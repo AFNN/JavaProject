@@ -13,7 +13,7 @@ public class Etudiant {
     
     private int Matricule;
     private String Nom;
-    private String Prénom;
+    private String Prenom;
     private int idClasse;
 
     public int getMatricule() {
@@ -32,12 +32,12 @@ public class Etudiant {
         this.Nom = Nom;
     }
 
-    public String getPrénom() {
-        return Prénom;
+    public String getPrenom() {
+        return Prenom;
     }
 
-    public void setPrénom(String Prénom) {
-        this.Prénom = Prénom;
+    public void setPrenom(String Prénom) {
+        this.Prenom = Prénom;
     }
 
     public int getIdClasse() {
@@ -48,10 +48,10 @@ public class Etudiant {
         this.idClasse = idClasse;
     }
 
-    public Etudiant(int Matricule, String Nom, String Prénom, int idClasse) {
+    public Etudiant(int Matricule, String Nom, String Prenom, int idClasse) {
         this.Matricule = Matricule;
         this.Nom = Nom;
-        this.Prénom = Prénom;
+        this.Prenom = Prenom;
         this.idClasse = idClasse;
     }
     
