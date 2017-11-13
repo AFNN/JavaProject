@@ -5,12 +5,10 @@
  */
 package controller;
 
-import static controller.GestionClasse.updateClasse;
+
 import model.Etudiant;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.Classe;
+
 
 /**
  *
@@ -24,7 +22,7 @@ public class GestionEtudiant {
         
         try {
                 DBconnexion.connexionDB();
-                Statement stmt = (Statement) DBconnexion.getConn().createStatement();
+                Statement stmt =  DBconnexion.getConn().createStatement();
 		String insert = "INSERT INTO etudiant (NOM, PRENOM, idClasse) VALUES ('" + E.getNom() +"','" +E.getPrenom()+"','" +E.getIdClasse()+"')";
 		stmt.executeUpdate(insert);
 		System.out.println("Etudiant ajouté à la base de donnée");
@@ -37,10 +35,10 @@ public class GestionEtudiant {
         
         try {
                 DBconnexion.connexionDB();
-                Statement stmt = (Statement) DBconnexion.getConn().createStatement();
-		String update = " ";
+                Statement stmt = DBconnexion.getConn().createStatement();
+		String update = "UPDATE etudiant SET NOM = " + E.getNom()+", PRENOM = " + E.getPrenom()+ ", idClasse = " +E.getIdClasse()+ " WHERE etudiant.MATRICULE = " + E.getMatricule(); 
                 stmt.executeUpdate(update);
-		System.out.println("Etudiant ajouté à la base de donnée");
+		System.out.println("Etudiant mis à jour dans la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
         }
@@ -53,9 +51,9 @@ public class GestionEtudiant {
      * @throws SQLException
      */
      public static void main(String[] args) throws SQLException {
-        Etudiant e= new model.Etudiant(0, "Nom", "Prénom", 1);
+        Etudiant e= new model.Etudiant(5, "Nom", "Prenom", 4);
          
-            addEtudiant(e);
+            updateEtudiant(e);
         
     
     

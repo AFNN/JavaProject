@@ -37,7 +37,7 @@ public class Etudiant {
     }
 
     public void setPrenom(String Prénom) {
-        this.Prenom = Prénom;
+        this.Prenom = Prenom;
     }
 
     public int getIdClasse() {

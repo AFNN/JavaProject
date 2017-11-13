@@ -11,20 +11,20 @@ package model;
  */
 public class Responsable {
     
-    private int idReprsponsable;
+    private int idResponsable;
     private String nom; 
     private String prenom; 
     private String adresse; 
     private int telephone;
-    private int email; 
+    private String email; 
     private int matricule;
 
-    public int getIdReprsponsable() {
-        return idReprsponsable;
+    public int getIdResponsable() {
+        return idResponsable;
     }
 
-    public void setIdReprsponsable(int idReprsponsable) {
-        this.idReprsponsable = idReprsponsable;
+    public void setIdResponsable(int idResponsable) {
+        this.idResponsable = idResponsable;
     }
 
     public String getNom() {
@@ -59,11 +59,11 @@ public class Responsable {
         this.telephone = telephone;
     }
 
-    public int getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(int email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -75,8 +75,8 @@ public class Responsable {
         this.matricule = matricule;
     }
 
-    public Responsable(int idReprsponsable, String nom, String prenom, String adresse, int telephone, int email, int matricule) {
-        this.idReprsponsable = idReprsponsable;
+    public Responsable(int idResponsable, String nom, String prenom, String adresse, int telephone, String email, int matricule) {
+        this.idResponsable = idResponsable;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;

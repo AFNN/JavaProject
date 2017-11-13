@@ -20,7 +20,7 @@ public class GestionClasse {
 
 		try {
 			DBconnexion.connexionDB();
-			Statement stmt = (Statement) DBconnexion.getConn().createStatement();
+			Statement stmt =  DBconnexion.getConn().createStatement();
 			String insert = "INSERT INTO classe (`idClasse`, `NomClasse`, `idMatiere1`, `idMatiere2`, `idMatiere3`, `idMatiere4`)VALUES (NULL, '" + c.getNomClasse()+ "','" + c.getIdMatiere1() + "','"+ c.getIdMatiere2() + "','"+ c.getIdMatiere3() + "','"+ c.getIdMatiere4() + "')";
 			stmt.executeUpdate(insert);
 			System.out.println("Classe ajoute à la base de donnée");
@@ -31,7 +31,7 @@ public class GestionClasse {
     public static void updateClasse(Classe c){
             try {
 			DBconnexion.connexionDB();
-			Statement stmt = (Statement) DBconnexion.getConn().createStatement();
+			Statement stmt = DBconnexion.getConn().createStatement();
 			String update = "UPDATE `classe` SET `NomClasse` = '" + c.getNomClasse() + "',`idMatiere1` = '" + c.getIdMatiere1() + "', `idMatiere2` = '" + c.getIdMatiere2() + "', `idMatiere3` = '" + c.getIdMatiere3() + "', `idMatiere4` = '" + c.getIdMatiere4() + "' WHERE `classe`.`idClasse` ='" + c.getIdClasse() + "' ;";
 			stmt.executeUpdate(update);
 			
