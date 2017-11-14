@@ -64,47 +64,7 @@ public static Connection connexionDB() throws SQLException{
     public static void setRs(ResultSet rs) {
         DBconnexion.rs = rs;
     }
-    /*
-    public boolean userConnection() throws SQLException{
-        ResultSet res=null;    
-        
-        try {
-                connexionDB();
-                stmt = (Statement) getConn().createStatement();
-                String LoginUser = "SELECT Login from Personne where (Login =)";
-                res = (ResultSet) stmt.executeQuery(LoginUser);
-            } catch (SQLException ex) {
-                Logger.getLogger(DBconnexion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-
-if (res.first()) {
-
-        System.out.println("Utilisateur trouve");
-        String MDPUser = "SELECT MDP from Personne where (Login = )";
-        ResultSet res2 = (ResultSet) stmt.executeQuery(MDPUser);
-        if (res2.first()) {
-
-                String mdp = res2.getString("MDP");
-                System.out.println("Mot de passe trouve");
-            
-                if ((mdp=="root") == true) {
-
-                        System.out.println("Utilisateur connecte");
-                        String IDUser = "SELECT ID from Personne where (Login = ";
-                                        
-                        ResultSet res3 = (ResultSet) stmt.executeQuery(IDUser);
-                        while (res3.next()) {
-
-                                b = res3.getInt("ID");
-
-                                System.out.println("ID : " + b)
-                        }
     
-    
-    
-      return userConnection;
-    }*/
     
     
     
