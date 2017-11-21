@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package javaprojet.view;
 
 /**
  *
  * @author Namko
  */
-public class Accueil extends javax.swing.JFrame {
+public class Accueil_2 extends javax.swing.JFrame {
 
     /**
      * Creates new form Accueil
      */
-    public Accueil() {
+    public Accueil_2() {
         initComponents();
     }
 
@@ -29,25 +29,25 @@ public class Accueil extends javax.swing.JFrame {
 
         jTabbedPaneAca = new javax.swing.JTabbedPane();
         jPanelNotes = new javax.swing.JPanel();
-        jPanelContent = new javax.swing.JPanel();
+        jPanelContentNotes = new javax.swing.JPanel();
         jLabelNom = new javax.swing.JLabel();
         jLabelPrenom = new javax.swing.JLabel();
         jLabelMat = new javax.swing.JLabel();
-        jPanelTitre = new javax.swing.JPanel();
-        jLabelTitre = new javax.swing.JLabel();
+        jPanelTitreNotes = new javax.swing.JPanel();
+        jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
         jPanelGest = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jButtonAccueil = new javax.swing.JButton();
+        jButtonAdmin = new javax.swing.JButton();
+        jButtonAca = new javax.swing.JButton();
+        jLabelLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
 
         jPanelNotes.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanelContent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
+        jPanelContentNotes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jLabelNom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelNom.setText("Nom :");
@@ -58,21 +58,21 @@ public class Accueil extends javax.swing.JFrame {
         jLabelMat.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelMat.setText("Matricule :");
 
-        javax.swing.GroupLayout jPanelContentLayout = new javax.swing.GroupLayout(jPanelContent);
-        jPanelContent.setLayout(jPanelContentLayout);
-        jPanelContentLayout.setHorizontalGroup(
-            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelContentNotesLayout = new javax.swing.GroupLayout(jPanelContentNotes);
+        jPanelContentNotes.setLayout(jPanelContentNotesLayout);
+        jPanelContentNotesLayout.setHorizontalGroup(
+            jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPrenom)
                     .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelMat))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanelContentLayout.setVerticalGroup(
-            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentLayout.createSequentialGroup()
+        jPanelContentNotesLayout.setVerticalGroup(
+            jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jLabelMat)
                 .addGap(51, 51, 51)
@@ -82,24 +82,24 @@ public class Accueil extends javax.swing.JFrame {
                 .addContainerGap(235, Short.MAX_VALUE))
         );
 
-        jLabelTitre.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabelTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitre.setText("NOTES");
+        jLabelTitreNotes.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabelTitreNotes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitreNotes.setText("NOTES");
 
-        javax.swing.GroupLayout jPanelTitreLayout = new javax.swing.GroupLayout(jPanelTitre);
-        jPanelTitre.setLayout(jPanelTitreLayout);
-        jPanelTitreLayout.setHorizontalGroup(
-            jPanelTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTitreNotesLayout = new javax.swing.GroupLayout(jPanelTitreNotes);
+        jPanelTitreNotes.setLayout(jPanelTitreNotesLayout);
+        jPanelTitreNotesLayout.setHorizontalGroup(
+            jPanelTitreNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreNotesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelTitre, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
+                .addComponent(jLabelTitreNotes, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanelTitreLayout.setVerticalGroup(
-            jPanelTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreLayout.createSequentialGroup()
+        jPanelTitreNotesLayout.setVerticalGroup(
+            jPanelTitreNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreNotesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelTitre, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addComponent(jLabelTitreNotes, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -109,20 +109,20 @@ public class Accueil extends javax.swing.JFrame {
             jPanelNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
-                .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTitreNotes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(173, Short.MAX_VALUE))
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelContentNotes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelNotesLayout.setVerticalGroup(
             jPanelNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTitreNotes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelContentNotes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -154,24 +154,24 @@ public class Accueil extends javax.swing.JFrame {
 
         jTabbedPaneAca.addTab("Gestion par matière", jPanelGest);
 
-        jButton1.setText("Accueil");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAccueil.setText("Accueil");
+        jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAccueilActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Partie Administrative");
+        jButtonAdmin.setText("Partie Administrative");
 
-        jButton3.setText("Partie Académique");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAca.setText("Partie Académique");
+        jButtonAca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonAcaActionPerformed(evt);
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/logo-ex-7.png"))); // NOI18N
+        jLabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-ex-7.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,10 +181,10 @@ public class Accueil extends javax.swing.JFrame {
                 .addComponent(jTabbedPaneAca, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAccueil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -193,13 +193,13 @@ public class Accueil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jTabbedPaneAca))
                 .addContainerGap())
@@ -208,13 +208,13 @@ public class Accueil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAccueilActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonAcaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,24 +245,24 @@ public class Accueil extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Accueil().setVisible(true);
+            new Accueil_2().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButtonAca;
+    private javax.swing.JButton jButtonAccueil;
+    private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMat;
     private javax.swing.JLabel jLabelNom;
     private javax.swing.JLabel jLabelPrenom;
-    private javax.swing.JLabel jLabelTitre;
-    private javax.swing.JPanel jPanelContent;
+    private javax.swing.JLabel jLabelTitreNotes;
+    private javax.swing.JPanel jPanelContentNotes;
     private javax.swing.JPanel jPanelGest;
     private javax.swing.JPanel jPanelNotes;
     private javax.swing.JPanel jPanelRech;
-    private javax.swing.JPanel jPanelTitre;
+    private javax.swing.JPanel jPanelTitreNotes;
     private javax.swing.JTabbedPane jTabbedPaneAca;
     // End of variables declaration//GEN-END:variables
 }

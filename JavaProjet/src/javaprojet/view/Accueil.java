@@ -3,7 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package javaprojet.view;
+
+import javax.accessibility.AccessibleContext;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -29,86 +38,86 @@ public class Accueil extends javax.swing.JFrame {
 
         jTabbedPaneAccueil = new javax.swing.JTabbedPane();
         jPanelConnexion = new javax.swing.JPanel();
-        jPanelContent = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton4 = new javax.swing.JButton();
-        jPanelTitre = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jPanelContentConnexion = new javax.swing.JPanel();
+        jLabelLogin = new javax.swing.JLabel();
+        jLabelMdp = new javax.swing.JLabel();
+        jTextFieldLogin = new javax.swing.JTextField();
+        jPasswordFieldMdp = new javax.swing.JPasswordField();
+        jButtonConnect = new javax.swing.JButton();
+        jPanelTitreConnexion = new javax.swing.JPanel();
+        jLabelConnexion = new javax.swing.JLabel();
+        jButtonAccueil = new javax.swing.JButton();
+        jButtonAdmin = new javax.swing.JButton();
+        jButtonAca = new javax.swing.JButton();
+        jLabelLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
 
         jPanelConnexion.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanelContent.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
+        jPanelContentConnexion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
-        jLabel1.setText("Login :");
+        jLabelLogin.setText("Login :");
 
-        jLabel2.setText("Password :");
+        jLabelMdp.setText("Password :");
 
-        jTextField1.setText("jTextField1");
+        jTextFieldLogin.setText("jTextField1");
 
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordFieldMdp.setText("jPasswordField1");
 
-        jButton4.setText("Se connecter");
+        jButtonConnect.setText("Se connecter");
 
-        javax.swing.GroupLayout jPanelContentLayout = new javax.swing.GroupLayout(jPanelContent);
-        jPanelContent.setLayout(jPanelContentLayout);
-        jPanelContentLayout.setHorizontalGroup(
-            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelContentConnexionLayout = new javax.swing.GroupLayout(jPanelContentConnexion);
+        jPanelContentConnexion.setLayout(jPanelContentConnexionLayout);
+        jPanelContentConnexionLayout.setHorizontalGroup(
+            jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentConnexionLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelMdp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
+                .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonConnect)
+                    .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextFieldLogin)
+                        .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
-        jPanelContentLayout.setVerticalGroup(
-            jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentLayout.createSequentialGroup()
+        jPanelContentConnexionLayout.setVerticalGroup(
+            jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentConnexionLayout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelMdp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(jButtonConnect)
                 .addContainerGap(104, Short.MAX_VALUE))
         );
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Connexion");
+        jLabelConnexion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelConnexion.setText("Connexion");
 
-        javax.swing.GroupLayout jPanelTitreLayout = new javax.swing.GroupLayout(jPanelTitre);
-        jPanelTitre.setLayout(jPanelTitreLayout);
-        jPanelTitreLayout.setHorizontalGroup(
-            jPanelTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTitreConnexionLayout = new javax.swing.GroupLayout(jPanelTitreConnexion);
+        jPanelTitreConnexion.setLayout(jPanelTitreConnexionLayout);
+        jPanelTitreConnexionLayout.setHorizontalGroup(
+            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanelTitreLayout.setVerticalGroup(
-            jPanelTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreLayout.createSequentialGroup()
+        jPanelTitreConnexionLayout.setVerticalGroup(
+            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -119,40 +128,40 @@ public class Accueil extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConnexionLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addGroup(jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelTitre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelContentConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanelConnexionLayout.setVerticalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConnexionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107)
-                .addComponent(jPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelContentConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(169, Short.MAX_VALUE))
         );
 
         jTabbedPaneAccueil.addTab("Connexion", jPanelConnexion);
 
-        jButton1.setText("Accueil");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAccueil.setText("Accueil");
+        jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAccueilActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Partie Administrative");
+        jButtonAdmin.setText("Partie Administrative");
 
-        jButton3.setText("Partie Académique");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAca.setText("Partie Académique");
+        jButtonAca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonAcaActionPerformed(evt);
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/logo-ex-7.png"))); // NOI18N
+        jLabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-ex-7.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,10 +171,10 @@ public class Accueil extends javax.swing.JFrame {
                 .addComponent(jTabbedPaneAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAccueil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -174,13 +183,13 @@ public class Accueil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jTabbedPaneAccueil))
                 .addContainerGap())
@@ -189,13 +198,13 @@ public class Accueil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAccueilActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonAcaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,20 +239,169 @@ public class Accueil extends javax.swing.JFrame {
         });
     }
 
+    public JButton getjButtonAca() {
+        return jButtonAca;
+    }
+
+    public void setjButtonAca(JButton jButtonAca) {
+        this.jButtonAca = jButtonAca;
+    }
+
+    public JButton getjButtonAccueil() {
+        return jButtonAccueil;
+    }
+
+    public void setjButtonAccueil(JButton jButtonAccueil) {
+        this.jButtonAccueil = jButtonAccueil;
+    }
+
+    public JButton getjButtonAdmin() {
+        return jButtonAdmin;
+    }
+
+    public void setjButtonAdmin(JButton jButtonAdmin) {
+        this.jButtonAdmin = jButtonAdmin;
+    }
+
+    public JButton getjButtonConnect() {
+        return jButtonConnect;
+    }
+
+    public void setjButtonConnect(JButton jButtonConnect) {
+        this.jButtonConnect = jButtonConnect;
+    }
+
+    public JLabel getjLabelConnexion() {
+        return jLabelConnexion;
+    }
+
+    public void setjLabelConnexion(JLabel jLabelConnexion) {
+        this.jLabelConnexion = jLabelConnexion;
+    }
+
+    public JLabel getjLabelLogin() {
+        return jLabelLogin;
+    }
+
+    public void setjLabelLogin(JLabel jLabelLogin) {
+        this.jLabelLogin = jLabelLogin;
+    }
+
+    public JLabel getjLabelLogo() {
+        return jLabelLogo;
+    }
+
+    public void setjLabelLogo(JLabel jLabelLogo) {
+        this.jLabelLogo = jLabelLogo;
+    }
+
+    public JLabel getjLabelMdp() {
+        return jLabelMdp;
+    }
+
+    public void setjLabelMdp(JLabel jLabelMdp) {
+        this.jLabelMdp = jLabelMdp;
+    }
+
+    public JPanel getjPanelConnexion() {
+        return jPanelConnexion;
+    }
+
+    public void setjPanelConnexion(JPanel jPanelConnexion) {
+        this.jPanelConnexion = jPanelConnexion;
+    }
+
+    public JPanel getjPanelContentConnexion() {
+        return jPanelContentConnexion;
+    }
+
+    public void setjPanelContentConnexion(JPanel jPanelContentConnexion) {
+        this.jPanelContentConnexion = jPanelContentConnexion;
+    }
+
+    public JPanel getjPanelTitreConnexion() {
+        return jPanelTitreConnexion;
+    }
+
+    public void setjPanelTitreConnexion(JPanel jPanelTitreConnexion) {
+        this.jPanelTitreConnexion = jPanelTitreConnexion;
+    }
+
+    public JPasswordField getjPasswordFieldMdp() {
+        return jPasswordFieldMdp;
+    }
+
+    public void setjPasswordFieldMdp(JPasswordField jPasswordFieldMdp) {
+        this.jPasswordFieldMdp = jPasswordFieldMdp;
+    }
+
+    public JTabbedPane getjTabbedPaneAccueil() {
+        return jTabbedPaneAccueil;
+    }
+
+    public void setjTabbedPaneAccueil(JTabbedPane jTabbedPaneAccueil) {
+        this.jTabbedPaneAccueil = jTabbedPaneAccueil;
+    }
+
+    public JTextField getjTextFieldLogin() {
+        return jTextFieldLogin;
+    }
+
+    public void setjTextFieldLogin(JTextField jTextFieldLogin) {
+        this.jTextFieldLogin = jTextFieldLogin;
+    }
+
+    public JRootPane getRootPane() {
+        return rootPane;
+    }
+
+    public void setRootPane(JRootPane rootPane) {
+        this.rootPane = rootPane;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButtonAca;
+    private javax.swing.JButton jButtonAccueil;
+    private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonConnect;
+    private javax.swing.JLabel jLabelConnexion;
+    private javax.swing.JLabel jLabelLogin;
+    private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelMdp;
     private javax.swing.JPanel jPanelConnexion;
-    private javax.swing.JPanel jPanelContent;
-    private javax.swing.JPanel jPanelTitre;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPanel jPanelContentConnexion;
+    private javax.swing.JPanel jPanelTitreConnexion;
+    private javax.swing.JPasswordField jPasswordFieldMdp;
     private javax.swing.JTabbedPane jTabbedPaneAccueil;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldLogin;
     // End of variables declaration//GEN-END:variables
 }
