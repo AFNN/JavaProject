@@ -12,6 +12,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,10 +23,14 @@ import javaprojet.model.donnee.Etudiant;
  * @author Arnaud Fouillard 
  */
 public class GestionDocument {
-public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest12.pdf";
+public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest13.pdf";
 
-
-    public static void GestionDocument(Etudiant E){
+    /**
+     * Permet de générer un document PDF. Ici une convocation pour les parents.
+     * @param E 
+     * @param motif
+     */
+    public static void GestionDocument(Etudiant E, String motif, Date date){
         String Prenometu="",Nometu="",NomRes="",PrenomRes="",AdresseRes="";
         
         
@@ -62,7 +67,7 @@ public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest12.pdf";
     
     Document document = new Document();
     
-    String motif ="Motif à définir";
+    
     String dateheure = "Date à définir à (Heure à définir)";
     
             
@@ -89,7 +94,7 @@ public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest12.pdf";
       document.add(new Paragraph("Madame, Monsieur "));
       document.add(new Paragraph("Vous êtes convoquée pour votre enfant : "+Nometu+" "+Prenometu+" dans le bureau de MR BERNARD Jean-Michel au lycée Emile Zoulo ."));
       document.add(new Paragraph("Motif: "+motif));
-      document.add(new Paragraph("Date : "+dateheure));
+      document.add(new Paragraph("Date : "+date));
       document.add(new Paragraph("Merci de confirmer votre présence au numéro suivant : 0237465434\n\n"));
       document.add(new Paragraph("Cordialement,\nLe directeur"));
 
@@ -103,7 +108,7 @@ public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest12.pdf";
       public static void main(String[] args)
   {
       Etudiant E= new Etudiant(1, "Fouillard", "Arnaud", 1);
-      GestionDocument(E);
+      GestionDocument(E,"punition",Date.valueOf("2017-05-05"));
       
   }
     
