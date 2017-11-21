@@ -239,6 +239,24 @@ public class Accueil extends javax.swing.JFrame {
         });
     }
 
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAca;
+    private javax.swing.JButton jButtonAccueil;
+    private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonConnect;
+    private javax.swing.JLabel jLabelConnexion;
+    private javax.swing.JLabel jLabelLogin;
+    private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelMdp;
+    private javax.swing.JPanel jPanelConnexion;
+    private javax.swing.JPanel jPanelContentConnexion;
+    private javax.swing.JPanel jPanelTitreConnexion;
+    private javax.swing.JPasswordField jPasswordFieldMdp;
+    private javax.swing.JTabbedPane jTabbedPaneAccueil;
+    private javax.swing.JTextField jTextFieldLogin;
+    // End of variables declaration//GEN-END:variables
+
     public JButton getjButtonAca() {
         return jButtonAca;
     }
@@ -351,57 +369,10 @@ public class Accueil extends javax.swing.JFrame {
         this.jTextFieldLogin = jTextFieldLogin;
     }
 
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
 
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    /**
-     *
-     * @return
-     */
-    @Override
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAca;
-    private javax.swing.JButton jButtonAccueil;
-    private javax.swing.JButton jButtonAdmin;
-    private javax.swing.JButton jButtonConnect;
-    private javax.swing.JLabel jLabelConnexion;
-    private javax.swing.JLabel jLabelLogin;
-    private javax.swing.JLabel jLabelLogo;
-    private javax.swing.JLabel jLabelMdp;
-    private javax.swing.JPanel jPanelConnexion;
-    private javax.swing.JPanel jPanelContentConnexion;
-    private javax.swing.JPanel jPanelTitreConnexion;
-    private javax.swing.JPasswordField jPasswordFieldMdp;
-    private javax.swing.JTabbedPane jTabbedPaneAccueil;
-    private javax.swing.JTextField jTextFieldLogin;
-    // End of variables declaration//GEN-END:variables
 }
+
+
+
+
+
