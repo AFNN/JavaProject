@@ -17,9 +17,9 @@ public class Run {
 		
         
         
-        Accueil acc = new Accueil();
-        Controller control = new Controller(acc);
-        acc.setVisible(true);
+        
+        Controller control = new Controller();
+        
         
     }
     

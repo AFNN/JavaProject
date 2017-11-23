@@ -5,6 +5,11 @@
  */
 package javaprojet.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author Namko
@@ -27,7 +32,7 @@ public class Accueil_2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPaneAca = new javax.swing.JTabbedPane();
+        jTabbedPaneAdmin = new javax.swing.JTabbedPane();
         jPanelNotes = new javax.swing.JPanel();
         jPanelContentNotes = new javax.swing.JPanel();
         jLabelNom = new javax.swing.JLabel();
@@ -126,7 +131,7 @@ public class Accueil_2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAca.addTab("Modification notes", jPanelNotes);
+        jTabbedPaneAdmin.addTab("Modification notes", jPanelNotes);
 
         javax.swing.GroupLayout jPanelRechLayout = new javax.swing.GroupLayout(jPanelRech);
         jPanelRech.setLayout(jPanelRechLayout);
@@ -139,7 +144,7 @@ public class Accueil_2 extends javax.swing.JFrame {
             .addGap(0, 694, Short.MAX_VALUE)
         );
 
-        jTabbedPaneAca.addTab("Recherche par classe", jPanelRech);
+        jTabbedPaneAdmin.addTab("Recherche par classe", jPanelRech);
 
         javax.swing.GroupLayout jPanelGestLayout = new javax.swing.GroupLayout(jPanelGest);
         jPanelGest.setLayout(jPanelGestLayout);
@@ -152,7 +157,7 @@ public class Accueil_2 extends javax.swing.JFrame {
             .addGap(0, 694, Short.MAX_VALUE)
         );
 
-        jTabbedPaneAca.addTab("Gestion par matière", jPanelGest);
+        jTabbedPaneAdmin.addTab("Gestion par matière", jPanelGest);
 
         jButtonAccueil.setText("Accueil");
         jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +183,7 @@ public class Accueil_2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPaneAca, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPaneAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButtonAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +206,7 @@ public class Accueil_2 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonAca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTabbedPaneAca))
+                    .addComponent(jTabbedPaneAdmin))
                 .addContainerGap())
         );
 
@@ -249,6 +254,118 @@ public class Accueil_2 extends javax.swing.JFrame {
         });
     }
 
+    public JButton getjButtonAca() {
+        return jButtonAca;
+    }
+
+    public void setjButtonAca(JButton jButtonAca) {
+        this.jButtonAca = jButtonAca;
+    }
+
+    public JButton getjButtonAccueil() {
+        return jButtonAccueil;
+    }
+
+    public void setjButtonAccueil(JButton jButtonAccueil) {
+        this.jButtonAccueil = jButtonAccueil;
+    }
+
+    public JButton getjButtonAdmin() {
+        return jButtonAdmin;
+    }
+
+    public void setjButtonAdmin(JButton jButtonAdmin) {
+        this.jButtonAdmin = jButtonAdmin;
+    }
+
+    public JLabel getjLabelLogo() {
+        return jLabelLogo;
+    }
+
+    public void setjLabelLogo(JLabel jLabelLogo) {
+        this.jLabelLogo = jLabelLogo;
+    }
+
+    public JLabel getjLabelMat() {
+        return jLabelMat;
+    }
+
+    public void setjLabelMat(JLabel jLabelMat) {
+        this.jLabelMat = jLabelMat;
+    }
+
+    public JLabel getjLabelNom() {
+        return jLabelNom;
+    }
+
+    public void setjLabelNom(JLabel jLabelNom) {
+        this.jLabelNom = jLabelNom;
+    }
+
+    public JLabel getjLabelPrenom() {
+        return jLabelPrenom;
+    }
+
+    public void setjLabelPrenom(JLabel jLabelPrenom) {
+        this.jLabelPrenom = jLabelPrenom;
+    }
+
+    public JLabel getjLabelTitreNotes() {
+        return jLabelTitreNotes;
+    }
+
+    public void setjLabelTitreNotes(JLabel jLabelTitreNotes) {
+        this.jLabelTitreNotes = jLabelTitreNotes;
+    }
+
+    public JPanel getjPanelContentNotes() {
+        return jPanelContentNotes;
+    }
+
+    public void setjPanelContentNotes(JPanel jPanelContentNotes) {
+        this.jPanelContentNotes = jPanelContentNotes;
+    }
+
+    public JPanel getjPanelGest() {
+        return jPanelGest;
+    }
+
+    public void setjPanelGest(JPanel jPanelGest) {
+        this.jPanelGest = jPanelGest;
+    }
+
+    public JPanel getjPanelNotes() {
+        return jPanelNotes;
+    }
+
+    public void setjPanelNotes(JPanel jPanelNotes) {
+        this.jPanelNotes = jPanelNotes;
+    }
+
+    public JPanel getjPanelRech() {
+        return jPanelRech;
+    }
+
+    public void setjPanelRech(JPanel jPanelRech) {
+        this.jPanelRech = jPanelRech;
+    }
+
+    public JPanel getjPanelTitreNotes() {
+        return jPanelTitreNotes;
+    }
+
+    public void setjPanelTitreNotes(JPanel jPanelTitreNotes) {
+        this.jPanelTitreNotes = jPanelTitreNotes;
+    }
+
+    public JTabbedPane getjTabbedPaneAdmin() {
+        return jTabbedPaneAdmin;
+    }
+
+    public void setjTabbedPaneAdmin(JTabbedPane jTabbedPaneAdmin) {
+        this.jTabbedPaneAdmin = jTabbedPaneAdmin;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
@@ -263,6 +380,6 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelNotes;
     private javax.swing.JPanel jPanelRech;
     private javax.swing.JPanel jPanelTitreNotes;
-    private javax.swing.JTabbedPane jTabbedPaneAca;
+    private javax.swing.JTabbedPane jTabbedPaneAdmin;
     // End of variables declaration//GEN-END:variables
 }

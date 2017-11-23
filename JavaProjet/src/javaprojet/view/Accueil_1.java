@@ -5,6 +5,12 @@
  */
 package javaprojet.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Namko
@@ -27,7 +33,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPaneAdmin = new javax.swing.JTabbedPane();
+        jTabbedPaneAca = new javax.swing.JTabbedPane();
         jPanelGeneral = new javax.swing.JPanel();
         jPanelContentGen = new javax.swing.JPanel();
         jLabelNom = new javax.swing.JLabel();
@@ -222,7 +228,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Général", jPanelGeneral);
+        jTabbedPaneAca.addTab("Général", jPanelGeneral);
 
         jLabelTitreIdentite.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreIdentite.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -357,7 +363,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Identité", jPanelIdentite);
+        jTabbedPaneAca.addTab("Identité", jPanelIdentite);
 
         jPanelCoord.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -484,7 +490,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Coordonnées", jPanelCoord);
+        jTabbedPaneAca.addTab("Coordonnées", jPanelCoord);
 
         jLabelTitrePers.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitrePers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -674,7 +680,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Personne responsable", jPanelPers);
+        jTabbedPaneAca.addTab("Personne responsable", jPanelPers);
 
         jLabelTitreSante.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreSante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -809,7 +815,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Santé", jPanelSante);
+        jTabbedPaneAca.addTab("Santé", jPanelSante);
 
         jLabelTitreDoc.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreDoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -868,7 +874,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPaneAdmin.addTab("Documents", jPanelDoc);
+        jTabbedPaneAca.addTab("Documents", jPanelDoc);
 
         jButtonAccueil.setText("Accueil");
         jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
@@ -894,7 +900,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPaneAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPaneAca, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButtonAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -917,7 +923,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonAca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTabbedPaneAdmin))
+                    .addComponent(jTabbedPaneAca))
                 .addContainerGap())
         );
 
@@ -963,6 +969,750 @@ public class Accueil_1 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new Accueil_1().setVisible(true);
         });
+    }
+
+    public JButton getjButtonAca() {
+        return jButtonAca;
+    }
+
+    public void setjButtonAca(JButton jButtonAca) {
+        this.jButtonAca = jButtonAca;
+    }
+
+    public JButton getjButtonAccueil() {
+        return jButtonAccueil;
+    }
+
+    public void setjButtonAccueil(JButton jButtonAccueil) {
+        this.jButtonAccueil = jButtonAccueil;
+    }
+
+    public JButton getjButtonAdmin() {
+        return jButtonAdmin;
+    }
+
+    public void setjButtonAdmin(JButton jButtonAdmin) {
+        this.jButtonAdmin = jButtonAdmin;
+    }
+
+    public JLabel getjLabelAdr() {
+        return jLabelAdr;
+    }
+
+    public void setjLabelAdr(JLabel jLabelAdr) {
+        this.jLabelAdr = jLabelAdr;
+    }
+
+    public JLabel getjLabelAll() {
+        return jLabelAll;
+    }
+
+    public void setjLabelAll(JLabel jLabelAll) {
+        this.jLabelAll = jLabelAll;
+    }
+
+    public JLabel getjLabelContact1() {
+        return jLabelContact1;
+    }
+
+    public void setjLabelContact1(JLabel jLabelContact1) {
+        this.jLabelContact1 = jLabelContact1;
+    }
+
+    public JLabel getjLabelContact1Adr() {
+        return jLabelContact1Adr;
+    }
+
+    public void setjLabelContact1Adr(JLabel jLabelContact1Adr) {
+        this.jLabelContact1Adr = jLabelContact1Adr;
+    }
+
+    public JLabel getjLabelContact1Mail() {
+        return jLabelContact1Mail;
+    }
+
+    public void setjLabelContact1Mail(JLabel jLabelContact1Mail) {
+        this.jLabelContact1Mail = jLabelContact1Mail;
+    }
+
+    public JLabel getjLabelContact1Nom() {
+        return jLabelContact1Nom;
+    }
+
+    public void setjLabelContact1Nom(JLabel jLabelContact1Nom) {
+        this.jLabelContact1Nom = jLabelContact1Nom;
+    }
+
+    public JLabel getjLabelContact1Prenom() {
+        return jLabelContact1Prenom;
+    }
+
+    public void setjLabelContact1Prenom(JLabel jLabelContact1Prenom) {
+        this.jLabelContact1Prenom = jLabelContact1Prenom;
+    }
+
+    public JLabel getjLabelContact1Tel() {
+        return jLabelContact1Tel;
+    }
+
+    public void setjLabelContact1Tel(JLabel jLabelContact1Tel) {
+        this.jLabelContact1Tel = jLabelContact1Tel;
+    }
+
+    public JLabel getjLabelContact2() {
+        return jLabelContact2;
+    }
+
+    public void setjLabelContact2(JLabel jLabelContact2) {
+        this.jLabelContact2 = jLabelContact2;
+    }
+
+    public JLabel getjLabelContact2Adr() {
+        return jLabelContact2Adr;
+    }
+
+    public void setjLabelContact2Adr(JLabel jLabelContact2Adr) {
+        this.jLabelContact2Adr = jLabelContact2Adr;
+    }
+
+    public JLabel getjLabelContact2Mail() {
+        return jLabelContact2Mail;
+    }
+
+    public void setjLabelContact2Mail(JLabel jLabelContact2Mail) {
+        this.jLabelContact2Mail = jLabelContact2Mail;
+    }
+
+    public JLabel getjLabelContact2Nom() {
+        return jLabelContact2Nom;
+    }
+
+    public void setjLabelContact2Nom(JLabel jLabelContact2Nom) {
+        this.jLabelContact2Nom = jLabelContact2Nom;
+    }
+
+    public JLabel getjLabelContact2Prenom() {
+        return jLabelContact2Prenom;
+    }
+
+    public void setjLabelContact2Prenom(JLabel jLabelContact2Prenom) {
+        this.jLabelContact2Prenom = jLabelContact2Prenom;
+    }
+
+    public JLabel getjLabelContact2Tel() {
+        return jLabelContact2Tel;
+    }
+
+    public void setjLabelContact2Tel(JLabel jLabelContact2Tel) {
+        this.jLabelContact2Tel = jLabelContact2Tel;
+    }
+
+    public JLabel getjLabelCp() {
+        return jLabelCp;
+    }
+
+    public void setjLabelCp(JLabel jLabelCp) {
+        this.jLabelCp = jLabelCp;
+    }
+
+    public JLabel getjLabelDateInsc() {
+        return jLabelDateInsc;
+    }
+
+    public void setjLabelDateInsc(JLabel jLabelDateInsc) {
+        this.jLabelDateInsc = jLabelDateInsc;
+    }
+
+    public JLabel getjLabelDateNais() {
+        return jLabelDateNais;
+    }
+
+    public void setjLabelDateNais(JLabel jLabelDateNais) {
+        this.jLabelDateNais = jLabelDateNais;
+    }
+
+    public JLabel getjLabelEtaPre() {
+        return jLabelEtaPre;
+    }
+
+    public void setjLabelEtaPre(JLabel jLabelEtaPre) {
+        this.jLabelEtaPre = jLabelEtaPre;
+    }
+
+    public JLabel getjLabelLogo() {
+        return jLabelLogo;
+    }
+
+    public void setjLabelLogo(JLabel jLabelLogo) {
+        this.jLabelLogo = jLabelLogo;
+    }
+
+    public JLabel getjLabelMail() {
+        return jLabelMail;
+    }
+
+    public void setjLabelMail(JLabel jLabelMail) {
+        this.jLabelMail = jLabelMail;
+    }
+
+    public JLabel getjLabelMat() {
+        return jLabelMat;
+    }
+
+    public void setjLabelMat(JLabel jLabelMat) {
+        this.jLabelMat = jLabelMat;
+    }
+
+    public JLabel getjLabelNom() {
+        return jLabelNom;
+    }
+
+    public void setjLabelNom(JLabel jLabelNom) {
+        this.jLabelNom = jLabelNom;
+    }
+
+    public JLabel getjLabelNomMed() {
+        return jLabelNomMed;
+    }
+
+    public void setjLabelNomMed(JLabel jLabelNomMed) {
+        this.jLabelNomMed = jLabelNomMed;
+    }
+
+    public JLabel getjLabelPaysNais() {
+        return jLabelPaysNais;
+    }
+
+    public void setjLabelPaysNais(JLabel jLabelPaysNais) {
+        this.jLabelPaysNais = jLabelPaysNais;
+    }
+
+    public JLabel getjLabelPrenom() {
+        return jLabelPrenom;
+    }
+
+    public void setjLabelPrenom(JLabel jLabelPrenom) {
+        this.jLabelPrenom = jLabelPrenom;
+    }
+
+    public JLabel getjLabelPrenomMed() {
+        return jLabelPrenomMed;
+    }
+
+    public void setjLabelPrenomMed(JLabel jLabelPrenomMed) {
+        this.jLabelPrenomMed = jLabelPrenomMed;
+    }
+
+    public JLabel getjLabelRem() {
+        return jLabelRem;
+    }
+
+    public void setjLabelRem(JLabel jLabelRem) {
+        this.jLabelRem = jLabelRem;
+    }
+
+    public JLabel getjLabelSexe() {
+        return jLabelSexe;
+    }
+
+    public void setjLabelSexe(JLabel jLabelSexe) {
+        this.jLabelSexe = jLabelSexe;
+    }
+
+    public JLabel getjLabelTelDom() {
+        return jLabelTelDom;
+    }
+
+    public void setjLabelTelDom(JLabel jLabelTelDom) {
+        this.jLabelTelDom = jLabelTelDom;
+    }
+
+    public JLabel getjLabelTelMed() {
+        return jLabelTelMed;
+    }
+
+    public void setjLabelTelMed(JLabel jLabelTelMed) {
+        this.jLabelTelMed = jLabelTelMed;
+    }
+
+    public JLabel getjLabelTelMob() {
+        return jLabelTelMob;
+    }
+
+    public void setjLabelTelMob(JLabel jLabelTelMob) {
+        this.jLabelTelMob = jLabelTelMob;
+    }
+
+    public JLabel getjLabelTitreCoord() {
+        return jLabelTitreCoord;
+    }
+
+    public void setjLabelTitreCoord(JLabel jLabelTitreCoord) {
+        this.jLabelTitreCoord = jLabelTitreCoord;
+    }
+
+    public JLabel getjLabelTitreDoc() {
+        return jLabelTitreDoc;
+    }
+
+    public void setjLabelTitreDoc(JLabel jLabelTitreDoc) {
+        this.jLabelTitreDoc = jLabelTitreDoc;
+    }
+
+    public JLabel getjLabelTitreGen() {
+        return jLabelTitreGen;
+    }
+
+    public void setjLabelTitreGen(JLabel jLabelTitreGen) {
+        this.jLabelTitreGen = jLabelTitreGen;
+    }
+
+    public JLabel getjLabelTitreIdentite() {
+        return jLabelTitreIdentite;
+    }
+
+    public void setjLabelTitreIdentite(JLabel jLabelTitreIdentite) {
+        this.jLabelTitreIdentite = jLabelTitreIdentite;
+    }
+
+    public JLabel getjLabelTitrePers() {
+        return jLabelTitrePers;
+    }
+
+    public void setjLabelTitrePers(JLabel jLabelTitrePers) {
+        this.jLabelTitrePers = jLabelTitrePers;
+    }
+
+    public JLabel getjLabelTitreSante() {
+        return jLabelTitreSante;
+    }
+
+    public void setjLabelTitreSante(JLabel jLabelTitreSante) {
+        this.jLabelTitreSante = jLabelTitreSante;
+    }
+
+    public JLabel getjLabelVacc() {
+        return jLabelVacc;
+    }
+
+    public void setjLabelVacc(JLabel jLabelVacc) {
+        this.jLabelVacc = jLabelVacc;
+    }
+
+    public JLabel getjLabelVille() {
+        return jLabelVille;
+    }
+
+    public void setjLabelVille(JLabel jLabelVille) {
+        this.jLabelVille = jLabelVille;
+    }
+
+    public JLabel getjLabelVilleNais() {
+        return jLabelVilleNais;
+    }
+
+    public void setjLabelVilleNais(JLabel jLabelVilleNais) {
+        this.jLabelVilleNais = jLabelVilleNais;
+    }
+
+    public JPanel getjPanelContentCoord() {
+        return jPanelContentCoord;
+    }
+
+    public void setjPanelContentCoord(JPanel jPanelContentCoord) {
+        this.jPanelContentCoord = jPanelContentCoord;
+    }
+
+    public JPanel getjPanelContentDoc() {
+        return jPanelContentDoc;
+    }
+
+    public void setjPanelContentDoc(JPanel jPanelContentDoc) {
+        this.jPanelContentDoc = jPanelContentDoc;
+    }
+
+    public JPanel getjPanelContentGen() {
+        return jPanelContentGen;
+    }
+
+    public void setjPanelContentGen(JPanel jPanelContentGen) {
+        this.jPanelContentGen = jPanelContentGen;
+    }
+
+    public JPanel getjPanelContentIdentite() {
+        return jPanelContentIdentite;
+    }
+
+    public void setjPanelContentIdentite(JPanel jPanelContentIdentite) {
+        this.jPanelContentIdentite = jPanelContentIdentite;
+    }
+
+    public JPanel getjPanelContentPers() {
+        return jPanelContentPers;
+    }
+
+    public void setjPanelContentPers(JPanel jPanelContentPers) {
+        this.jPanelContentPers = jPanelContentPers;
+    }
+
+    public JPanel getjPanelContentSante() {
+        return jPanelContentSante;
+    }
+
+    public void setjPanelContentSante(JPanel jPanelContentSante) {
+        this.jPanelContentSante = jPanelContentSante;
+    }
+
+    public JPanel getjPanelCoord() {
+        return jPanelCoord;
+    }
+
+    public void setjPanelCoord(JPanel jPanelCoord) {
+        this.jPanelCoord = jPanelCoord;
+    }
+
+    public JPanel getjPanelDoc() {
+        return jPanelDoc;
+    }
+
+    public void setjPanelDoc(JPanel jPanelDoc) {
+        this.jPanelDoc = jPanelDoc;
+    }
+
+    public JPanel getjPanelGeneral() {
+        return jPanelGeneral;
+    }
+
+    public void setjPanelGeneral(JPanel jPanelGeneral) {
+        this.jPanelGeneral = jPanelGeneral;
+    }
+
+    public JPanel getjPanelIdentite() {
+        return jPanelIdentite;
+    }
+
+    public void setjPanelIdentite(JPanel jPanelIdentite) {
+        this.jPanelIdentite = jPanelIdentite;
+    }
+
+    public JPanel getjPanelPers() {
+        return jPanelPers;
+    }
+
+    public void setjPanelPers(JPanel jPanelPers) {
+        this.jPanelPers = jPanelPers;
+    }
+
+    public JPanel getjPanelSante() {
+        return jPanelSante;
+    }
+
+    public void setjPanelSante(JPanel jPanelSante) {
+        this.jPanelSante = jPanelSante;
+    }
+
+    public JPanel getjPanelTitreCoord() {
+        return jPanelTitreCoord;
+    }
+
+    public void setjPanelTitreCoord(JPanel jPanelTitreCoord) {
+        this.jPanelTitreCoord = jPanelTitreCoord;
+    }
+
+    public JPanel getjPanelTitreDoc() {
+        return jPanelTitreDoc;
+    }
+
+    public void setjPanelTitreDoc(JPanel jPanelTitreDoc) {
+        this.jPanelTitreDoc = jPanelTitreDoc;
+    }
+
+    public JPanel getjPanelTitreGen() {
+        return jPanelTitreGen;
+    }
+
+    public void setjPanelTitreGen(JPanel jPanelTitreGen) {
+        this.jPanelTitreGen = jPanelTitreGen;
+    }
+
+    public JPanel getjPanelTitreIdentite() {
+        return jPanelTitreIdentite;
+    }
+
+    public void setjPanelTitreIdentite(JPanel jPanelTitreIdentite) {
+        this.jPanelTitreIdentite = jPanelTitreIdentite;
+    }
+
+    public JPanel getjPanelTitrePers() {
+        return jPanelTitrePers;
+    }
+
+    public void setjPanelTitrePers(JPanel jPanelTitrePers) {
+        this.jPanelTitrePers = jPanelTitrePers;
+    }
+
+    public JPanel getjPanelTitreSante() {
+        return jPanelTitreSante;
+    }
+
+    public void setjPanelTitreSante(JPanel jPanelTitreSante) {
+        this.jPanelTitreSante = jPanelTitreSante;
+    }
+
+    public JTabbedPane getjTabbedPaneAdmin() {
+        return jTabbedPaneAca;
+    }
+
+    public void setjTabbedPaneAdmin(JTabbedPane jTabbedPaneAdmin) {
+        this.jTabbedPaneAca = jTabbedPaneAdmin;
+    }
+
+    public JTextField getjTextFieldAdr() {
+        return jTextFieldAdr;
+    }
+
+    public void setjTextFieldAdr(JTextField jTextFieldAdr) {
+        this.jTextFieldAdr = jTextFieldAdr;
+    }
+
+    public JTextField getjTextFieldAll() {
+        return jTextFieldAll;
+    }
+
+    public void setjTextFieldAll(JTextField jTextFieldAll) {
+        this.jTextFieldAll = jTextFieldAll;
+    }
+
+    public JTextField getjTextFieldContact1Adr() {
+        return jTextFieldContact1Adr;
+    }
+
+    public void setjTextFieldContact1Adr(JTextField jTextFieldContact1Adr) {
+        this.jTextFieldContact1Adr = jTextFieldContact1Adr;
+    }
+
+    public JTextField getjTextFieldContact1Mail() {
+        return jTextFieldContact1Mail;
+    }
+
+    public void setjTextFieldContact1Mail(JTextField jTextFieldContact1Mail) {
+        this.jTextFieldContact1Mail = jTextFieldContact1Mail;
+    }
+
+    public JTextField getjTextFieldContact1Nom() {
+        return jTextFieldContact1Nom;
+    }
+
+    public void setjTextFieldContact1Nom(JTextField jTextFieldContact1Nom) {
+        this.jTextFieldContact1Nom = jTextFieldContact1Nom;
+    }
+
+    public JTextField getjTextFieldContact1Prenom() {
+        return jTextFieldContact1Prenom;
+    }
+
+    public void setjTextFieldContact1Prenom(JTextField jTextFieldContact1Prenom) {
+        this.jTextFieldContact1Prenom = jTextFieldContact1Prenom;
+    }
+
+    public JTextField getjTextFieldContact1Tel() {
+        return jTextFieldContact1Tel;
+    }
+
+    public void setjTextFieldContact1Tel(JTextField jTextFieldContact1Tel) {
+        this.jTextFieldContact1Tel = jTextFieldContact1Tel;
+    }
+
+    public JTextField getjTextFieldContact2Adr() {
+        return jTextFieldContact2Adr;
+    }
+
+    public void setjTextFieldContact2Adr(JTextField jTextFieldContact2Adr) {
+        this.jTextFieldContact2Adr = jTextFieldContact2Adr;
+    }
+
+    public JTextField getjTextFieldContact2Mail() {
+        return jTextFieldContact2Mail;
+    }
+
+    public void setjTextFieldContact2Mail(JTextField jTextFieldContact2Mail) {
+        this.jTextFieldContact2Mail = jTextFieldContact2Mail;
+    }
+
+    public JTextField getjTextFieldContact2Nom() {
+        return jTextFieldContact2Nom;
+    }
+
+    public void setjTextFieldContact2Nom(JTextField jTextFieldContact2Nom) {
+        this.jTextFieldContact2Nom = jTextFieldContact2Nom;
+    }
+
+    public JTextField getjTextFieldContact2Prenom() {
+        return jTextFieldContact2Prenom;
+    }
+
+    public void setjTextFieldContact2Prenom(JTextField jTextFieldContact2Prenom) {
+        this.jTextFieldContact2Prenom = jTextFieldContact2Prenom;
+    }
+
+    public JTextField getjTextFieldContact2Tel() {
+        return jTextFieldContact2Tel;
+    }
+
+    public void setjTextFieldContact2Tel(JTextField jTextFieldContact2Tel) {
+        this.jTextFieldContact2Tel = jTextFieldContact2Tel;
+    }
+
+    public JTextField getjTextFieldCp() {
+        return jTextFieldCp;
+    }
+
+    public void setjTextFieldCp(JTextField jTextFieldCp) {
+        this.jTextFieldCp = jTextFieldCp;
+    }
+
+    public JTextField getjTextFieldDateInsc() {
+        return jTextFieldDateInsc;
+    }
+
+    public void setjTextFieldDateInsc(JTextField jTextFieldDateInsc) {
+        this.jTextFieldDateInsc = jTextFieldDateInsc;
+    }
+
+    public JTextField getjTextFieldDateNais() {
+        return jTextFieldDateNais;
+    }
+
+    public void setjTextFieldDateNais(JTextField jTextFieldDateNais) {
+        this.jTextFieldDateNais = jTextFieldDateNais;
+    }
+
+    public JTextField getjTextFieldEtaPre() {
+        return jTextFieldEtaPre;
+    }
+
+    public void setjTextFieldEtaPre(JTextField jTextFieldEtaPre) {
+        this.jTextFieldEtaPre = jTextFieldEtaPre;
+    }
+
+    public JTextField getjTextFieldMail() {
+        return jTextFieldMail;
+    }
+
+    public void setjTextFieldMail(JTextField jTextFieldMail) {
+        this.jTextFieldMail = jTextFieldMail;
+    }
+
+    public JTextField getjTextFieldMat() {
+        return jTextFieldMat;
+    }
+
+    public void setjTextFieldMat(JTextField jTextFieldMat) {
+        this.jTextFieldMat = jTextFieldMat;
+    }
+
+    public JTextField getjTextFieldNom() {
+        return jTextFieldNom;
+    }
+
+    public void setjTextFieldNom(JTextField jTextFieldNom) {
+        this.jTextFieldNom = jTextFieldNom;
+    }
+
+    public JTextField getjTextFieldNomMed() {
+        return jTextFieldNomMed;
+    }
+
+    public void setjTextFieldNomMed(JTextField jTextFieldNomMed) {
+        this.jTextFieldNomMed = jTextFieldNomMed;
+    }
+
+    public JTextField getjTextFieldPaysNais() {
+        return jTextFieldPaysNais;
+    }
+
+    public void setjTextFieldPaysNais(JTextField jTextFieldPaysNais) {
+        this.jTextFieldPaysNais = jTextFieldPaysNais;
+    }
+
+    public JTextField getjTextFieldPrenom() {
+        return jTextFieldPrenom;
+    }
+
+    public void setjTextFieldPrenom(JTextField jTextFieldPrenom) {
+        this.jTextFieldPrenom = jTextFieldPrenom;
+    }
+
+    public JTextField getjTextFieldPrenomMed() {
+        return jTextFieldPrenomMed;
+    }
+
+    public void setjTextFieldPrenomMed(JTextField jTextFieldPrenomMed) {
+        this.jTextFieldPrenomMed = jTextFieldPrenomMed;
+    }
+
+    public JTextField getjTextFieldRem() {
+        return jTextFieldRem;
+    }
+
+    public void setjTextFieldRem(JTextField jTextFieldRem) {
+        this.jTextFieldRem = jTextFieldRem;
+    }
+
+    public JTextField getjTextFieldSexe() {
+        return jTextFieldSexe;
+    }
+
+    public void setjTextFieldSexe(JTextField jTextFieldSexe) {
+        this.jTextFieldSexe = jTextFieldSexe;
+    }
+
+    public JTextField getjTextFieldTelDom() {
+        return jTextFieldTelDom;
+    }
+
+    public void setjTextFieldTelDom(JTextField jTextFieldTelDom) {
+        this.jTextFieldTelDom = jTextFieldTelDom;
+    }
+
+    public JTextField getjTextFieldTelMed() {
+        return jTextFieldTelMed;
+    }
+
+    public void setjTextFieldTelMed(JTextField jTextFieldTelMed) {
+        this.jTextFieldTelMed = jTextFieldTelMed;
+    }
+
+    public JTextField getjTextFieldTelMob() {
+        return jTextFieldTelMob;
+    }
+
+    public void setjTextFieldTelMob(JTextField jTextFieldTelMob) {
+        this.jTextFieldTelMob = jTextFieldTelMob;
+    }
+
+    public JTextField getjTextFieldVacc() {
+        return jTextFieldVacc;
+    }
+
+    public void setjTextFieldVacc(JTextField jTextFieldVacc) {
+        this.jTextFieldVacc = jTextFieldVacc;
+    }
+
+    public JTextField getjTextFieldVille() {
+        return jTextFieldVille;
+    }
+
+    public void setjTextFieldVille(JTextField jTextFieldVille) {
+        this.jTextFieldVille = jTextFieldVille;
+    }
+
+    public JTextField getjTextFieldVilleNais() {
+        return jTextFieldVilleNais;
+    }
+
+    public void setjTextFieldVilleNais(JTextField jTextFieldVilleNais) {
+        this.jTextFieldVilleNais = jTextFieldVilleNais;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1027,7 +1777,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTitreIdentite;
     private javax.swing.JPanel jPanelTitrePers;
     private javax.swing.JPanel jPanelTitreSante;
-    private javax.swing.JTabbedPane jTabbedPaneAdmin;
+    private javax.swing.JTabbedPane jTabbedPaneAca;
     private javax.swing.JTextField jTextFieldAdr;
     private javax.swing.JTextField jTextFieldAll;
     private javax.swing.JTextField jTextFieldContact1Adr;
