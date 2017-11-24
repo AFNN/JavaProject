@@ -8,6 +8,7 @@ package javaprojet.view;
 import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
@@ -38,14 +39,18 @@ public class Accueil extends javax.swing.JFrame {
 
         jTabbedPaneAccueil = new javax.swing.JTabbedPane();
         jPanelConnexion = new javax.swing.JPanel();
+        jPanelTitreConnexion = new javax.swing.JPanel();
+        jLabelConnexion = new javax.swing.JLabel();
+        jPanelMainContent = new javax.swing.JPanel();
         jPanelContentConnexion = new javax.swing.JPanel();
         jLabelLogin = new javax.swing.JLabel();
         jLabelMdp = new javax.swing.JLabel();
         jTextFieldLogin = new javax.swing.JTextField();
         jPasswordFieldMdp = new javax.swing.JPasswordField();
         jButtonConnect = new javax.swing.JButton();
-        jPanelTitreConnexion = new javax.swing.JPanel();
-        jLabelConnexion = new javax.swing.JLabel();
+        jPanelContentConnected = new javax.swing.JPanel();
+        jLabelConnected = new javax.swing.JLabel();
+        jButtonDiscon = new javax.swing.JButton();
         jButtonAccueil = new javax.swing.JButton();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
@@ -56,15 +61,34 @@ public class Accueil extends javax.swing.JFrame {
 
         jPanelConnexion.setBackground(new java.awt.Color(102, 102, 102));
 
+        jLabelConnexion.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabelConnexion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelConnexion.setText("Connexion");
+
+        javax.swing.GroupLayout jPanelTitreConnexionLayout = new javax.swing.GroupLayout(jPanelTitreConnexion);
+        jPanelTitreConnexion.setLayout(jPanelTitreConnexionLayout);
+        jPanelTitreConnexionLayout.setHorizontalGroup(
+            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelTitreConnexionLayout.setVerticalGroup(
+            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelMainContent.setLayout(new java.awt.CardLayout());
+
         jPanelContentConnexion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jLabelLogin.setText("Login :");
 
         jLabelMdp.setText("Password :");
-
-        jTextFieldLogin.setText("jTextField1");
-
-        jPasswordFieldMdp.setText("jPasswordField1");
 
         jButtonConnect.setText("Se connecter");
 
@@ -73,7 +97,7 @@ public class Accueil extends javax.swing.JFrame {
         jPanelContentConnexionLayout.setHorizontalGroup(
             jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentConnexionLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
+                .addGap(125, 125, 125)
                 .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelMdp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -98,39 +122,55 @@ public class Accueil extends javax.swing.JFrame {
                     .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonConnect)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        jLabelConnexion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelConnexion.setText("Connexion");
+        jPanelMainContent.add(jPanelContentConnexion, "cardLogin");
 
-        javax.swing.GroupLayout jPanelTitreConnexionLayout = new javax.swing.GroupLayout(jPanelTitreConnexion);
-        jPanelTitreConnexion.setLayout(jPanelTitreConnexionLayout);
-        jPanelTitreConnexionLayout.setHorizontalGroup(
-            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelContentConnected.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
+
+        jLabelConnected.setText("CONNECTED");
+
+        jButtonDiscon.setText("Deconnection");
+        jButtonDiscon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDisconActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelContentConnectedLayout = new javax.swing.GroupLayout(jPanelContentConnected);
+        jPanelContentConnected.setLayout(jPanelContentConnectedLayout);
+        jPanelContentConnectedLayout.setHorizontalGroup(
+            jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentConnectedLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addGroup(jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDiscon)
+                    .addComponent(jLabelConnected))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
-        jPanelTitreConnexionLayout.setVerticalGroup(
-            jPanelTitreConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTitreConnexionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelContentConnectedLayout.setVerticalGroup(
+            jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelContentConnectedLayout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabelConnected)
+                .addGap(31, 31, 31)
+                .addComponent(jButtonDiscon)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
+
+        jPanelMainContent.add(jPanelContentConnected, "cardConnected");
 
         javax.swing.GroupLayout jPanelConnexionLayout = new javax.swing.GroupLayout(jPanelConnexion);
         jPanelConnexion.setLayout(jPanelConnexionLayout);
         jPanelConnexionLayout.setHorizontalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConnexionLayout.createSequentialGroup()
+            .addGroup(jPanelConnexionLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addGroup(jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelContentConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(173, Short.MAX_VALUE))
+                    .addComponent(jPanelMainContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         jPanelConnexionLayout.setVerticalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,8 +178,8 @@ public class Accueil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107)
-                .addComponent(jPanelContentConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addComponent(jPanelMainContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         jTabbedPaneAccueil.addTab("Connexion", jPanelConnexion);
@@ -206,6 +246,10 @@ public class Accueil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAcaActionPerformed
 
+    private void jButtonDisconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDisconActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDisconActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,18 +289,24 @@ public class Accueil extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonConnect;
+    private javax.swing.JButton jButtonDiscon;
+    private javax.swing.JLabel jLabelConnected;
     private javax.swing.JLabel jLabelConnexion;
     private javax.swing.JLabel jLabelLogin;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMdp;
     private javax.swing.JPanel jPanelConnexion;
+    private javax.swing.JPanel jPanelContentConnected;
     private javax.swing.JPanel jPanelContentConnexion;
+    private javax.swing.JPanel jPanelMainContent;
     private javax.swing.JPanel jPanelTitreConnexion;
     private javax.swing.JPasswordField jPasswordFieldMdp;
     private javax.swing.JTabbedPane jTabbedPaneAccueil;
     private javax.swing.JTextField jTextFieldLogin;
     // End of variables declaration//GEN-END:variables
-
+   //Boîte du message d'erreur
+    private javax.swing.JOptionPane jop;
+    
     public JButton getjButtonAca() {
         return jButtonAca;
     }
@@ -369,9 +419,52 @@ public class Accueil extends javax.swing.JFrame {
         this.jTextFieldLogin = jTextFieldLogin;
     }
 
+    public JButton getjButtonDiscon() {
+        return jButtonDiscon;
+    }
+
+    public void setjButtonDiscon(JButton jButtonDiscon) {
+        this.jButtonDiscon = jButtonDiscon;
+    }
+
+    public JLabel getjLabelConnected() {
+        return jLabelConnected;
+    }
+
+    public void setjLabelConnected(JLabel jLabelConnected) {
+        this.jLabelConnected = jLabelConnected;
+    }
+
+    public JPanel getjPanelContentConnected() {
+        return jPanelContentConnected;
+    }
+
+    public void setjPanelContentConnected(JPanel jPanelContentConnected) {
+        this.jPanelContentConnected = jPanelContentConnected;
+    }
+
+    public JPanel getjPanelMainContent() {
+        return jPanelMainContent;
+    }
+
+    public void setjPanelMainContent(JPanel jPanelMainContent) {
+        this.jPanelMainContent = jPanelMainContent;
+    }
+
+    public JOptionPane getJop() {
+        return jop;
+    }
+
+    public void setJop(JOptionPane jop) {
+        this.jop = jop;
+    }
+
 
 }
-
+int n = JOptionPane.showConfirmDialog(frame,
+ "Erreur" ,
+ "Voulez-vous vraiment continuer?",
+ JOptionPane.YES_NO_OPTION);
 
 
 

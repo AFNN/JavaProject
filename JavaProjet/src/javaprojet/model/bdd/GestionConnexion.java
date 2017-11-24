@@ -32,7 +32,7 @@ public class GestionConnexion {
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                         
-        }
+        } 
         
         if(res.first())
         {
@@ -44,6 +44,8 @@ public class GestionConnexion {
                     
             } catch (SQLException SQLmdpE) {
                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLmdpE.getMessage());
+                   
+                   
             }
             
             if(resmdp.first())
@@ -56,13 +58,16 @@ public class GestionConnexion {
                             System.out.println("DEBUG / MDPUSER = "+mdpBDD);
                             System.out.println("Utilisateur connecté");
                         } 
+                        
                 }
         }
   return connection;         
     }
     
+
     
-    public static boolean CheckAdmin(String login){
+    
+    public static boolean CheckAdmin(String login) throws SQLException{
            boolean admin=false;
            ResultSet res=null;
            String adminres="";
@@ -78,6 +83,7 @@ public class GestionConnexion {
             }
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+            stmt.close();
                         
         }
         return admin;
