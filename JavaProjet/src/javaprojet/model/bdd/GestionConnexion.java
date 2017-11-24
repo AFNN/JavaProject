@@ -29,6 +29,7 @@ public class GestionConnexion {
             System.out.println("DEBUG / USERLOGIN REQUEST"+userLogin);
             res=stmt.executeQuery(userLogin);
             
+            
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                         
@@ -41,6 +42,7 @@ public class GestionConnexion {
                     String MDPuser="SELECT PASSWORD FROM userapplication WHERE LOGIN='"+login+"'";
                     System.out.println("DEBUG / MDPUSER REQUEST"+MDPuser);
                     resmdp=stmt.executeQuery(MDPuser);
+                    
                     
             } catch (SQLException SQLmdpE) {
                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLmdpE.getMessage());
@@ -61,7 +63,8 @@ public class GestionConnexion {
                         
                 }
         }
-  return connection;         
+    stmt.close();
+    return connection;         
     }
     
 

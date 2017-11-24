@@ -461,10 +461,7 @@ public class Accueil extends javax.swing.JFrame {
 
 
 }
-int n = JOptionPane.showConfirmDialog(frame,
- "Erreur" ,
- "Voulez-vous vraiment continuer?",
- JOptionPane.YES_NO_OPTION);
+
 
 
 

@@ -10,8 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javaprojet.model.bdd.DBconnexion;
 import javaprojet.view.Accueil;
 import javaprojet.view.Accueil_1;
 import javaprojet.view.Accueil_2;
@@ -47,6 +49,8 @@ public class Controller {
         Admin.getjButtonAccueil().addActionListener(blistener);
         Admin.getjButtonAdmin().addActionListener(blistener);
         Admin.getjButtonAca().addActionListener(blistener);
+        Admin.getjButtonokClasse().addActionListener(blistener);
+        Admin.getjButtonchoixETU().addActionListener(blistener);
         
         // Création d'évènement sur les bouttons de la page Académique
         Aca.getjButtonAccueil().addActionListener(blistener);
@@ -147,7 +151,7 @@ public class Controller {
 			System.out.println(Accueil.getjTextFieldLogin().getText());
                         
                     }
-                               
+         
                 } catch (SQLException ex) {
                     Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -156,21 +160,75 @@ public class Controller {
                 System.out.println(mdp);
                 String login = Accueil.getjTextFieldLogin().getText();
                 System.out.println(login);
-                System.out.println("connect2 = "+connect);
                 
             }
             
             //Bouton retour vers panel "connexion"
             else if (e.getSource() == Accueil.getjButtonDiscon()){
-                
-                
+
                 CardLayout c2 = (CardLayout)(Accueil.getjPanelMainContent().getLayout());
                 c2.next(Accueil.getjPanelMainContent());
                 //Boîte du message d'information
                 JOptionPane.showMessageDialog(null, "Déconnection", "Information", JOptionPane.INFORMATION_MESSAGE);
-                
-                
-            }     
+            }  
+            
+            //Boutton pour confirmer la classe à choisir dans le 1er combobox de la page Administration
+            else if (e.getSource() == Admin.getjButtonokClasse()){
+                System.out.println(Admin.getjComboBoxClasse().getSelectedItem());
+        
+                ResultSet resEtu=null;
+                ResultSet resid=null;
+                Statement stmt=null;
+                int id= 0;
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    //PERMET DE RECUPERER L'ID DE LA CLASSSE POUR PERMETTRE DE REMPLIR LA COMBOBOX ETUDIANT
+                    String idClasse="SELECT idCLasse FROM `classe` WHERE NomClasse='"+Admin.getjComboBoxClasse().getSelectedItem()+"'";
+                    resid=stmt.executeQuery(idClasse);
+                    resid.first();
+                    id=Integer.parseInt(resid.getString("idClasse"));
+                    System.out.println("idClasse="+id);
+                    String EtuSelect="SELECT * FROM `etudiant` WHERE idClasse="+id+"";
+                    System.out.println("DEBUG / USERLOGIN REQUEST"+EtuSelect);
+                    resEtu=stmt.executeQuery(EtuSelect);
+                    Admin.getjComboBoxEtu().setModel(new javax.swing.DefaultComboBoxModel<>());
+                    
+                    while(resEtu.next()){
+                        Admin.getjComboBoxEtu().addItem(resEtu.getString("NOM")+" "+resEtu.getString("PRENOM"));
+                    }
+                    stmt.close();
+                }
+                catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+                }
+            }
+            
+            //Boutton pour confirmer la classe à choisir dans le 2eme combobox de la page Académique
+            else if (e.getSource() == Admin.getjButtonchoixETU()){
+                ResultSet resEtu=null;
+                ResultSet resid=null;
+                Statement stmt=null;
+                int idEtudiant=0;
+                String[] NameEtudiant= Admin.getjComboBoxEtu().getSelectedItem().toString().split(" ");
+                System.out.println("idEtudiantSelection: "+NameEtudiant[0]);
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    //PERMET DE RECUPERER L'ID DE LA CLASSSE POUR PERMETTRE DE REMPLIR LA COMBOBOX ETUDIANT
+                    String Matricule="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'";
+                    resid=stmt.executeQuery(Matricule);
+                    resid.first();
+                    idEtudiant=Integer.parseInt(resid.getString("MATRICULE"));
+                    System.out.println("Matricule="+idEtudiant);
+                }
+                catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+                }
+        
+            }
+            
         }
     }
 }
