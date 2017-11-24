@@ -10,6 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javaprojet.model.bdd.DBconnexion;
 
 /**
  *
@@ -122,6 +126,11 @@ public class Accueil_1 extends javax.swing.JFrame {
         jPanelTitreDoc = new javax.swing.JPanel();
         jLabelTitreDoc = new javax.swing.JLabel();
         jPanelContentDoc = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jComboBoxClasse = new javax.swing.JComboBox<>();
+        jButtonokClasse = new javax.swing.JButton();
+        jComboBoxEtu = new javax.swing.JComboBox<>();
+        jButtonchoixETU = new javax.swing.JButton();
         jButtonAccueil = new javax.swing.JButton();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
@@ -181,7 +190,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         jLabelTitreGen.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -654,7 +663,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelContact2Mail)
                     .addComponent(jTextFieldContact1Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldContact2Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPersLayout = new javax.swing.GroupLayout(jPanelPers);
@@ -848,7 +857,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
         jPanelContentDocLayout.setVerticalGroup(
             jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 548, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanelDocLayout = new javax.swing.GroupLayout(jPanelDoc);
@@ -875,6 +884,70 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
 
         jTabbedPaneAca.addTab("Documents", jPanelDoc);
+
+        jComboBoxClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
+        ResultSet res=null;
+        Statement stmt=null;
+        int nbp = 0;
+        try{
+            javaprojet.model.bdd.DBconnexion.connexionDB();
+            stmt= DBconnexion.getConn().createStatement();
+            String ClassSelect="SELECT * FROM `classe`";
+            System.out.println("DEBUG / USERLOGIN REQUEST"+ClassSelect);
+            res=stmt.executeQuery(ClassSelect);
+            while(res.next()){
+                jComboBoxClasse.addItem(res.getString("NomClasse"));
+            }
+        }
+        catch (SQLException SQLe) {
+            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+        }
+
+        jButtonokClasse.setText("OK");
+        jButtonokClasse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonokClasseActionPerformed(evt);
+            }
+        });
+
+        jButtonchoixETU.setText("CHOIX");
+        jButtonchoixETU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonchoixETUActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBoxEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxClasse, 0, 105, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonokClasse)
+                    .addComponent(jButtonchoixETU, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(549, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonokClasse))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonchoixETU))
+                .addContainerGap(557, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneAca.addTab("Selection Etudiant", jPanel1);
 
         jButtonAccueil.setText("Accueil");
         jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
@@ -937,6 +1010,44 @@ public class Accueil_1 extends javax.swing.JFrame {
     private void jButtonAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAcaActionPerformed
+
+    private void jButtonokClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonokClasseActionPerformed
+        // TODO add your handling code here:
+        System.out.println(jComboBoxClasse.getSelectedItem());
+        
+            ResultSet resEtu=null;
+            ResultSet resid=null;
+            Statement stmt=null;
+            int id= 0;
+            try{
+                javaprojet.model.bdd.DBconnexion.connexionDB();
+                stmt= DBconnexion.getConn().createStatement();
+                //PERMET DE RECUPERER L'ID DE LA CLASSSE POUR PERMETTRE DE REMPLIR LA COMBOBOX ETUDIANT
+                String idClasse="SELECT idCLasse FROM `classe` WHERE NomClasse='"+jComboBoxClasse.getSelectedItem()+"'";
+                resid=stmt.executeQuery(idClasse);
+                resid.first();
+                id=Integer.parseInt(resid.getString("idClasse"));
+                System.out.println("id="+id);
+                String EtuSelect="SELECT * FROM `etudiant` WHERE idClasse="+id+"";
+                System.out.println("DEBUG / USERLOGIN REQUEST"+EtuSelect);
+                resEtu=stmt.executeQuery(EtuSelect);
+                jComboBoxEtu.setModel(new javax.swing.DefaultComboBoxModel<>());
+                while(resEtu.next()){
+                    jComboBoxEtu.addItem(resEtu.getString("NOM"));
+                }
+            }
+            catch (SQLException SQLe) {
+                System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+            }
+        
+    }//GEN-LAST:event_jButtonokClasseActionPerformed
+
+    private void jButtonchoixETUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonchoixETUActionPerformed
+        // TODO add your handling code here:
+        String idEtudiantSelect=jComboBoxEtu.getSelectedItem().toString();
+        System.out.println("idEtudiantSelection: "+idEtudiantSelect);
+    }//GEN-LAST:event_jButtonchoixETUActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1719,6 +1830,10 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonchoixETU;
+    private javax.swing.JButton jButtonokClasse;
+    private javax.swing.JComboBox<String> jComboBoxClasse;
+    private javax.swing.JComboBox<String> jComboBoxEtu;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;
@@ -1759,6 +1874,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelVacc;
     private javax.swing.JLabel jLabelVille;
     private javax.swing.JLabel jLabelVilleNais;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelContentCoord;
     private javax.swing.JPanel jPanelContentDoc;
     private javax.swing.JPanel jPanelContentGen;

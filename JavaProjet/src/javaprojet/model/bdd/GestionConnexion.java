@@ -28,6 +28,7 @@ public class GestionConnexion {
             String userLogin="SELECT LOGIN From userapplication WHERE LOGIN='"+login+"'";
             System.out.println("DEBUG / USERLOGIN REQUEST"+userLogin);
             res=stmt.executeQuery(userLogin);
+            
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                         
