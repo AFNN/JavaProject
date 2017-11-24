@@ -17,7 +17,7 @@ public class Identite {
     private String Sexe ;			
     private String DateInscription; 
     private String Etablissementpr ;
-    private String Matricule; 	
+    private int Matricule; 	
     /**
      * 
      * @return DateNaissance
@@ -106,14 +106,14 @@ public class Identite {
      * 
      * @return Matricule
      */
-    public String getMatricule() {
+    public int getMatricule() {
         return Matricule;
     }
     /**
      * 
      * @param Matricule 
      */
-    public void setMatricule(String Matricule) {
+    public void setMatricule(int Matricule) {
         this.Matricule = Matricule;
     }
     /**
@@ -126,7 +126,7 @@ public class Identite {
      * @param Etablissementpr
      * @param Matricule 
      */
-    public Identite(String DateNaissance, String VilleNaissance, String PaysNaissance, String Sexe, String DateInscription, String Etablissementpr, String Matricule) {
+    public Identite(String DateNaissance, String VilleNaissance, String PaysNaissance, String Sexe, String DateInscription, String Etablissementpr, int Matricule) {
         this.DateNaissance = DateNaissance;
         this.VilleNaissance = VilleNaissance;
         this.PaysNaissance = PaysNaissance;

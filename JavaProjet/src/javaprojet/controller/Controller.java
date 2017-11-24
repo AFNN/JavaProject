@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaprojet.model.bdd.DBconnexion;
+import javaprojet.model.donnee.*;
 import javaprojet.view.Accueil;
 import javaprojet.view.Accueil_1;
 import javaprojet.view.Accueil_2;
@@ -29,6 +30,12 @@ public class Controller {
     Accueil Accueil = new Accueil();
     Accueil_1 Admin = new Accueil_1();
     Accueil_2 Aca = new Accueil_2();
+    Etudiant etu = new Etudiant(0,"","",0) ;
+    Coordonnees c = new Coordonnees("", 0, "", 0, 0, "", 0);
+    Identite i = new Identite("DateNaissance", "VilleNaissance", "PaysNaissance", "Sexe", "DateInscription", "Etablissementpr",0);
+    Responsable r1 = new Responsable(0, "nom", "prenom", "adresse", 0, "email", 0);
+    Responsable r2= new Responsable(0, "nom", "prenom", "adresse", 0, "email", 0);
+    Sante s = new Sante(0, "medecinTraitant", 0, "vaccinations", "allergies", "remarquesMedicales");
     
     /*
     public static boolean connect = false;
@@ -216,12 +223,82 @@ public class Controller {
                 try{
                     javaprojet.model.bdd.DBconnexion.connexionDB();
                     stmt= DBconnexion.getConn().createStatement();
-                    //PERMET DE RECUPERER L'ID DE LA CLASSSE POUR PERMETTRE DE REMPLIR LA COMBOBOX ETUDIANT
+                    //PERMET DE RECUPERER LE MATRICULE DE L'ETUDIANT
                     String Matricule="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'";
                     resid=stmt.executeQuery(Matricule);
                     resid.first();
                     idEtudiant=Integer.parseInt(resid.getString("MATRICULE"));
                     System.out.println("Matricule="+idEtudiant);
+                    String Recup_etudiant_info="SELECT * FROM `etudiant` LEFT JOIN responsable ON (etudiant.MATRICULE=responsable.Matricule) \n" +
+"						 LEFT JOIN identite ON (etudiant.MATRICULE=identite.Matricule)\n" +
+"						 LEFT JOIN coordonnees ON (etudiant.MATRICULE=coordonnees.Matricule)\n" +
+"						 LEFT JOIN sante ON (etudiant.MATRICULE=sante.Matricule)\n" +
+"						 WHERE etudiant.MATRICULE="+idEtudiant+"";
+                resEtu=stmt.executeQuery(Recup_etudiant_info);
+                resEtu.first();
+                //Donne les valeurs associé à l'étudiant dans les différents objet associé
+                etu.setMatricule(Integer.parseInt(resEtu.getString("MATRICULE")));
+                etu.setNom(resEtu.getString("NOM"));
+                etu.setPrenom(resEtu.getString("PRENOM"));
+                etu.setIdClasse(Integer.parseInt(resEtu.getString("idClasse")));
+                
+                //Associe les valeurs de cette etudiant dans l'objet identité
+                i.setMatricule(idEtudiant);
+                i.setDateInscription(resEtu.getString("DateInscription"));
+                i.setDateNaissance(resEtu.getString("DateNaissance"));
+                i.setEtablissementpr(resEtu.getString("Etablissementpr"));
+                i.setPaysNaissance(resEtu.getString("PaysNaissance"));
+                i.setSexe(resEtu.getString("Sexe"));
+                i.setVilleNaissance(resEtu.getString("VilleNaissance"));
+               
+                //
+                c.setMatricule(idEtudiant);
+                c.setAdresse(resEtu.getString("Adresse"));
+                c.setCodePostal(Integer.parseInt(resEtu.getString("CodePostal")));
+                c.setVille(resEtu.getString("Ville"));
+                c.setEmail(resEtu.getString("Email"));
+                c.setTeldom(Integer.parseInt(resEtu.getString("Teldom")));
+                c.setTelmobile(Integer.parseInt(resEtu.getString("Telmobile")));
+                //
+                s.setMatricule(idEtudiant);
+                s.setMedecinTraitant(resEtu.getString("MédecinTraitant"));
+                s.setTelMedecin(Integer.parseInt(resEtu.getString("TelMedecin")));
+                s.setVaccinations(resEtu.getString("Vaccinations"));
+                s.setAllergies(resEtu.getString("Allergies"));
+                s.setRemarquesMedicales(resEtu.getString("RemarquesMedicales"));
+                //
+                r1.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
+                r1.setNom(resEtu.getString("Nom"));
+                r1.setPrenom(resEtu.getString("Prenom"));
+                r1.setAdresse(resEtu.getString("Adresse"));
+                r1.setTelephone(Integer.parseInt(resEtu.getString("Telephone")));
+                r1.setEmail(resEtu.getString("Email"));
+                //Dans le cas d'un deuxieme responsable
+                if(resEtu.next()==true)
+                {
+                    
+                    r2.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
+                    r2.setNom(resEtu.getString("Nom"));
+                    r2.setPrenom(resEtu.getString("Prenom"));
+                    r2.setAdresse(resEtu.getString("Adresse"));
+                    r2.setTelephone(Integer.parseInt(resEtu.getString("Telephone")));
+                    r2.setEmail(resEtu.getString("Email"));
+                
+                }
+                
+                
+                Admin.getjTextFieldMat().setText(Integer.toString(etu.getMatricule()));
+                Admin.getjTextFieldNom().setText(etu.getNom());
+                Admin.getjTextFieldPrenom().setText(etu.getPrenom());
+                Admin.getjTextFieldDateNais().setText(i.getDateNaissance());
+                
+                /*
+             
+               System.out.println(etu.getMatricule());
+               System.out.println(etu.getNom());
+               System.out.println(etu.getPrenom());
+               System.out.println(etu.getIdClasse());*/
+               System.out.println(r2.getAdresse());
                 }
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
