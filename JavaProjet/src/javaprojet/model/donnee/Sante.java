@@ -12,7 +12,7 @@ package javaprojet.model.donnee;
 public class Sante {
     private int matricule;
     private String medecinTraitant;
-    private int telMedecin;
+    private String telMedecin;
     private String vaccinations;
     private String allergies;
     private String remarquesMedicales;
@@ -48,14 +48,14 @@ public class Sante {
      * 
      * @return telMedecin
      */
-    public int getTelMedecin() {
+    public String getTelMedecin() {
         return telMedecin;
     }
     /**
      * 
      * @param telMedecin 
      */
-    public void setTelMedecin(int telMedecin) {
+    public void setTelMedecin(String telMedecin) {
         this.telMedecin = telMedecin;
     }
     /**
@@ -109,7 +109,7 @@ public class Sante {
      * @param allergies
      * @param remarquesMedicales 
      */
-    public Sante(int matricule, String medecinTraitant, int telMedecin, String vaccinations, String allergies, String remarquesMedicales) {
+    public Sante(int matricule, String medecinTraitant, String telMedecin, String vaccinations, String allergies, String remarquesMedicales) {
         this.matricule = matricule;
         this.medecinTraitant = medecinTraitant;
         this.telMedecin = telMedecin;

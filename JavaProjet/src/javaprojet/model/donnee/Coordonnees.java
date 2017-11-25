@@ -13,8 +13,8 @@ public class Coordonnees {
     private String adresse ;
     private int codePostal;
     private String ville ;
-    private int teldom ;
-    private int telmobile; 
+    private String teldom ;
+    private String telmobile; 
     private String email ;
     private int matricule;
 
@@ -62,28 +62,28 @@ public class Coordonnees {
      * 
      * @return teldom
      */
-    public int getTeldom() {
+    public String getTeldom() {
         return teldom;
     }
     /**
      * 
      * @param teldom 
      */
-    public void setTeldom(int teldom) {
+    public void setTeldom(String teldom) {
         this.teldom = teldom;
     }
     /**
      * 
      * @return telmobile
      */
-    public int getTelmobile() {
+    public String getTelmobile() {
         return telmobile;
     }
     /**
      * 
      * @param telmobile 
      */
-    public void setTelmobile(int telmobile) {
+    public void setTelmobile(String telmobile) {
         this.telmobile = telmobile;
     }
     /**
@@ -124,7 +124,7 @@ public class Coordonnees {
      * @param email
      * @param matricule 
      */
-    public Coordonnees(String adresse, int codePostal, String ville, int teldom, int telmobile, String email, int matricule) {
+    public Coordonnees(String adresse, int codePostal, String ville, String teldom, String telmobile, String email, int matricule) {
         this.adresse = adresse;
         this.codePostal = codePostal;
         this.ville = ville;

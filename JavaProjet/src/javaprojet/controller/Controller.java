@@ -30,12 +30,12 @@ public class Controller {
     Accueil Accueil = new Accueil();
     Accueil_1 Admin = new Accueil_1();
     Accueil_2 Aca = new Accueil_2();
-    Etudiant etu = new Etudiant(0,"","",0) ;
-    Coordonnees c = new Coordonnees("", 0, "", 0, 0, "", 0);
+    Etudiant etu = new Etudiant(0,"","",0);
+    Coordonnees c = new Coordonnees("", 0, "", "", "", "", 0);
     Identite i = new Identite("DateNaissance", "VilleNaissance", "PaysNaissance", "Sexe", "DateInscription", "Etablissementpr",0);
-    Responsable r1 = new Responsable(0, "nom", "prenom", "adresse", 0, "email", 0);
-    Responsable r2= new Responsable(0, "nom", "prenom", "adresse", 0, "email", 0);
-    Sante s = new Sante(0, "medecinTraitant", 0, "vaccinations", "allergies", "remarquesMedicales");
+    Responsable r1 = new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
+    Responsable r2= new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
+    Sante s = new Sante(0, "medecinTraitant", "", "vaccinations", "allergies", "remarquesMedicales");
     
     /*
     public static boolean connect = false;
@@ -241,7 +241,7 @@ public class Controller {
                 etu.setNom(resEtu.getString("NOM"));
                 etu.setPrenom(resEtu.getString("PRENOM"));
                 etu.setIdClasse(Integer.parseInt(resEtu.getString("idClasse")));
-                
+                System.out.println("test requete"+resEtu.getString("PRENOM"));
                 //Associe les valeurs de cette etudiant dans l'objet identité
                 i.setMatricule(idEtudiant);
                 i.setDateInscription(resEtu.getString("DateInscription"));
@@ -257,41 +257,89 @@ public class Controller {
                 c.setCodePostal(Integer.parseInt(resEtu.getString("CodePostal")));
                 c.setVille(resEtu.getString("Ville"));
                 c.setEmail(resEtu.getString("Email"));
-                c.setTeldom(Integer.parseInt(resEtu.getString("Teldom")));
-                c.setTelmobile(Integer.parseInt(resEtu.getString("Telmobile")));
+                c.setTeldom(resEtu.getString("Teldom"));
+                c.setTelmobile(resEtu.getString("Telmobile"));
                 //
                 s.setMatricule(idEtudiant);
                 s.setMedecinTraitant(resEtu.getString("MédecinTraitant"));
-                s.setTelMedecin(Integer.parseInt(resEtu.getString("TelMedecin")));
+                s.setTelMedecin(resEtu.getString("TelMedecin"));
                 s.setVaccinations(resEtu.getString("Vaccinations"));
                 s.setAllergies(resEtu.getString("Allergies"));
                 s.setRemarquesMedicales(resEtu.getString("RemarquesMedicales"));
                 //
                 r1.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
-                r1.setNom(resEtu.getString("Nom"));
-                r1.setPrenom(resEtu.getString("Prenom"));
-                r1.setAdresse(resEtu.getString("Adresse"));
-                r1.setTelephone(Integer.parseInt(resEtu.getString("Telephone")));
-                r1.setEmail(resEtu.getString("Email"));
+                r1.setNom(resEtu.getString("NomRes"));
+                r1.setPrenom(resEtu.getString("PrenomRes"));
+                r1.setAdresse(resEtu.getString("AdresseRes"));
+                r1.setTelephone(resEtu.getString("TelephoneRes"));
+                r1.setEmail(resEtu.getString("EmailRes"));
                 //Dans le cas d'un deuxieme responsable
                 if(resEtu.next()==true)
                 {
                     
                     r2.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
-                    r2.setNom(resEtu.getString("Nom"));
-                    r2.setPrenom(resEtu.getString("Prenom"));
-                    r2.setAdresse(resEtu.getString("Adresse"));
-                    r2.setTelephone(Integer.parseInt(resEtu.getString("Telephone")));
+                    r2.setNom(resEtu.getString("NomRes"));
+                    r2.setPrenom(resEtu.getString("PrenomRes"));
+                    r2.setAdresse(resEtu.getString("AdresseRes"));
+                    r2.setTelephone(resEtu.getString("TelephoneRes"));
                     r2.setEmail(resEtu.getString("Email"));
                 
                 }
+                //si pas de responsable2 , mettre a vide les champs du reponsable deux
+                else{
+                    r2.setIdResponsable(0);
+                    r2.setNom(" ");
+                    r2.setPrenom(" ");
+                    r2.setAdresse(" ");
+                    r2.setTelephone(" ");
+                    r2.setEmail(" ");
+                    
+                    
+                }
+                
                 
                 
                 Admin.getjTextFieldMat().setText(Integer.toString(etu.getMatricule()));
                 Admin.getjTextFieldNom().setText(etu.getNom());
                 Admin.getjTextFieldPrenom().setText(etu.getPrenom());
-                Admin.getjTextFieldDateNais().setText(i.getDateNaissance());
                 
+                Admin.getjTextFieldAdr().setText(c.getAdresse());
+                
+                Admin.getjTextFieldContact1Adr().setText(r1.getAdresse());
+                Admin.getjTextFieldContact1Mail().setText(r1.getEmail());
+                Admin.getjTextFieldContact1Nom().setText(r1.getNom());
+                Admin.getjTextFieldContact1Prenom().setText(r1.getPrenom());
+                Admin.getjTextFieldContact1Tel().setText(r1.getTelephone());
+                
+                Admin.getjTextFieldContact2Adr().setText(r2.getAdresse());
+                Admin.getjTextFieldContact2Mail().setText(r2.getEmail());
+                Admin.getjTextFieldContact2Nom().setText(r2.getNom());
+                Admin.getjTextFieldContact2Prenom().setText(r2.getPrenom());
+                Admin.getjTextFieldContact2Tel().setText(r2.getTelephone());
+                
+                Admin.getjTextFieldCp().setText(Integer.toString(c.getCodePostal()));
+                Admin.getjTextFieldDateInsc().setText(i.getDateInscription());
+                Admin.getjTextFieldDateNais().setText(i.getDateNaissance());
+                Admin.getjTextFieldEtaPre().setText(i.getEtablissementpr());
+                Admin.getjTextFieldPaysNais().setText(i.getPaysNaissance());
+                
+                Admin.getjTextFieldMail().setText(c.getEmail());
+                Admin.getjTextFieldSexe().setText(i.getSexe());
+                Admin.getjTextFieldTelDom().setText(c.getTeldom());
+                Admin.getjTextFieldTelMob().setText(c.getTelmobile());
+                Admin.getjTextFieldVille().setText(c.getVille());
+                Admin.getjTextFieldVilleNais().setText(i.getVilleNaissance());
+                Admin.getjTextFieldDateNais().setText(i.getDateNaissance());
+               
+                //parser nommedecintraitant
+                String[] NameMedecin= s.getMedecinTraitant().split(" ");
+                Admin.getjTextFieldNomMed().setText(NameMedecin[0]);
+                Admin.getjTextFieldPrenomMed().setText(NameMedecin[1]);
+                Admin.getjTextFieldRem().setText(s.getRemarquesMedicales());
+                Admin.getjTextFieldVacc().setText(s.getVaccinations());
+                Admin.getjTextFieldAll().setText(s.getAllergies());
+                Admin.getjTextFieldTelMed().setText(s.getTelMedecin());
+               
                 /*
              
                System.out.println(etu.getMatricule());
@@ -299,6 +347,7 @@ public class Controller {
                System.out.println(etu.getPrenom());
                System.out.println(etu.getIdClasse());*/
                System.out.println(r2.getAdresse());
+               System.out.println(etu.getPrenom());
                 }
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());

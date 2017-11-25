@@ -15,7 +15,7 @@ public class Responsable {
     private String nom; 
     private String prenom; 
     private String adresse; 
-    private int telephone;
+    private String telephone;
     private String email; 
     private int matricule;
     /**
@@ -78,14 +78,14 @@ public class Responsable {
      * 
      * @return telephone
      */
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
     /**
      * 
      * @param telephone 
      */
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
     /**
@@ -126,7 +126,7 @@ public class Responsable {
      * @param email
      * @param matricule 
      */
-    public Responsable(int idResponsable, String nom, String prenom, String adresse, int telephone, String email, int matricule) {
+    public Responsable(int idResponsable, String nom, String prenom, String adresse, String telephone, String email, int matricule) {
         this.idResponsable = idResponsable;
         this.nom = nom;
         this.prenom = prenom;
