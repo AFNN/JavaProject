@@ -45,9 +45,11 @@ public class GestionEtudiant {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt = DBconnexion.getConn().createStatement();
-		String update = "UPDATE etudiant SET NOM = " + E.getNom()+", PRENOM = " + E.getPrenom()+ ", idClasse = " +E.getIdClasse()+ " WHERE etudiant.MATRICULE = " + E.getMatricule(); 
+		String update = "UPDATE etudiant SET NOM = '" + E.getNom()+"', PRENOM = '" + E.getPrenom()+ "', idClasse = " +E.getIdClasse()+ " WHERE etudiant.MATRICULE = " + E.getMatricule(); 
+                System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Etudiant mis à jour dans la base de donnée");
+                
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
         }

@@ -38,7 +38,8 @@ public class GestionResponsable {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt = DBconnexion.getConn().createStatement();
-		String update = "UPDATE `responsable` SET `NomRes` = "+r.getNom()+", `PrenomRes` = "+r.getPrenom()+", `AdresseRes` = "+r.getAdresse()+", `TelephoneRes` = "+r.getTelephone()+", `EmailRes` = "+r.getEmail()+" WHERE `responsable`.`IdResponsable` = "+r.getIdResponsable()+";";
+		String update = "UPDATE `responsable` SET `NomRes` = '"+r.getNom()+"', `PrenomRes` = '"+r.getPrenom()+"', `AdresseRes` = '"+r.getAdresse()+"', `TelephoneRes` = '"+r.getTelephone()+"', `EmailRes` = '"+r.getEmail()+"' WHERE `responsable`.`IdResponsable` = "+r.getIdResponsable()+";";
+                System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Responsable mis à jour dans la base de donnée");
         } catch (SQLException SQLe) {

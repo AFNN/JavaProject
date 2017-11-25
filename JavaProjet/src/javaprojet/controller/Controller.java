@@ -14,6 +14,11 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaprojet.model.bdd.DBconnexion;
+import javaprojet.model.bdd.GestionCoordonnees;
+import javaprojet.model.bdd.GestionEtudiant;
+import javaprojet.model.bdd.GestionIdentite;
+import javaprojet.model.bdd.GestionResponsable;
+import javaprojet.model.bdd.GestionSante;
 import javaprojet.model.donnee.*;
 import javaprojet.view.Accueil;
 import javaprojet.view.Accueil_1;
@@ -295,11 +300,11 @@ public class Controller {
                 //si pas de responsable2 , mettre a vide les champs du reponsable deux
                 else{
                     r2.setIdResponsable(0);
-                    r2.setNom(" ");
-                    r2.setPrenom(" ");
-                    r2.setAdresse(" ");
-                    r2.setTelephone(" ");
-                    r2.setEmail(" ");
+                    r2.setNom("  ");
+                    r2.setPrenom("  ");
+                    r2.setAdresse("  ");
+                    r2.setTelephone("  ");
+                    r2.setEmail("  ");
                     
                     
                 }
@@ -308,7 +313,7 @@ public class Controller {
                 
                 Admin.getjTextFieldMat().setText(Integer.toString(etu.getMatricule()));
                 Admin.getjTextFieldNom().setText(etu.getNom());
-                Admin.getjTextFieldPrenom().setText(etu.getPrenom());
+                Admin.getjTextFieldPrenom1().setText(etu.getPrenom());
                 
                 Admin.getjTextFieldAdr().setText(c.getAdresse());
                 
@@ -396,8 +401,8 @@ public class Controller {
                 
                 etu.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
                 etu.setNom(Admin.getjTextFieldNom().getText());
-                etu.setPrenom(Admin.getjTextFieldPrenom().getText());
-                //etu.setIdClasse(Admin.getjTextField().getText());
+                etu.setPrenom(Admin.getjTextFieldPrenom1().getText());
+                GestionEtudiant.updateEtudiant(etu);
               
             }
             else if (e.getSource() == Admin.getjButtonModifyIdent()){
@@ -408,7 +413,7 @@ public class Controller {
                 i.setPaysNaissance(Admin.getjTextFieldPaysNais().getText());
                 i.setSexe(Admin.getjTextFieldSexe().getText());
                 i.setVilleNaissance(Admin.getjTextFieldVilleNais().getText());
-                
+                GestionIdentite.updateIdentite(i);
             }
             else if (e.getSource() == Admin.getjButtonModifyCoord()){
                 c.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
@@ -418,6 +423,7 @@ public class Controller {
                 c.setEmail(Admin.getjTextFieldMail().getText());
                 c.setTeldom(Admin.getjTextFieldTelDom().getText());
                 c.setTelmobile(Admin.getjTextFieldTelMob().getText());
+                GestionCoordonnees.updateCoordonnees(c);
             }
             else if (e.getSource() == Admin.getjButtonModifyR1()){
                 r1.setNom(Admin.getjTextFieldContact1Nom().getText());
@@ -425,7 +431,7 @@ public class Controller {
                 r1.setAdresse(Admin.getjTextFieldContact1Adr().getText());
                 r1.setTelephone(Admin.getjTextFieldContact1Tel().getText());
                 r1.setEmail(Admin.getjTextFieldContact1Mail().getText());
-                
+                GestionResponsable.updateResponsable(r1);
             }
             else if (e.getSource() == Admin.getjButtonModifyR2()){
                 
@@ -434,16 +440,16 @@ public class Controller {
                 r2.setAdresse(Admin.getjTextFieldContact2Adr().getText());
                 r2.setTelephone(Admin.getjTextFieldContact2Tel().getText());
                 r2.setEmail(Admin.getjTextFieldContact2Mail().getText());
-                
+                GestionResponsable.updateResponsable(r2);
             }
             else if (e.getSource() == Admin.getjButtonModifyMed()){
-                    s.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
-                //s.setMedecinTraitant(Admin.getjTextFieldPrenom().getText()+);
+                s.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
+                s.setMedecinTraitant(Admin.getjTextFieldNomMed().getText()+" "+Admin.getjTextFieldPrenomMed().getText());
                 s.setTelMedecin(Admin.getjTextFieldTelMed().getText());
                 s.setVaccinations(Admin.getjTextFieldVacc().getText());
                 s.setAllergies(Admin.getjTextFieldAll().getText());
                 s.setRemarquesMedicales(Admin.getjTextFieldRem().getText());
-                
+                GestionSante.updateSante(s);
             }
             
         }

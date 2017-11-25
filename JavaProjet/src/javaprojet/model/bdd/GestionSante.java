@@ -36,7 +36,8 @@ public class GestionSante {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt = DBconnexion.getConn().createStatement();
-		String update = "UPDATE `sante` SET `MédecinTraitant` = "+s.getMedecinTraitant()+", `TelMedecin` = "+s.getTelMedecin()+", `Vaccinations` = "+s.getVaccinations()+", `Allergies` = "+s.getAllergies()+", `RemarquesMedicales` = "+s.getRemarquesMedicales()+" WHERE `sante`.`MATRICULE` = "+s.getMatricule()+";";
+		String update = "UPDATE `sante` SET `MédecinTraitant` = '"+s.getMedecinTraitant()+"', `TelMedecin` = '"+s.getTelMedecin()+"', `Vaccinations` = '"+s.getVaccinations()+"', `Allergies` = '"+s.getAllergies()+"', `RemarquesMedicales` = '"+s.getRemarquesMedicales()+"' WHERE `sante`.`MATRICULE` = "+s.getMatricule()+";";
+                System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Rubrique sante  mis  à jour dans la base de donnée");
         } catch (SQLException SQLe) {

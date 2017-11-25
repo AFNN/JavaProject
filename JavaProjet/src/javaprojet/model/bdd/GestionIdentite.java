@@ -38,7 +38,8 @@ public class GestionIdentite {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt = (Statement) DBconnexion.getConn().createStatement();
-		String update = "UPDATE `identite` SET `DateNaissance` = "+I.getDateNaissance()+",`VilleNaissance` ="+ I.getVilleNaissance() +",`PaysNaissance` = "+ I.getPaysNaissance()+", `Sexe` = "+ I.getSexe()+", `DateInscription` = "+ I.getDateInscription()+", `Etablissementpr` = "+I.getEtablissementpr()+", `Matricule` = "+I.getMatricule()+" WHERE `identite`.`Matricule` ="+I.getMatricule();
+		String update = "UPDATE `identite` SET `DateNaissance` = '"+I.getDateNaissance()+"',`VilleNaissance` ='"+ I.getVilleNaissance() +"',`PaysNaissance` = '"+ I.getPaysNaissance()+"', `Sexe` = '"+ I.getSexe()+"', `DateInscription` = '"+ I.getDateInscription()+"', `Etablissementpr` = '"+I.getEtablissementpr()+"', `Matricule` = "+I.getMatricule()+" WHERE `identite`.`Matricule` ="+I.getMatricule();
+                System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Identite Etudiant  mis  à jour dans la base de donnée");
         } catch (SQLException SQLe) {

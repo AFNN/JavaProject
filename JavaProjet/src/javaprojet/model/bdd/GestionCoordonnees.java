@@ -42,7 +42,8 @@ public class GestionCoordonnees {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt = DBconnexion.getConn().createStatement();
-		String update = "UPDATE `coordonnees` SET `Adresse` = "+coor.getAdresse()+", `CodePostal` = "+coor.getCodePostal()+", `Ville` = "+coor.getVille()+", `Teldom` = "+coor.getTeldom()+", `Telmobile` = "+coor.getTelmobile()+", `Email` = "+coor.getEmail()+" WHERE `coordonnees`.`Matricule` = "+coor.getMatricule();
+		String update = "UPDATE `coordonnees` SET `Adresse` = '"+coor.getAdresse()+"', `CodePostal` = '"+coor.getCodePostal()+"', `Ville` = '"+coor.getVille()+"', `Teldom` = '"+coor.getTeldom()+"', `Telmobile` = '"+coor.getTelmobile()+"', `Email` = '"+coor.getEmail()+"' WHERE `coordonnees`.`Matricule` = "+coor.getMatricule();
+                System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Coordonnées mis à jour dans la base de donnée");
         } catch (SQLException SQLe) {

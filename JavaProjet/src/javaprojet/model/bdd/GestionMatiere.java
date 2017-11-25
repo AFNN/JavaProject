@@ -34,7 +34,7 @@ public class GestionMatiere {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt =  DBconnexion.getConn().createStatement();
-		String update = "UPDATE `matiere` SET `nomMat` = "+m.getNomMat()+" WHERE `matiere`.`idMatiere` = "+m.getIdMatiere(); 
+		String update = "UPDATE `matiere` SET `nomMat` = '"+m.getNomMat()+"' WHERE `matiere`.`idMatiere` = "+m.getIdMatiere(); 
                 stmt.executeUpdate(update);
 		System.out.println("Matiere mise à jour dans la base de donnée");
         } catch (SQLException SQLe) {

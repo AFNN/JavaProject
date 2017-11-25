@@ -46,7 +46,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         jLabelMat = new javax.swing.JLabel();
         jTextFieldMat = new javax.swing.JTextField();
         jTextFieldNom = new javax.swing.JTextField();
-        jTextFieldPrenom = new javax.swing.JTextField();
+        jTextFieldPrenom1 = new javax.swing.JTextField();
         jButtonModifyGeneral = new javax.swing.JButton();
         jPanelTitreGen = new javax.swing.JPanel();
         jLabelTitreGen = new javax.swing.JLabel();
@@ -163,7 +163,7 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldNom.setText("jTextField2");
 
-        jTextFieldPrenom.setText("jTextField3");
+        jTextFieldPrenom1.setText("jTextField3");
 
         jButtonModifyGeneral.setText("Modifier Information");
 
@@ -179,7 +179,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelPrenom))
                 .addGap(77, 77, 77)
                 .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPrenom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -202,7 +202,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPrenom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103)
                 .addComponent(jButtonModifyGeneral)
                 .addContainerGap(109, Short.MAX_VALUE))
@@ -1785,12 +1785,12 @@ public class Accueil_1 extends javax.swing.JFrame {
         this.jTextFieldPaysNais = jTextFieldPaysNais;
     }
 
-    public JTextField getjTextFieldPrenom() {
-        return jTextFieldPrenom;
+    public JTextField getjTextFieldPrenom1() {
+        return jTextFieldPrenom1;
     }
 
-    public void setjTextFieldPrenom(JTextField jTextFieldPrenom) {
-        this.jTextFieldPrenom = jTextFieldPrenom;
+    public void setjTextFieldPrenom(JTextField jTextFieldPrenom1) {
+        this.jTextFieldPrenom1 = jTextFieldPrenom1;
     }
 
     public JTextField getjTextFieldPrenomMed() {
@@ -2057,7 +2057,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNom;
     private javax.swing.JTextField jTextFieldNomMed;
     private javax.swing.JTextField jTextFieldPaysNais;
-    private javax.swing.JTextField jTextFieldPrenom;
+    private javax.swing.JTextField jTextFieldPrenom1;
     private javax.swing.JTextField jTextFieldPrenomMed;
     private javax.swing.JTextField jTextFieldRem;
     private javax.swing.JTextField jTextFieldSexe;
