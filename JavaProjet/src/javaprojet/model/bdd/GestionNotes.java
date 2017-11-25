@@ -6,6 +6,7 @@
 package javaprojet.model.bdd;
 import java.sql.*;
 import javaprojet.model.donnee.Notes;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -41,9 +42,14 @@ public class GestionNotes {
                 Statement stmt =  DBconnexion.getConn().createStatement();
 		String update = "UPDATE `notes` SET `moyenne` = "+n.getMoyenne()+" WHERE `notes`.`Matricule` ="+n.getMatricule()+" AND `notes`.`idMatière` = "+n.getIdMatière();
                 stmt.executeUpdate(update);
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Notes mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
+		
 		System.out.println("Notes  mis  à jour dans la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de la mise a jour dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
         
         

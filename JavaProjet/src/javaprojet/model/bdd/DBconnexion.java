@@ -8,6 +8,7 @@ package javaprojet.model.bdd;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,15 +33,14 @@ public class DBconnexion {
 public static Connection connexionDB() throws SQLException{
             try {
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaprojet" ,"root", ""); //objet de connection pour ce connecter a la base
-                
+                System.out.println("Connexion ouverte");
             }
             catch(SQLException sqle){       
                  System.out.println("ERREUR FATALE!"+sqle.getMessage());
+                 JOptionPane jop1 = new JOptionPane();
+                 jop1.showMessageDialog(null, sqle.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
             }
-            finally{
-                
-                System.out.println("Connexion ouverte");
-            }
+            
         
             return getConn();
 }   

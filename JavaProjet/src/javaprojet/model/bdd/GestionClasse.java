@@ -7,6 +7,7 @@ package javaprojet.model.bdd;
 import javaprojet.model.donnee.Classe;
 import static javaprojet.model.bdd.DBconnexion.connexionDB;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Arnaud Fouillard 
@@ -47,10 +48,14 @@ public class GestionClasse {
 			Statement stmt = DBconnexion.getConn().createStatement();
 			String update = "UPDATE `classe` SET `NomClasse` = '" + c.getNomClasse() + "',`idMatiere1` = '" + c.getIdMatiere1() + "', `idMatiere2` = '" + c.getIdMatiere2() + "', `idMatiere3` = '" + c.getIdMatiere3() + "', `idMatiere4` = '" + c.getIdMatiere4() + "' WHERE `classe`.`idClasse` ='" + c.getIdClasse() + "' ;";
 			stmt.executeUpdate(update);
-			
+			JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Classe mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
+		
 			System.out.println("Classe modifie ");
 		} catch (SQLException SQLe) {
 			System.out.println("Echec de la mise à jour dans la base : "+SQLe.getMessage());
+                        JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
 		}
         
         

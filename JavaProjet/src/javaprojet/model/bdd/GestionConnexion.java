@@ -8,6 +8,7 @@ package javaprojet.model.bdd;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,7 +33,8 @@ public class GestionConnexion {
             
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
-                        
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);            
         } 
         
         if(res.first())
@@ -46,7 +48,8 @@ public class GestionConnexion {
                     
             } catch (SQLException SQLmdpE) {
                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLmdpE.getMessage());
-                   
+                   JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLmdpE.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
                    
             }
             
@@ -87,7 +90,8 @@ public class GestionConnexion {
         } catch (SQLException SQLe) {
             System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
             stmt.close();
-                        
+            JOptionPane jop1 = new JOptionPane();
+            jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);            
         }
         return admin;
     }

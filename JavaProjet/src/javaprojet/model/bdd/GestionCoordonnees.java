@@ -7,6 +7,7 @@ package javaprojet.model.bdd;
 
 import java.sql.*;
 import javaprojet.model.donnee.Coordonnees;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,9 +46,13 @@ public class GestionCoordonnees {
 		String update = "UPDATE `coordonnees` SET `Adresse` = '"+coor.getAdresse()+"', `CodePostal` = '"+coor.getCodePostal()+"', `Ville` = '"+coor.getVille()+"', `Teldom` = '"+coor.getTeldom()+"', `Telmobile` = '"+coor.getTelmobile()+"', `Email` = '"+coor.getEmail()+"' WHERE `coordonnees`.`Matricule` = "+coor.getMatricule();
                 System.out.println(update);
                 stmt.executeUpdate(update);
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Coordonnées mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
 		System.out.println("Coordonnées mis à jour dans la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                 jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
         
         

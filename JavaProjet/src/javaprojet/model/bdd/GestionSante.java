@@ -6,6 +6,7 @@
 package javaprojet.model.bdd;
 import java.sql.*;
 import javaprojet.model.donnee.Sante;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,9 +40,14 @@ public class GestionSante {
 		String update = "UPDATE `sante` SET `MédecinTraitant` = '"+s.getMedecinTraitant()+"', `TelMedecin` = '"+s.getTelMedecin()+"', `Vaccinations` = '"+s.getVaccinations()+"', `Allergies` = '"+s.getAllergies()+"', `RemarquesMedicales` = '"+s.getRemarquesMedicales()+"' WHERE `sante`.`MATRICULE` = "+s.getMatricule()+";";
                 System.out.println(update);
                 stmt.executeUpdate(update);
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Rubrique sante mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
+		
 		System.out.println("Rubrique sante  mis  à jour dans la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de la mise a jour dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+            jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
         
     }

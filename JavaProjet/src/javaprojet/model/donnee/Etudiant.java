@@ -55,7 +55,7 @@ public class Etudiant {
      * 
      * @param Prénom 
      */
-    public void setPrenom(String Prénom) {
+    public void setPrenom(String Prenom) {
         this.Prenom = Prenom;
     }
     /**

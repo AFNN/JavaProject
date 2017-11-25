@@ -6,6 +6,7 @@
 package javaprojet.model.bdd;
 import java.sql.*;
 import javaprojet.model.donnee.Matiere;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Arnaud Fouillard 
@@ -36,9 +37,15 @@ public class GestionMatiere {
                 Statement stmt =  DBconnexion.getConn().createStatement();
 		String update = "UPDATE `matiere` SET `nomMat` = '"+m.getNomMat()+"' WHERE `matiere`.`idMatiere` = "+m.getIdMatiere(); 
                 stmt.executeUpdate(update);
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Matiere mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
+		
 		System.out.println("Matiere mise à jour dans la base de donnée");
+                
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
         
     

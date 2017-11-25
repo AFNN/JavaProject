@@ -8,6 +8,7 @@ package javaprojet.model.bdd;
 
 import java.sql.*;
 import javaprojet.model.donnee.Identite;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,9 +42,13 @@ public class GestionIdentite {
 		String update = "UPDATE `identite` SET `DateNaissance` = '"+I.getDateNaissance()+"',`VilleNaissance` ='"+ I.getVilleNaissance() +"',`PaysNaissance` = '"+ I.getPaysNaissance()+"', `Sexe` = '"+ I.getSexe()+"', `DateInscription` = '"+ I.getDateInscription()+"', `Etablissementpr` = '"+I.getEtablissementpr()+"', `Matricule` = "+I.getMatricule()+" WHERE `identite`.`Matricule` ="+I.getMatricule();
                 System.out.println(update);
                 stmt.executeUpdate(update);
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Identite Etudiant mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
 		System.out.println("Identite Etudiant  mis  à jour dans la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de la mise a jour dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

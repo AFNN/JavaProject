@@ -10,6 +10,7 @@ import javaprojet.model.donnee.Etudiant;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -33,6 +34,8 @@ public class GestionEtudiant {
 		System.out.println("Etudiant ajouté à la base de donnée");
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
     }
      
@@ -49,35 +52,16 @@ public class GestionEtudiant {
                 System.out.println(update);
                 stmt.executeUpdate(update);
 		System.out.println("Etudiant mis à jour dans la base de donnée");
-                
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Coordonnées mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);
+		
         } catch (SQLException SQLe) {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
+            JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public static ResultSet selectEtudiant(Etudiant E){
-            ResultSet res=null;
-            Statement stmt = null;
-            String select = "SELECT * FROM etudiant WHERE MATRICULE='"+E.getMatricule()+"'";
-            if(DBconnexion.getConn()==null){
-                try {
-                    DBconnexion.connexionDB();
-                    stmt= DBconnexion.getConn().createStatement();
-                    
-                    res=stmt.executeQuery(select);
-                } catch (SQLException SQLe) {
-                     System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
-                }
-            }
-            else{  
-                try { 
-                    stmt= DBconnexion.getConn().createStatement();
-                    res=stmt.executeQuery(select);
-                } catch (SQLException SQLe) {
-                     System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
-                }
-            }
-      return res;  
-    }
+    
     
     /**
      *
