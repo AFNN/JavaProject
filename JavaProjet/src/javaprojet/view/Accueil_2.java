@@ -5,7 +5,12 @@
  */
 package javaprojet.view;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javaprojet.model.bdd.DBconnexion;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -42,6 +47,10 @@ public class Accueil_2 extends javax.swing.JFrame {
         jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
         jPanelGest = new javax.swing.JPanel();
+        jComboBoxMatiere = new javax.swing.JComboBox<>();
+        jComboBoxEtudiantMat = new javax.swing.JComboBox<>();
+        jButtonOkMatiere = new javax.swing.JButton();
+        jButtonChoixMatiere = new javax.swing.JButton();
         jButtonAccueil = new javax.swing.JButton();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
@@ -146,15 +155,62 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jTabbedPaneAdmin.addTab("Recherche par classe", jPanelRech);
 
+        jComboBoxMatiere.setModel(new javax.swing.DefaultComboBoxModel<>());
+        ResultSet res=null;
+        Statement stmt=null;
+        int nbp = 0;
+        try{
+            javaprojet.model.bdd.DBconnexion.connexionDB();
+            stmt= DBconnexion.getConn().createStatement();
+            String ClassSelect="SELECT * FROM `matiere`";
+            System.out.println("DEBUG / USERLOGIN REQUEST"+ClassSelect);
+            res=stmt.executeQuery(ClassSelect);
+            while(res.next()){
+                jComboBoxMatiere.addItem(res.getString("nomMat"));
+            }
+            stmt.close();
+        }
+        catch (SQLException SQLe) {
+            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+        }
+
+        jComboBoxEtudiantMat.setModel(new javax.swing.DefaultComboBoxModel<>());
+
+        jButtonOkMatiere.setText("OK");
+
+        jButtonChoixMatiere.setText("Choix");
+
         javax.swing.GroupLayout jPanelGestLayout = new javax.swing.GroupLayout(jPanelGest);
         jPanelGest.setLayout(jPanelGestLayout);
         jPanelGestLayout.setHorizontalGroup(
             jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 805, Short.MAX_VALUE)
+            .addGroup(jPanelGestLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxMatiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxEtudiantMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonChoixMatiere)
+                    .addComponent(jButtonOkMatiere))
+                .addContainerGap(608, Short.MAX_VALUE))
         );
         jPanelGestLayout.setVerticalGroup(
             jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
+            .addGroup(jPanelGestLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxMatiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOkMatiere))
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelGestLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxEtudiantMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelGestLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jButtonChoixMatiere)))
+                .addContainerGap(564, Short.MAX_VALUE))
         );
 
         jTabbedPaneAdmin.addTab("Gestion par matière", jPanelGest);
@@ -366,10 +422,47 @@ public class Accueil_2 extends javax.swing.JFrame {
         this.jTabbedPaneAdmin = jTabbedPaneAdmin;
     }
 
+    public JButton getjButtonChoixMatiere() {
+        return jButtonChoixMatiere;
+    }
+
+    public void setjButtonChoixMatiere(JButton jButtonChoixMatiere) {
+        this.jButtonChoixMatiere = jButtonChoixMatiere;
+    }
+
+    public JButton getjButtonOkMatiere() {
+        return jButtonOkMatiere;
+    }
+
+    public void setjButtonOkMatiere(JButton jButtonOkMatiere) {
+        this.jButtonOkMatiere = jButtonOkMatiere;
+    }
+
+    public JComboBox<String> getjComboBoxEtudiantMat() {
+        return jComboBoxEtudiantMat;
+    }
+
+    public void setjComboBoxEtudiantMat(JComboBox<String> jComboBoxEtudiantMat) {
+        this.jComboBoxEtudiantMat = jComboBoxEtudiantMat;
+    }
+
+    public JComboBox<String> getjComboBoxMatiere() {
+        return jComboBoxMatiere;
+    }
+
+    public void setjComboBoxMatiere(JComboBox<String> jComboBoxMatiere) {
+        this.jComboBoxMatiere = jComboBoxMatiere;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonChoixMatiere;
+    private javax.swing.JButton jButtonOkMatiere;
+    private javax.swing.JComboBox<String> jComboBoxEtudiantMat;
+    private javax.swing.JComboBox<String> jComboBoxMatiere;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMat;
     private javax.swing.JLabel jLabelNom;

@@ -247,15 +247,77 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="805" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jComboBoxMatiere" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBoxEtudiantMat" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonChoixMatiere" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonOkMatiere" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="608" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="694" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jComboBoxMatiere" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonOkMatiere" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEtudiantMat" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="jButtonChoixMatiere" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="564" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="jComboBoxMatiere">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;()" type="code"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ResultSet res=null;&#xa;            Statement stmt=null;&#xa;            int nbp = 0;&#xa;            try{&#xa;                javaprojet.model.bdd.DBconnexion.connexionDB();&#xa;                stmt= DBconnexion.getConn().createStatement();&#xa;                String ClassSelect=&quot;SELECT * FROM `matiere`&quot;;&#xa;                System.out.println(&quot;DEBUG / USERLOGIN REQUEST&quot;+ClassSelect);&#xa;                res=stmt.executeQuery(ClassSelect);&#xa;                while(res.next()){&#xa;                    jComboBoxMatiere.addItem(res.getString(&quot;nomMat&quot;));&#xa;                }&#xa;                stmt.close();&#xa;                }&#xa;            catch (SQLException SQLe) {&#xa;                System.out.println(&quot;Probleme lors de la recherche dans la BDD &quot;+SQLe.getMessage());&#xa;&#xa;            }"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxEtudiantMat">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;()" type="code"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonOkMatiere">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OK"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonChoixMatiere">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Choix"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

@@ -63,7 +63,8 @@ public class Controller {
         Aca.getjButtonAccueil().addActionListener(blistener);
         Aca.getjButtonAdmin().addActionListener(blistener);
         Aca.getjButtonAca().addActionListener(blistener);
-        
+        Aca.getjButtonChoixMatiere().addActionListener(blistener);
+        Aca.getjButtonOkMatiere().addActionListener(blistener);
         
         //Initialisation de la page d'accueil en visible
         Accueil.setVisible(true);
@@ -353,6 +354,39 @@ public class Controller {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
         
+            }
+            else if (e.getSource() == Aca.getjButtonOkMatiere()){
+                System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
+                ResultSet resEtu=null;
+                ResultSet resid=null;
+                Statement stmt=null;
+                
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    //PERMET DE RECUPERER LE MATRICULE DE L'ETUDIANT
+                    String Matiere ="SELECT idMatiere FROM `matiere` WHERE nomMat='"+Aca.getjComboBoxMatiere().getSelectedItem()+"'";
+                    resid=stmt.executeQuery(Matiere);
+                    resid.first();
+                    int idMatiere=Integer.parseInt(resid.getString("idMatiere"));
+                    System.out.println("ID MATIERE ="+idMatiere);
+                    String Recup_etudiant_info="SELECT * FROM `etudiant` LEFT JOIN classe ON (etudiant.idClasse=classe.idClasse) \n" +
+"						 LEFT JOIN matiere ON (classe.idMatiere1=matiere.idMatiere OR classe.idMatiere2=matiere.idMatiere OR classe.idMatiere3=matiere.idMatiere OR classe.idMatiere4=matiere.idMatiere)\n" +
+"                                                WHERE matiere.idMatiere="+idMatiere+"";
+                    resEtu=stmt.executeQuery(Recup_etudiant_info);
+                    Aca.getjComboBoxEtudiantMat().setModel(new javax.swing.DefaultComboBoxModel<>());
+                    
+                    while(resEtu.next()){
+                        Aca.getjComboBoxEtudiantMat().addItem(resEtu.getString("NOM")+" "+resEtu.getString("PRENOM"));
+                    }
+                    stmt.close();
+                    
+                } catch (SQLException sqlE) {
+                    System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
+                }
+                
+                
+                
             }
             
         }
