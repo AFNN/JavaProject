@@ -47,6 +47,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         jTextFieldMat = new javax.swing.JTextField();
         jTextFieldNom = new javax.swing.JTextField();
         jTextFieldPrenom = new javax.swing.JTextField();
+        jButtonModifyGeneral = new javax.swing.JButton();
         jPanelTitreGen = new javax.swing.JPanel();
         jLabelTitreGen = new javax.swing.JLabel();
         jPanelIdentite = new javax.swing.JPanel();
@@ -65,6 +66,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         jTextFieldSexe = new javax.swing.JTextField();
         jTextFieldDateInsc = new javax.swing.JTextField();
         jTextFieldEtaPre = new javax.swing.JTextField();
+        jButtonModifyIdent = new javax.swing.JButton();
         jPanelCoord = new javax.swing.JPanel();
         jPanelTitreCoord = new javax.swing.JPanel();
         jLabelTitreCoord = new javax.swing.JLabel();
@@ -81,6 +83,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         jTextFieldTelDom = new javax.swing.JTextField();
         jTextFieldTelMob = new javax.swing.JTextField();
         jTextFieldMail = new javax.swing.JTextField();
+        jButtonModifyCoord = new javax.swing.JButton();
         jPanelPers = new javax.swing.JPanel();
         jPanelTitrePers = new javax.swing.JPanel();
         jLabelTitrePers = new javax.swing.JLabel();
@@ -107,6 +110,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         jTextFieldContact2Adr = new javax.swing.JTextField();
         jTextFieldContact2Tel = new javax.swing.JTextField();
         jTextFieldContact2Mail = new javax.swing.JTextField();
+        jButtonModifyR1 = new javax.swing.JButton();
+        jButtonModifyR2 = new javax.swing.JButton();
         jPanelSante = new javax.swing.JPanel();
         jPanelTitreSante = new javax.swing.JPanel();
         jLabelTitreSante = new javax.swing.JLabel();
@@ -123,6 +128,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         jTextFieldVacc = new javax.swing.JTextField();
         jTextFieldAll = new javax.swing.JTextField();
         jTextFieldRem = new javax.swing.JTextField();
+        jButtonModifyMed = new javax.swing.JButton();
         jPanelDoc = new javax.swing.JPanel();
         jPanelTitreDoc = new javax.swing.JPanel();
         jLabelTitreDoc = new javax.swing.JLabel();
@@ -159,6 +165,8 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldPrenom.setText("jTextField3");
 
+        jButtonModifyGeneral.setText("Modifier Information");
+
         javax.swing.GroupLayout jPanelContentGenLayout = new javax.swing.GroupLayout(jPanelContentGen);
         jPanelContentGen.setLayout(jPanelContentGenLayout);
         jPanelContentGenLayout.setHorizontalGroup(
@@ -175,6 +183,10 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentGenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonModifyGeneral)
+                .addGap(316, 316, 316))
         );
         jPanelContentGenLayout.setVerticalGroup(
             jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +203,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGap(103, 103, 103)
+                .addComponent(jButtonModifyGeneral)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jLabelTitreGen.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -222,7 +236,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelGeneralLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(jPanelGeneralLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentGen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -287,6 +301,8 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldEtaPre.setText("jTextField1");
 
+        jButtonModifyIdent.setText("Modifier Information");
+
         javax.swing.GroupLayout jPanelContentIdentiteLayout = new javax.swing.GroupLayout(jPanelContentIdentite);
         jPanelContentIdentite.setLayout(jPanelContentIdentiteLayout);
         jPanelContentIdentiteLayout.setHorizontalGroup(
@@ -319,6 +335,10 @@ public class Accueil_1 extends javax.swing.JFrame {
                         .addGap(105, 105, 105)
                         .addComponent(jTextFieldDateNais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonModifyIdent)
+                .addGap(233, 233, 233))
         );
         jPanelContentIdentiteLayout.setVerticalGroup(
             jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +367,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEtaPre)
                     .addComponent(jTextFieldEtaPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonModifyIdent)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelIdentiteLayout = new javax.swing.GroupLayout(jPanelIdentite);
@@ -357,7 +379,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelIdentiteLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreIdentite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(jPanelIdentiteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentIdentite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -424,6 +446,8 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldMail.setText("jTextField1");
 
+        jButtonModifyCoord.setText("Modifier Information");
+
         javax.swing.GroupLayout jPanelContentCoordLayout = new javax.swing.GroupLayout(jPanelContentCoord);
         jPanelContentCoord.setLayout(jPanelContentCoordLayout);
         jPanelContentCoordLayout.setHorizontalGroup(
@@ -446,6 +470,10 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldAdr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentCoordLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonModifyCoord)
+                .addGap(266, 266, 266))
         );
         jPanelContentCoordLayout.setVerticalGroup(
             jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -474,7 +502,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelMail)
                     .addComponent(jTextFieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jButtonModifyCoord)
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelCoordLayout = new javax.swing.GroupLayout(jPanelCoord);
@@ -484,7 +514,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelCoordLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreCoord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(jPanelCoordLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentCoord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -569,11 +599,20 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldContact2Mail.setText("jTextField1");
 
+        jButtonModifyR1.setText("Modifier information");
+
+        jButtonModifyR2.setText("Modifier information");
+        jButtonModifyR2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModifyR2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelContentPersLayout = new javax.swing.GroupLayout(jPanelContentPers);
         jPanelContentPers.setLayout(jPanelContentPersLayout);
         jPanelContentPersLayout.setHorizontalGroup(
             jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentPersLayout.createSequentialGroup()
+            .addGroup(jPanelContentPersLayout.createSequentialGroup()
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelContentPersLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
@@ -600,8 +639,11 @@ public class Accueil_1 extends javax.swing.JFrame {
                             .addGroup(jPanelContentPersLayout.createSequentialGroup()
                                 .addComponent(jLabelContact1Tel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldContact1Tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentPersLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonModifyR1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelContact2)
                     .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -624,8 +666,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelContentPersLayout.createSequentialGroup()
                             .addComponent(jLabelContact2Nom)
                             .addGap(74, 74, 74)
-                            .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(159, 159, 159))
+                            .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButtonModifyR2))
+                .addGap(186, 186, 186))
         );
         jPanelContentPersLayout.setVerticalGroup(
             jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -664,7 +707,11 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelContact2Mail)
                     .addComponent(jTextFieldContact1Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldContact2Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonModifyR1)
+                    .addComponent(jButtonModifyR2))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPersLayout = new javax.swing.GroupLayout(jPanelPers);
@@ -739,6 +786,13 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTextFieldRem.setText("jTextField1");
 
+        jButtonModifyMed.setText("Modifier information");
+        jButtonModifyMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModifyMedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelContentSanteLayout = new javax.swing.GroupLayout(jPanelContentSante);
         jPanelContentSante.setLayout(jPanelContentSanteLayout);
         jPanelContentSanteLayout.setHorizontalGroup(
@@ -770,7 +824,11 @@ public class Accueil_1 extends javax.swing.JFrame {
                         .addComponent(jLabelNomMed)
                         .addGap(120, 120, 120)
                         .addComponent(jTextFieldNomMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(374, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonModifyMed)
+                .addGap(279, 279, 279))
         );
         jPanelContentSanteLayout.setVerticalGroup(
             jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -799,7 +857,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelRem)
                     .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jButtonModifyMed)
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelSanteLayout = new javax.swing.GroupLayout(jPanelSante);
@@ -809,7 +869,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelSanteLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreSante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(jPanelSanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentSante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1019,6 +1079,14 @@ public class Accueil_1 extends javax.swing.JFrame {
     private void jButtonchoixETUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonchoixETUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonchoixETUActionPerformed
+
+    private void jButtonModifyR2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifyR2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonModifyR2ActionPerformed
+
+    private void jButtonModifyMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifyMedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonModifyMedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1845,10 +1913,65 @@ public class Accueil_1 extends javax.swing.JFrame {
         this.jTabbedPaneAca = jTabbedPaneAca;
     }
 
+    public JButton getjButtonModifyCoord() {
+        return jButtonModifyCoord;
+    }
+
+    public void setjButtonModifyCoord(JButton jButtonModifyCoord) {
+        this.jButtonModifyCoord = jButtonModifyCoord;
+    }
+
+    public JButton getjButtonModifyGeneral() {
+        return jButtonModifyGeneral;
+    }
+
+    public void setjButtonModifyGeneral(JButton jButtonModifyGeneral) {
+        this.jButtonModifyGeneral = jButtonModifyGeneral;
+    }
+
+    public JButton getjButtonModifyIdent() {
+        return jButtonModifyIdent;
+    }
+
+    public void setjButtonModifyIdent(JButton jButtonModifyIdent) {
+        this.jButtonModifyIdent = jButtonModifyIdent;
+    }
+
+    public JButton getjButtonModifyMed() {
+        return jButtonModifyMed;
+    }
+
+    public void setjButtonModifyMed(JButton jButtonModifyMed) {
+        this.jButtonModifyMed = jButtonModifyMed;
+    }
+
+    public JButton getjButtonModifyR1() {
+        return jButtonModifyR1;
+    }
+
+    public void setjButtonModifyR1(JButton jButtonModifyR1) {
+        this.jButtonModifyR1 = jButtonModifyR1;
+    }
+
+    public JButton getjButtonModifyR2() {
+        return jButtonModifyR2;
+    }
+
+    public void setjButtonModifyR2(JButton jButtonModifyR2) {
+        this.jButtonModifyR2 = jButtonModifyR2;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonModifyCoord;
+    private javax.swing.JButton jButtonModifyGeneral;
+    private javax.swing.JButton jButtonModifyIdent;
+    private javax.swing.JButton jButtonModifyMed;
+    private javax.swing.JButton jButtonModifyR1;
+    private javax.swing.JButton jButtonModifyR2;
     private javax.swing.JButton jButtonchoixETU;
     private javax.swing.JButton jButtonokClasse;
     private javax.swing.JComboBox<String> jComboBoxClasse;

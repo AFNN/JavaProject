@@ -58,13 +58,19 @@ public class Controller {
         Admin.getjButtonAca().addActionListener(blistener);
         Admin.getjButtonokClasse().addActionListener(blistener);
         Admin.getjButtonchoixETU().addActionListener(blistener);
-        
+        Admin.getjButtonModifyCoord().addActionListener(blistener);
+        Admin.getjButtonModifyGeneral().addActionListener(blistener);
+        Admin.getjButtonModifyIdent().addActionListener(blistener);
+        Admin.getjButtonModifyMed().addActionListener(blistener);
+        Admin.getjButtonModifyR1().addActionListener(blistener);
+        Admin.getjButtonModifyR2().addActionListener(blistener);
         // Création d'évènement sur les bouttons de la page Académique
         Aca.getjButtonAccueil().addActionListener(blistener);
         Aca.getjButtonAdmin().addActionListener(blistener);
         Aca.getjButtonAca().addActionListener(blistener);
         Aca.getjButtonChoixMatiere().addActionListener(blistener);
         Aca.getjButtonOkMatiere().addActionListener(blistener);
+     
         
         //Initialisation de la page d'accueil en visible
         Accueil.setVisible(true);
@@ -384,8 +390,59 @@ public class Controller {
                 } catch (SQLException sqlE) {
                     System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
                 }
+
+            }
+            else if (e.getSource() == Admin.getjButtonModifyGeneral()){
                 
+                etu.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
+                etu.setNom(Admin.getjTextFieldNom().getText());
+                etu.setPrenom(Admin.getjTextFieldPrenom().getText());
+                //etu.setIdClasse(Admin.getjTextField().getText());
+              
+            }
+            else if (e.getSource() == Admin.getjButtonModifyIdent()){
+                i.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
+                i.setDateInscription(Admin.getjTextFieldDateInsc().getText());
+                i.setDateNaissance(Admin.getjTextFieldDateNais().getText());
+                i.setEtablissementpr(Admin.getjTextFieldEtaPre().getText());
+                i.setPaysNaissance(Admin.getjTextFieldPaysNais().getText());
+                i.setSexe(Admin.getjTextFieldSexe().getText());
+                i.setVilleNaissance(Admin.getjTextFieldVilleNais().getText());
                 
+            }
+            else if (e.getSource() == Admin.getjButtonModifyCoord()){
+                c.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
+                c.setAdresse(Admin.getjTextFieldAdr().getText());
+                c.setCodePostal(Integer.parseInt(Admin.getjTextFieldCp().getText()));
+                c.setVille(Admin.getjTextFieldVille().getText());
+                c.setEmail(Admin.getjTextFieldMail().getText());
+                c.setTeldom(Admin.getjTextFieldTelDom().getText());
+                c.setTelmobile(Admin.getjTextFieldTelMob().getText());
+            }
+            else if (e.getSource() == Admin.getjButtonModifyR1()){
+                r1.setNom(Admin.getjTextFieldContact1Nom().getText());
+                r1.setPrenom(Admin.getjTextFieldContact1Prenom().getText());
+                r1.setAdresse(Admin.getjTextFieldContact1Adr().getText());
+                r1.setTelephone(Admin.getjTextFieldContact1Tel().getText());
+                r1.setEmail(Admin.getjTextFieldContact1Mail().getText());
+                
+            }
+            else if (e.getSource() == Admin.getjButtonModifyR2()){
+                
+                r2.setNom(Admin.getjTextFieldContact2Nom().getText());
+                r2.setPrenom(Admin.getjTextFieldContact2Prenom().getText());
+                r2.setAdresse(Admin.getjTextFieldContact2Adr().getText());
+                r2.setTelephone(Admin.getjTextFieldContact2Tel().getText());
+                r2.setEmail(Admin.getjTextFieldContact2Mail().getText());
+                
+            }
+            else if (e.getSource() == Admin.getjButtonModifyMed()){
+                    s.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
+                //s.setMedecinTraitant(Admin.getjTextFieldPrenom().getText()+);
+                s.setTelMedecin(Admin.getjTextFieldTelMed().getText());
+                s.setVaccinations(Admin.getjTextFieldVacc().getText());
+                s.setAllergies(Admin.getjTextFieldAll().getText());
+                s.setRemarquesMedicales(Admin.getjTextFieldRem().getText());
                 
             }
             
