@@ -443,7 +443,7 @@ public class Controller {
                     resid=stmt.executeQuery(MatriculeN);
                     resid.first();
                     idMat = Integer.parseInt(resid.getString("MATRICULE"));
-                    System.out.println("1");
+                    
                     System.out.println("idEtuMatricule="+idEtu);
                     System.out.println("Matricule="+idMat);
                     String Recup_notes_info="SELECT NOM, PRENOM, nomMat, moyenne, NomClasse FROM `etudiant` LEFT JOIN classe ON (etudiant.idClasse=classe.idClasse)  \n" +
@@ -611,8 +611,9 @@ public class Controller {
             }
              
             else if (e.getSource() == Aca.getjButtonReChoixEtu()){
-                ResultSet resEtu=null;
+                ResultSet resTable=null;
                 ResultSet resid=null;
+                
                 Statement stmt=null;
                 int idEtudiant=0;
                 String[] NameEtudiant= Aca.getjComboBoxReEtu().getSelectedItem().toString().split(" ");
@@ -626,6 +627,16 @@ public class Controller {
                     resid=stmt.executeQuery(Matricule);
                     resid.first();
                     idEtudiant=Integer.parseInt(resid.getString("MATRICULE"));
+                    String Recup_notes_info="SELECT NOM, PRENOM, nomMat, moyenne, NomClasse FROM `etudiant` LEFT JOIN classe ON (etudiant.idClasse=classe.idClasse)  \n" +
+"						 LEFT JOIN notes ON(notes.idMatiere=classe.idMatiere1 OR notes.idMatiere=classe.idMatiere2 OR notes.idMatiere=classe.idMatiere3 OR notes.idMatiere=classe.idMatiere4)\n" +
+"						 LEFT JOIN matiere ON (matiere.idMatiere=notes.idMatiere)\n" +
+"						 WHERE etudiant.MATRICULE="+idEtudiant+" AND notes.MATRICULE="+idEtudiant+"";
+
+                    resTable=stmt.executeQuery(Recup_notes_info);
+                       
+                    
+                    //Utilisation de rs2xml.jar pour générer un tableau
+                    Aca.getjTableNotes().setModel(DbUtils.resultSetToTableModel(resTable));
                    
                 } catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
