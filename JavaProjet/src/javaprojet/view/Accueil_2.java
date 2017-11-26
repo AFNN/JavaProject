@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -44,6 +45,14 @@ public class Accueil_2 extends javax.swing.JFrame {
         jPanelContentNotes = new javax.swing.JPanel();
         jScrollPaneTable = new javax.swing.JScrollPane();
         jTableNotes = new javax.swing.JTable();
+        jButtonChoixLigne = new javax.swing.JButton();
+        jLabelModifyNom = new javax.swing.JLabel();
+        jTextFieldModifyNom = new javax.swing.JTextField();
+        jLabelModifyMat = new javax.swing.JLabel();
+        jTextFieldModifyMat = new javax.swing.JTextField();
+        jLabelNoteMoyenne = new javax.swing.JLabel();
+        jTextFieldModifyNote = new javax.swing.JTextField();
+        jButtonNotesModifier = new javax.swing.JButton();
         jPanelTitreNotes = new javax.swing.JPanel();
         jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
@@ -80,22 +89,76 @@ public class Accueil_2 extends javax.swing.JFrame {
             }
         ));
         jScrollPaneTable.setViewportView(jTableNotes);
+        jTableNotes.setAutoCreateRowSorter(true);
+
+        jButtonChoixLigne.setText("Valider Choix Ligne");
+
+        jLabelModifyNom.setText("Nom : ");
+
+        jLabelModifyMat.setText("Matière : ");
+
+        jTextFieldModifyMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldModifyMatActionPerformed(evt);
+            }
+        });
+
+        jLabelNoteMoyenne.setText("Moyenne : ");
+
+        jButtonNotesModifier.setText("Modifier");
 
         javax.swing.GroupLayout jPanelContentNotesLayout = new javax.swing.GroupLayout(jPanelContentNotes);
         jPanelContentNotes.setLayout(jPanelContentNotesLayout);
         jPanelContentNotesLayout.setHorizontalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPaneTable)
+                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPaneTable))
+                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                        .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                                .addGap(344, 344, 344)
+                                .addComponent(jButtonChoixLigne))
+                            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabelModifyNom)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldModifyNom, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabelModifyMat)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(101, 101, 101)
+                                .addComponent(jLabelNoteMoyenne)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentNotesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonNotesModifier)
+                .addGap(344, 344, 344))
         );
         jPanelContentNotesLayout.setVerticalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentNotesLayout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addComponent(jScrollPaneTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPaneTable, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonChoixLigne)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelModifyNom)
+                    .addComponent(jTextFieldModifyNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelModifyMat)
+                    .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNoteMoyenne)
+                    .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jButtonNotesModifier)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jLabelTitreNotes.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -334,6 +397,10 @@ public class Accueil_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonReChoixEtuActionPerformed
 
+    private void jTextFieldModifyMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModifyMatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldModifyMatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -535,6 +602,70 @@ public class Accueil_2 extends javax.swing.JFrame {
     public void setjButtonReChoixEtu(JButton jButtonReChoixEtu) {
         this.jButtonReChoixEtu = jButtonReChoixEtu;
     }
+
+    public JButton getjButtonChoixLigne() {
+        return jButtonChoixLigne;
+    }
+
+    public void setjButtonChoixLigne(JButton jButtonChoixLigne) {
+        this.jButtonChoixLigne = jButtonChoixLigne;
+    }
+
+    public JButton getjButtonNotesModifier() {
+        return jButtonNotesModifier;
+    }
+
+    public void setjButtonNotesModifier(JButton jButtonNotesModifier) {
+        this.jButtonNotesModifier = jButtonNotesModifier;
+    }
+
+    public JLabel getjLabelModifyMat() {
+        return jLabelModifyMat;
+    }
+
+    public void setjLabelModifyMat(JLabel jLabelModifyMat) {
+        this.jLabelModifyMat = jLabelModifyMat;
+    }
+
+    public JLabel getjLabelModifyNom() {
+        return jLabelModifyNom;
+    }
+
+    public void setjLabelModifyNom(JLabel jLabelModifyNom) {
+        this.jLabelModifyNom = jLabelModifyNom;
+    }
+
+    public JLabel getjLabelNoteMoyenne() {
+        return jLabelNoteMoyenne;
+    }
+
+    public void setjLabelNoteMoyenne(JLabel jLabelNoteMoyenne) {
+        this.jLabelNoteMoyenne = jLabelNoteMoyenne;
+    }
+
+    public JTextField getjTextFieldModifyMat() {
+        return jTextFieldModifyMat;
+    }
+
+    public void setjTextFieldModifyMat(JTextField jTextFieldModifyMat) {
+        this.jTextFieldModifyMat = jTextFieldModifyMat;
+    }
+
+    public JTextField getjTextFieldModifyNom() {
+        return jTextFieldModifyNom;
+    }
+
+    public void setjTextFieldModifyNom(JTextField jTextFieldModifyNom) {
+        this.jTextFieldModifyNom = jTextFieldModifyNom;
+    }
+
+    public JTextField getjTextFieldModifyNote() {
+        return jTextFieldModifyNote;
+    }
+
+    public void setjTextFieldModifyNote(JTextField jTextFieldModifyNote) {
+        this.jTextFieldModifyNote = jTextFieldModifyNote;
+    }
     
     
     
@@ -544,7 +675,9 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonChoixLigne;
     private javax.swing.JButton jButtonChoixMatiere;
+    private javax.swing.JButton jButtonNotesModifier;
     private javax.swing.JButton jButtonOkMatiere;
     private javax.swing.JButton jButtonReChoixClasse;
     private javax.swing.JButton jButtonReChoixEtu;
@@ -553,6 +686,9 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxReClasse;
     private javax.swing.JComboBox<String> jComboBoxReEtu;
     private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelModifyMat;
+    private javax.swing.JLabel jLabelModifyNom;
+    private javax.swing.JLabel jLabelNoteMoyenne;
     private javax.swing.JLabel jLabelTitreNotes;
     private javax.swing.JPanel jPanelContentNotes;
     private javax.swing.JPanel jPanelGest;
@@ -562,5 +698,8 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneTable;
     private javax.swing.JTabbedPane jTabbedPaneAdmin;
     private javax.swing.JTable jTableNotes;
+    private javax.swing.JTextField jTextFieldModifyMat;
+    private javax.swing.JTextField jTextFieldModifyNom;
+    private javax.swing.JTextField jTextFieldModifyNote;
     // End of variables declaration//GEN-END:variables
 }

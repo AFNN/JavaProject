@@ -30,6 +30,7 @@ import javaprojet.view.Accueil_1;
 import javaprojet.view.Accueil_2;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -87,6 +88,8 @@ public class Controller {
         Aca.getjButtonOkMatiere().addActionListener(blistener);
         Aca.getjButtonReChoixClasse().addActionListener(blistener);
         Aca.getjButtonReChoixEtu().addActionListener(blistener);
+        Aca.getjButtonNotesModifier().addActionListener(blistener);
+        Aca.getjButtonChoixLigne().addActionListener(blistener);
      
         
         //Initialisation de la page d'accueil en visible
@@ -461,6 +464,51 @@ public class Controller {
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
+             }
+             
+             else if (e.getSource() == Aca.getjButtonChoixLigne()){
+                
+                DefaultTableModel model = (DefaultTableModel)Aca.getjTableNotes().getModel();
+		int row = Aca.getjTableNotes().getSelectedRow();               
+		int modelRow = Aca.getjTableNotes().convertRowIndexToModel( row );               
+		String note =  Aca.getjTableNotes().getValueAt(row, 3).toString();
+                String matiere =  Aca.getjTableNotes().getValueAt(row, 2).toString();
+                String nom =  Aca.getjTableNotes().getValueAt(row, 0).toString();
+                
+                System.out.println("Note : " + note);
+                
+                Aca.getjTextFieldModifyNote().setText(note);
+                Aca.getjTextFieldModifyMat().setText(matiere);
+                Aca.getjTextFieldModifyNom().setText(nom);
+            }
+             
+             else if (e.getSource() == Aca.getjButtonNotesModifier()){
+                System.out.println("45");
+                int idMat=0;
+                ResultSet resMatEtu=null;
+
+                Statement stmt=null;
+                try{
+                    String nomModifier = Aca.getjTextFieldModifyNom().getText();
+                    System.out.println("Nom : " +nomModifier);
+                    String requeteMat = "SELECT MATRICULE FROM etudiant WHERE NOM='"+nomModifier+"'";
+                    System.out.println("46");
+                    resMatEtu=stmt.executeQuery(requeteMat);
+                    System.out.println("47");
+                    resMatEtu.first();
+                    System.out.println("48");
+                    idMat=Integer.parseInt(resMatEtu.getString("MATRICULE"));
+                    System.out.println("49");
+                    System.out.println(idMat);
+                    /*
+
+                 note.setIdMatière(0);*/
+                }
+                catch (SQLException sqlE) {
+                    System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
+                }
+                
+                 
              }
              //permet de modifier les informations general 
             else if (e.getSource() == Admin.getjButtonModifyGeneral()){
