@@ -141,6 +141,9 @@ public class Accueil_1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextFieldDocDate = new javax.swing.JTextField();
         jButtonDocEdit = new javax.swing.JButton();
+        jButtonDocImpr = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanelSelect = new javax.swing.JPanel();
         jComboBoxClasse = new javax.swing.JComboBox<>();
         jButtonokClasse = new javax.swing.JButton();
@@ -947,6 +950,12 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jButtonDocEdit.setText("Editer Convocation");
 
+        jButtonDocImpr.setText("Imprimer Convocation");
+
+        jLabel4.setText("Editer la convocation avant d'imprimer cette convocation");
+
+        jLabel5.setText("Format de la date : aaaa-mm-jj");
+
         javax.swing.GroupLayout jPanelContentDocLayout = new javax.swing.GroupLayout(jPanelContentDoc);
         jPanelContentDoc.setLayout(jPanelContentDocLayout);
         jPanelContentDocLayout.setHorizontalGroup(
@@ -959,19 +968,28 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addGroup(jPanelContentDocLayout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelContentDocLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(102, 102, 102)
-                                .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentDocLayout.createSequentialGroup()
                                 .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButtonDocEdit, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel1))
+                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                                        .addGap(102, 102, 102)
+                                        .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentDocLayout.createSequentialGroup()
+                                        .addGap(54, 54, 54)
+                                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButtonDocImpr)
+                                            .addComponent(jButtonDocEdit))))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelContentDocLayout.setVerticalGroup(
@@ -991,9 +1009,15 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addComponent(jButtonDocEdit)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonDocImpr)
+                    .addComponent(jLabel4))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelDocLayout = new javax.swing.GroupLayout(jPanelDoc);
@@ -2071,6 +2095,14 @@ public class Accueil_1 extends javax.swing.JFrame {
     public void setjTextFieldDocMotif(JTextField jTextFieldDocMotif) {
         this.jTextFieldDocMotif = jTextFieldDocMotif;
     }
+
+    public JButton getjButtonDocImpr() {
+        return jButtonDocImpr;
+    }
+
+    public void setjButtonDocImpr(JButton jButtonDocImpr) {
+        this.jButtonDocImpr = jButtonDocImpr;
+    }
     
     
 
@@ -2079,6 +2111,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonDocEdit;
+    private javax.swing.JButton jButtonDocImpr;
     private javax.swing.JButton jButtonModifyCoord;
     private javax.swing.JButton jButtonModifyGeneral;
     private javax.swing.JButton jButtonModifyIdent;
@@ -2093,6 +2126,8 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;

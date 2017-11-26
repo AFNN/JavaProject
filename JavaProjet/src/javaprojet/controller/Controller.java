@@ -6,8 +6,11 @@
 package javaprojet.controller;
 
 import java.awt.CardLayout;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,6 +42,7 @@ public class Controller {
     Accueil_1 Admin = new Accueil_1();
     Accueil_2 Aca = new Accueil_2();
     Etudiant etu = new Etudiant(0,"","",0);
+    Etudiant etuDoc = new Etudiant(0, "", "", 0);
     Coordonnees c = new Coordonnees("", 0, "", "", "", "", 0);
     Identite i = new Identite("DateNaissance", "VilleNaissance", "PaysNaissance", "Sexe", "DateInscription", "Etablissementpr",0);
     Responsable r1 = new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
@@ -73,6 +77,8 @@ public class Controller {
         Admin.getjButtonModifyR1().addActionListener(blistener);
         Admin.getjButtonModifyR2().addActionListener(blistener);
         Admin.getjButtonDocEdit().addActionListener(blistener);
+        Admin.getjButtonDocImpr().addActionListener(blistener);
+        
         // Création d'évènement sur les bouttons de la page Académique
         Aca.getjButtonAccueil().addActionListener(blistener);
         Aca.getjButtonAdmin().addActionListener(blistener);
@@ -454,6 +460,7 @@ public class Controller {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
              }
+             //permet de modifier les informations general 
             else if (e.getSource() == Admin.getjButtonModifyGeneral()){
                 
                 etu.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
@@ -462,6 +469,7 @@ public class Controller {
                 GestionEtudiant.updateEtudiant(etu);
               
             }
+            // permet de modifier l'identité
             else if (e.getSource() == Admin.getjButtonModifyIdent()){
                 i.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
                 i.setDateInscription(Admin.getjTextFieldDateInsc().getText());
@@ -472,6 +480,8 @@ public class Controller {
                 i.setVilleNaissance(Admin.getjTextFieldVilleNais().getText());
                 GestionIdentite.updateIdentite(i);
             }
+            
+            //permet de modifier les coordonnées 
             else if (e.getSource() == Admin.getjButtonModifyCoord()){
                 c.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
                 c.setAdresse(Admin.getjTextFieldAdr().getText());
@@ -482,6 +492,7 @@ public class Controller {
                 c.setTelmobile(Admin.getjTextFieldTelMob().getText());
                 GestionCoordonnees.updateCoordonnees(c);
             }
+            //permet de modifier le reponsable 1
             else if (e.getSource() == Admin.getjButtonModifyR1()){
                 r1.setNom(Admin.getjTextFieldContact1Nom().getText());
                 r1.setPrenom(Admin.getjTextFieldContact1Prenom().getText());
@@ -490,6 +501,7 @@ public class Controller {
                 r1.setEmail(Admin.getjTextFieldContact1Mail().getText());
                 GestionResponsable.updateResponsable(r1);
             }
+            //permet de modifier le reponsable 2
             else if (e.getSource() == Admin.getjButtonModifyR2()){
                 
                 r2.setNom(Admin.getjTextFieldContact2Nom().getText());
@@ -499,6 +511,7 @@ public class Controller {
                 r2.setEmail(Admin.getjTextFieldContact2Mail().getText());
                 GestionResponsable.updateResponsable(r2);
             }
+            //permet de modifier le reponsable medicale
             else if (e.getSource() == Admin.getjButtonModifyMed()){
                 s.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
                 s.setMedecinTraitant(Admin.getjTextFieldNomMed().getText()+" "+Admin.getjTextFieldPrenomMed().getText());
@@ -512,7 +525,7 @@ public class Controller {
                 String[] result= Admin.getjComboBoxDocEtu().getSelectedItem().toString().split(" ");
                 String date= Admin.getjTextFieldDocDate().getText();
                 String motif=Admin.getjTextFieldDocMotif().getText();
-                Etudiant etuDoc = new Etudiant(0, "", "", 0);
+                
                 Statement stmt=null;
                 ResultSet resEtudiant=null; 
                 try{
@@ -530,11 +543,37 @@ public class Controller {
                     System.out.println("Probleme BDD :"+sqlE.getMessage());
                 }
                 GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf");
+                Desktop desk = Desktop.getDesktop();
+                try {
+                    desk.open(new File("./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf"));
+                } catch (IOException Fe) {
+                    JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Probleme lors de l'ouverture du pdf"+Fe.getMessage(), "Erreur Ouverture", JOptionPane.ERROR_MESSAGE);
+                    System.out.println("Probleme lors de l'ouverture du pdf"+Fe.getMessage());
+                    
+                }
+                }
+            //Permet d'imprimer la convocation
+            else if (e.getSource() == Admin.getjButtonDocImpr()){
                 
-                
-                
-                
-                
+                Desktop desk = Desktop.getDesktop();
+                if (Desktop.isDesktopSupported()){  
+                    if(Desktop.getDesktop().isSupported(java.awt.Desktop.Action.PRINT)){  
+                        try {  
+                                java.awt.Desktop.getDesktop().print(new File("./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf")); 
+                                JOptionPane jop1 = new JOptionPane();
+                                jop1.showMessageDialog(null, "L'impression est en cours", "Impression", JOptionPane.INFORMATION_MESSAGE);
+                         
+                        } catch (IOException Fe) {  
+                                JOptionPane jop1 = new JOptionPane();
+                                jop1.showMessageDialog(null, "Probleme lors de l'impression du pdf"+Fe.getMessage(), "Erreur Impression", JOptionPane.ERROR_MESSAGE);
+                        }  
+                    }else {  
+                                //La fonction n'est pas supportée par votre système d'exploitation
+                                JOptionPane jop1 = new JOptionPane();
+                                jop1.showMessageDialog(null, "La fonction n'est pas supporté par votre systeme d'exploitation", "Erreur Impression", JOptionPane.ERROR_MESSAGE);
+                            }  
+                }   
             }
             
         }
