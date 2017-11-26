@@ -40,7 +40,7 @@ public class GestionNotes {
         try {
                 DBconnexion.connexionDB();
                 Statement stmt =  DBconnexion.getConn().createStatement();
-		String update = "UPDATE `notes` SET `moyenne` = "+n.getMoyenne()+" WHERE `notes`.`Matricule` ="+n.getMatricule()+" AND `notes`.`idMatière` = "+n.getIdMatière();
+		String update = "UPDATE `notes` SET `moyenne` = "+n.getMoyenne()+" WHERE `notes`.`Matricule` ="+n.getMatricule()+" AND `notes`.`idMatiere` = "+n.getIdMatière();
                 stmt.executeUpdate(update);
                 JOptionPane jop1 = new JOptionPane();
                 jop1.showMessageDialog(null, "Notes mis à jour dans la base de donnée", "Ajout BDD", JOptionPane.INFORMATION_MESSAGE);

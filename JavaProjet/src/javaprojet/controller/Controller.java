@@ -1,4 +1,5 @@
 /*
+
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -22,6 +23,7 @@ import javaprojet.model.bdd.GestionCoordonnees;
 import javaprojet.model.bdd.GestionDocument;
 import javaprojet.model.bdd.GestionEtudiant;
 import javaprojet.model.bdd.GestionIdentite;
+import javaprojet.model.bdd.GestionNotes;
 import javaprojet.model.bdd.GestionResponsable;
 import javaprojet.model.bdd.GestionSante;
 import javaprojet.model.donnee.*;
@@ -49,6 +51,7 @@ public class Controller {
     Responsable r1 = new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
     Responsable r2= new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
     Sante s = new Sante(0, "medecinTraitant", "", "vaccinations", "allergies", "remarquesMedicales");
+    Notes n = new Notes(0,0,0);
     
     /*
     public static boolean connect = false;
@@ -90,6 +93,7 @@ public class Controller {
         Aca.getjButtonReChoixEtu().addActionListener(blistener);
         Aca.getjButtonNotesModifier().addActionListener(blistener);
         Aca.getjButtonChoixLigne().addActionListener(blistener);
+        Aca.getjButtonRefresh().addActionListener(blistener);
      
         
         //Initialisation de la page d'accueil en visible
@@ -142,6 +146,8 @@ public class Controller {
     public class BoutonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) { 
+            boolean connect=false;
+            boolean admin=false;
             //Si l'utilisateur clique sur un bouton "Accueil" (peut importe la page)
             if (e.getSource() == Accueil.getjButtonAccueil() || e.getSource() == Admin.getjButtonAccueil() || e.getSource() == Aca.getjButtonAccueil()){
                 Accueil.setVisible(true);
@@ -151,22 +157,31 @@ public class Controller {
             
             //Si l'utilisateur clique sur un bouton "Administration" (peut importe la page)
             else if (e.getSource() == Accueil.getjButtonAdmin() || e.getSource() == Admin.getjButtonAdmin() || e.getSource() == Aca.getjButtonAdmin()){
-                Accueil.setVisible(false);
-                Admin.setVisible(true);
-                Aca.setVisible(false);
+                if (connect == true){
+                    Accueil.setVisible(false);
+                    Admin.setVisible(true);
+                    Aca.setVisible(false);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Vous devez vous connecter", "Accès refusé", JOptionPane.ERROR_MESSAGE);
+                }
             }
             
             //Si l'utilisateur clique sur un bouton "Académique" (peut importe la page)
             else if (e.getSource() == Accueil.getjButtonAca() || e.getSource() == Admin.getjButtonAca() || e.getSource() == Aca.getjButtonAca()){
-                Accueil.setVisible(false);
-                Admin.setVisible(false);
-                Aca.setVisible(true);
+                if (connect == true){
+                    Accueil.setVisible(false);
+                    Admin.setVisible(false);
+                    Aca.setVisible(true);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Vous devez vous connecter", "Accès refusé", JOptionPane.ERROR_MESSAGE);
+                }     
             }
-            
+
             //Connection à la bdd sur le bouton "Connecter" de la page d'accueil puis change vers Panel "connected"
             else if (e.getSource() == Accueil.getjButtonConnect()){
-                boolean connect=false;
-                boolean admin=false;
+                
                 ResultSet rs=null;
                 try {
                     connect=javaprojet.model.bdd.GestionConnexion.userConnection(Accueil.getjTextFieldLogin().getText(),Accueil.getjPasswordFieldMdp().getText());
@@ -484,31 +499,105 @@ public class Controller {
              
              else if (e.getSource() == Aca.getjButtonNotesModifier()){
                 System.out.println("45");
-                int idMat=0;
+                
+                int idMat=0, mat=0;
+                double note = 0;
                 ResultSet resMatEtu=null;
+                ResultSet resMat=null;
+                ResultSet resNote=null;
+
 
                 Statement stmt=null;
                 try{
+                    
+                    
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    
                     String nomModifier = Aca.getjTextFieldModifyNom().getText();
-                    System.out.println("Nom : " +nomModifier);
                     String requeteMat = "SELECT MATRICULE FROM etudiant WHERE NOM='"+nomModifier+"'";
-                    System.out.println("46");
                     resMatEtu=stmt.executeQuery(requeteMat);
-                    System.out.println("47");
                     resMatEtu.first();
-                    System.out.println("48");
-                    idMat=Integer.parseInt(resMatEtu.getString("MATRICULE"));
-                    System.out.println("49");
-                    System.out.println(idMat);
+                    mat=Integer.parseInt(resMatEtu.getString("MATRICULE"));
+                    System.out.println("MATRICULE : " +mat);
+                    
+                    String matiereModifier = Aca.getjTextFieldModifyMat().getText();
+                    String requeteIdMat = "SELECT idMatiere FROM matiere WHERE nomMat='"+matiereModifier+"'";
+                    resMat=stmt.executeQuery(requeteIdMat);
+                    resMat.first();
+                    idMat=Integer.parseInt(resMat.getString("idMatiere"));
+                    System.out.println("idMatiere : " +idMat);
+                    
+                    String noteModifier = Aca.getjTextFieldModifyNote().getText();
+                    System.out.println("notetexte : "+Aca.getjTextFieldModifyNote().getText());
+
+                    n.setIdMatière(idMat);
+                    n.setMatricule(mat);
+                    n.setMoyenne(Double.parseDouble(Aca.getjTextFieldModifyNote().getText()));
+                    
+                    GestionNotes.updateNotes(n);
+                    
+                    stmt.close();
                     /*
 
                  note.setIdMatière(0);*/
                 }
                 catch (SQLException sqlE) {
                     System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
-                }
+                } 
+             }
+             
+            else if (e.getSource() == Aca.getjButtonRefresh()){
+                ResultSet resTable=null;
+                ResultSet resid=null;
+                ResultSet resEtu=null;
+                Statement stmt=null;
                 
-                 
+                int idEtu=0, idMat=0;
+
+                String[] NameEtudiant =  Aca.getjComboBoxEtudiantMat().getSelectedItem().toString().split(" ");
+                System.out.println("NomSelection: "+NameEtudiant[0]);
+
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    System.out.println("1");
+
+                    String etudiant ="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'"; 
+                    System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
+                    resEtu=stmt.executeQuery(etudiant);
+                    System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
+                    resEtu.first();
+
+                    
+                    idEtu=Integer.parseInt(resEtu.getString("MATRICULE"));
+                    System.out.println("idEtu="+idEtu);
+
+                    
+                    System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
+                    
+                    String MatriculeN="SELECT MATRICULE FROM `notes` LEFT JOIN `matiere`ON (notes.idMatiere=matiere.idMatiere)WHERE NomMat='"+Aca.getjComboBoxMatiere().getSelectedItem()+"'";
+                    resid=stmt.executeQuery(MatriculeN);
+                    resid.first();
+                    idMat = Integer.parseInt(resid.getString("MATRICULE"));
+                    
+                    System.out.println("idEtuMatricule="+idEtu);
+                    System.out.println("Matricule="+idMat);
+                    String Recup_notes_info="SELECT NOM, PRENOM, nomMat, moyenne, NomClasse FROM `etudiant` LEFT JOIN classe ON (etudiant.idClasse=classe.idClasse)  \n" +
+"						 LEFT JOIN notes ON(notes.idMatiere=classe.idMatiere1 OR notes.idMatiere=classe.idMatiere2 OR notes.idMatiere=classe.idMatiere3 OR notes.idMatiere=classe.idMatiere4)\n" +
+"						 LEFT JOIN matiere ON (matiere.idMatiere=notes.idMatiere)\n" +
+"						 WHERE etudiant.MATRICULE="+idEtu+" AND notes.MATRICULE="+idEtu+"";
+
+                    resTable=stmt.executeQuery(Recup_notes_info);
+                       
+                    
+                    //Utilisation de rs2xml.jar pour générer un tableau
+                    Aca.getjTableNotes().setModel(DbUtils.resultSetToTableModel(resTable));
+
+                }
+                catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+                }
              }
              //permet de modifier les informations general 
             else if (e.getSource() == Admin.getjButtonModifyGeneral()){

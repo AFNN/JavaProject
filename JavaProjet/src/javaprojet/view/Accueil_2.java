@@ -53,6 +53,7 @@ public class Accueil_2 extends javax.swing.JFrame {
         jLabelNoteMoyenne = new javax.swing.JLabel();
         jTextFieldModifyNote = new javax.swing.JTextField();
         jButtonNotesModifier = new javax.swing.JButton();
+        jButtonRefresh = new javax.swing.JButton();
         jPanelTitreNotes = new javax.swing.JPanel();
         jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
@@ -107,6 +108,8 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jButtonNotesModifier.setText("Modifier");
 
+        jButtonRefresh.setText("Rafraichir le tableau");
+
         javax.swing.GroupLayout jPanelContentNotesLayout = new javax.swing.GroupLayout(jPanelContentNotes);
         jPanelContentNotes.setLayout(jPanelContentNotesLayout);
         jPanelContentNotesLayout.setHorizontalGroup(
@@ -129,17 +132,19 @@ public class Accueil_2 extends javax.swing.JFrame {
                                 .addGap(64, 64, 64)
                                 .addComponent(jLabelModifyMat)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(101, 101, 101)
-                                .addComponent(jLabelNoteMoyenne)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                                        .addComponent(jButtonNotesModifier)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonRefresh))
+                                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                                        .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(101, 101, 101)
+                                        .addComponent(jLabelNoteMoyenne)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentNotesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonNotesModifier)
-                .addGap(344, 344, 344))
         );
         jPanelContentNotesLayout.setVerticalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,9 +161,11 @@ public class Accueil_2 extends javax.swing.JFrame {
                     .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNoteMoyenne)
                     .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jButtonNotesModifier)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonNotesModifier)
+                    .addComponent(jButtonRefresh))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jLabelTitreNotes.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -666,6 +673,14 @@ public class Accueil_2 extends javax.swing.JFrame {
     public void setjTextFieldModifyNote(JTextField jTextFieldModifyNote) {
         this.jTextFieldModifyNote = jTextFieldModifyNote;
     }
+
+    public JButton getjButtonRefresh() {
+        return jButtonRefresh;
+    }
+
+    public void setjButtonRefresh(JButton jButtonRefresh) {
+        this.jButtonRefresh = jButtonRefresh;
+    }
     
     
     
@@ -681,6 +696,7 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOkMatiere;
     private javax.swing.JButton jButtonReChoixClasse;
     private javax.swing.JButton jButtonReChoixEtu;
+    private javax.swing.JButton jButtonRefresh;
     private javax.swing.JComboBox<String> jComboBoxEtudiantMat;
     private javax.swing.JComboBox<String> jComboBoxMatiere;
     private javax.swing.JComboBox<String> jComboBoxReClasse;

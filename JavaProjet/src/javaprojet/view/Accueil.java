@@ -107,7 +107,7 @@ public class Accueil extends javax.swing.JFrame {
                     .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextFieldLogin)
                         .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanelContentConnexionLayout.setVerticalGroup(
             jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,9 +129,9 @@ public class Accueil extends javax.swing.JFrame {
 
         jPanelContentConnected.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
-        jLabelConnected.setText("CONNECTED");
+        jLabelConnected.setText("Vous êtes connecté !");
 
-        jButtonDiscon.setText("Deconnection");
+        jButtonDiscon.setText("Se déconnecter");
         jButtonDiscon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDisconActionPerformed(evt);
@@ -143,20 +143,20 @@ public class Accueil extends javax.swing.JFrame {
         jPanelContentConnectedLayout.setHorizontalGroup(
             jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentConnectedLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addGroup(jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonDiscon)
-                    .addComponent(jLabelConnected))
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE)
+                .addGroup(jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonDiscon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelConnected, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanelContentConnectedLayout.setVerticalGroup(
             jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentConnectedLayout.createSequentialGroup()
-                .addGap(122, 122, 122)
+                .addGap(112, 112, 112)
                 .addComponent(jLabelConnected)
-                .addGap(31, 31, 31)
+                .addGap(41, 41, 41)
                 .addComponent(jButtonDiscon)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         jPanelMainContent.add(jPanelContentConnected, "cardConnected");
@@ -170,7 +170,7 @@ public class Accueil extends javax.swing.JFrame {
                 .addGroup(jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelMainContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanelConnexionLayout.setVerticalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
