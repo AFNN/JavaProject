@@ -23,14 +23,16 @@ import javaprojet.model.donnee.Etudiant;
  * @author Arnaud Fouillard 
  */
 public class GestionDocument {
-public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest13.pdf";
+
 
     /**
      * Permet de générer un document PDF. Ici une convocation pour les parents.
      * @param E 
      * @param motif
+     * @param date
+     * @param chemin
      */
-    public static void GestionDocument(Etudiant E, String motif, Date date){
+    public static void GestionDocument(Etudiant E, String motif, Date date,String chemin){
         String Prenometu="",Nometu="",NomRes="",PrenomRes="",AdresseRes="";
         
         
@@ -40,22 +42,20 @@ public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest13.pdf";
            try {
             javaprojet.model.bdd.DBconnexion.connexionDB();
             stmt= DBconnexion.getConn().createStatement();
-            String userinfo="SELECT * From etudiant WHERE Matricule='"+E.getMatricule()+"'";
-               System.out.println(userinfo);
-            String Responsableinfo="SELECT * FROM `responsable` WHERE Matricule='"+E.getMatricule()+"'";
+            String userinfo="SELECT * From etudiant WHERE Matricule="+E.getMatricule()+"";
+            System.out.println(userinfo);
+            String Responsableinfo="SELECT * FROM `responsable` WHERE Matricule="+E.getMatricule()+"";
             
             resEtudiant=stmt.executeQuery(userinfo);
             resEtudiant.first();
             Prenometu=resEtudiant.getString("NOM");
             Nometu=resEtudiant.getString("PRENOM");
           
-            
-       
             resResponsable=stmt.executeQuery(Responsableinfo);
             resResponsable.first();
-            NomRes=resResponsable.getString("Nom");
-            PrenomRes=resResponsable.getString("Prenom");
-            AdresseRes=resResponsable.getString("Adresse");
+            NomRes=resResponsable.getString("NomRes");
+            PrenomRes=resResponsable.getString("PrenomRes");
+            AdresseRes=resResponsable.getString("AdresseRes");
             
             
         } catch (SQLException SQLe) {
@@ -108,7 +108,7 @@ public static final String chemin = "C:/Users/fouil/Desktop/pdf/pdftest13.pdf";
       public static void main(String[] args)
   {
       Etudiant E= new Etudiant(1, "Fouillard", "Arnaud", 1);
-      GestionDocument(E,"punition",Date.valueOf("2017-05-05"));
+      GestionDocument(E,"punition",Date.valueOf("2017-05-05"),"./DocumentPDF/Convocation_"+E.getNom()+"_"+E.getPrenom()+".pdf");
       
   }
     

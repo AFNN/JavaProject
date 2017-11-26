@@ -8,6 +8,7 @@ package javaprojet.controller;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaprojet.model.bdd.DBconnexion;
 import javaprojet.model.bdd.GestionCoordonnees;
+import javaprojet.model.bdd.GestionDocument;
 import javaprojet.model.bdd.GestionEtudiant;
 import javaprojet.model.bdd.GestionIdentite;
 import javaprojet.model.bdd.GestionResponsable;
@@ -70,6 +72,7 @@ public class Controller {
         Admin.getjButtonModifyMed().addActionListener(blistener);
         Admin.getjButtonModifyR1().addActionListener(blistener);
         Admin.getjButtonModifyR2().addActionListener(blistener);
+        Admin.getjButtonDocEdit().addActionListener(blistener);
         // Création d'évènement sur les bouttons de la page Académique
         Aca.getjButtonAccueil().addActionListener(blistener);
         Aca.getjButtonAdmin().addActionListener(blistener);
@@ -504,6 +507,34 @@ public class Controller {
                 s.setAllergies(Admin.getjTextFieldAll().getText());
                 s.setRemarquesMedicales(Admin.getjTextFieldRem().getText());
                 GestionSante.updateSante(s);
+            }
+            else if (e.getSource() == Admin.getjButtonDocEdit()){
+                String[] result= Admin.getjComboBoxDocEtu().getSelectedItem().toString().split(" ");
+                String date= Admin.getjTextFieldDocDate().getText();
+                String motif=Admin.getjTextFieldDocMotif().getText();
+                Etudiant etuDoc = new Etudiant(0, "", "", 0);
+                Statement stmt=null;
+                ResultSet resEtudiant=null; 
+                try{
+                javaprojet.model.bdd.DBconnexion.connexionDB();
+                stmt= DBconnexion.getConn().createStatement();
+                String EtuSelect="SELECT * FROM `etudiant` WHERE NOM='"+result[0] +"'";
+                System.out.println("DEBUG / USERLOGIN REQUEST  "+EtuSelect);
+                resEtudiant=stmt.executeQuery(EtuSelect);
+                resEtudiant.first();
+                etuDoc.setMatricule(Integer.parseInt(resEtudiant.getString("MATRICULE")));
+                etuDoc.setNom(resEtudiant.getString("NOM"));
+                etuDoc.setPrenom(resEtudiant.getString("PRENOM"));
+                etuDoc.setIdClasse(Integer.parseInt(resEtudiant.getString("idClasse")));
+                } catch (SQLException sqlE) {
+                    System.out.println("Probleme BDD :"+sqlE.getMessage());
+                }
+                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf");
+                
+                
+                
+                
+                
             }
             
         }

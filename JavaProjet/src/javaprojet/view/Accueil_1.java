@@ -133,6 +133,14 @@ public class Accueil_1 extends javax.swing.JFrame {
         jPanelTitreDoc = new javax.swing.JPanel();
         jLabelTitreDoc = new javax.swing.JLabel();
         jPanelContentDoc = new javax.swing.JPanel();
+        jLabelDocPres = new javax.swing.JLabel();
+        jComboBoxDocEtu = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldDocMotif = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldDocDate = new javax.swing.JTextField();
+        jButtonDocEdit = new javax.swing.JButton();
         jPanelSelect = new javax.swing.JPanel();
         jComboBoxClasse = new javax.swing.JComboBox<>();
         jButtonokClasse = new javax.swing.JButton();
@@ -620,55 +628,47 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addGroup(jPanelContentPersLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelContact1Nom)
+                            .addComponent(jLabelContact1Prenom)
+                            .addComponent(jLabelContact1Adr)
+                            .addComponent(jLabelContact1Tel)
+                            .addComponent(jLabelContact1Mail))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldContact1Mail)
+                            .addComponent(jTextFieldContact1Tel)
+                            .addComponent(jTextFieldContact1Adr)
+                            .addComponent(jTextFieldContact1Prenom)
                             .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                                .addComponent(jLabelContact1Prenom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                                .addComponent(jLabelContact1Nom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                                .addComponent(jLabelContact1Mail)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                                .addComponent(jLabelContact1Adr)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Adr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                                .addComponent(jLabelContact1Tel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact1Tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jTextFieldContact1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentPersLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButtonModifyR1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelContact2)
                     .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                            .addComponent(jLabelContact2Mail)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldContact2Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                            .addComponent(jLabelContact2Tel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldContact2Tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                            .addComponent(jLabelContact2Adr)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldContact2Adr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                            .addComponent(jLabelContact2Prenom)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldContact2Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelContentPersLayout.createSequentialGroup()
-                            .addComponent(jLabelContact2Nom)
-                            .addGap(74, 74, 74)
-                            .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelContact2Nom)
+                                .addComponent(jLabelContact2Prenom)
+                                .addComponent(jLabelContact2Adr))
+                            .addGap(21, 21, 21)
+                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                .addComponent(jTextFieldContact2Prenom)
+                                .addComponent(jTextFieldContact2Adr)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelContentPersLayout.createSequentialGroup()
+                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelContact2Tel)
+                                .addComponent(jLabelContact2Mail))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldContact2Mail)
+                                .addComponent(jTextFieldContact2Tel))))
                     .addComponent(jButtonModifyR2))
-                .addGap(186, 186, 186))
+                .addGap(168, 168, 168))
         );
         jPanelContentPersLayout.setVerticalGroup(
             jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,7 +721,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelPersLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitrePers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
             .addGroup(jPanelPersLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentPers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -910,15 +910,90 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jPanelContentDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelDocPres.setText("Vous entrez dans le gestion des convocations d'étudiants. Vous pouvez éditer des convocations");
+
+        jComboBoxDocEtu.setModel(new javax.swing.DefaultComboBoxModel<>());
+        ResultSet resEtudiant=null;
+        Statement stmt1=null;
+        try{
+            javaprojet.model.bdd.DBconnexion.connexionDB();
+            stmt1= DBconnexion.getConn().createStatement();
+            String EtuSelect="SELECT * FROM `etudiant`";
+            System.out.println("DEBUG / USERLOGIN REQUEST"+EtuSelect);
+            resEtudiant=stmt1.executeQuery(EtuSelect);
+            while(resEtudiant.next()){
+                jComboBoxDocEtu.addItem(resEtudiant.getString("NOM")+" "+resEtudiant.getString("PRENOM"));
+            }
+        }
+        catch (SQLException SQLe) {
+            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+        }
+
+        jLabel1.setText("Selectionnez un étudiant :");
+
+        jLabel2.setText("Saissisez un motif :");
+
+        jTextFieldDocMotif.setText("Motif de convocation");
+        jTextFieldDocMotif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDocMotifActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Choix de la date : ");
+
+        jTextFieldDocDate.setText("Choix de la date");
+
+        jButtonDocEdit.setText("Editer Convocation");
+
         javax.swing.GroupLayout jPanelContentDocLayout = new javax.swing.GroupLayout(jPanelContentDoc);
         jPanelContentDoc.setLayout(jPanelContentDocLayout);
         jPanelContentDocLayout.setHorizontalGroup(
             jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 779, Short.MAX_VALUE)
+            .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabelDocPres))
+                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(102, 102, 102)
+                                .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentDocLayout.createSequentialGroup()
+                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButtonDocEdit, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelContentDocLayout.setVerticalGroup(
             jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabelDocPres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addComponent(jButtonDocEdit)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelDocLayout = new javax.swing.GroupLayout(jPanelDoc);
@@ -928,7 +1003,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelDocLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
             .addGroup(jPanelDocLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentDoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1087,6 +1162,10 @@ public class Accueil_1 extends javax.swing.JFrame {
     private void jButtonModifyMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifyMedActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifyMedActionPerformed
+
+    private void jTextFieldDocMotifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDocMotifActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDocMotifActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1960,12 +2039,46 @@ public class Accueil_1 extends javax.swing.JFrame {
     public void setjButtonModifyR2(JButton jButtonModifyR2) {
         this.jButtonModifyR2 = jButtonModifyR2;
     }
+
+    public JButton getjButtonDocEdit() {
+        return jButtonDocEdit;
+    }
+
+    public void setjButtonDocEdit(JButton jButtonDocEdit) {
+        this.jButtonDocEdit = jButtonDocEdit;
+    }
+
+    public JComboBox<String> getjComboBoxDocEtu() {
+        return jComboBoxDocEtu;
+    }
+
+    public void setjComboBoxDocEtu(JComboBox<String> jComboBoxDocEtu) {
+        this.jComboBoxDocEtu = jComboBoxDocEtu;
+    }
+
+    public JTextField getjTextFieldDocDate() {
+        return jTextFieldDocDate;
+    }
+
+    public void setjTextFieldDocDate(JTextField jTextFieldDocDate) {
+        this.jTextFieldDocDate = jTextFieldDocDate;
+    }
+
+    public JTextField getjTextFieldDocMotif() {
+        return jTextFieldDocMotif;
+    }
+
+    public void setjTextFieldDocMotif(JTextField jTextFieldDocMotif) {
+        this.jTextFieldDocMotif = jTextFieldDocMotif;
+    }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAca;
     private javax.swing.JButton jButtonAccueil;
     private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonDocEdit;
     private javax.swing.JButton jButtonModifyCoord;
     private javax.swing.JButton jButtonModifyGeneral;
     private javax.swing.JButton jButtonModifyIdent;
@@ -1975,7 +2088,11 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonchoixETU;
     private javax.swing.JButton jButtonokClasse;
     private javax.swing.JComboBox<String> jComboBoxClasse;
+    private javax.swing.JComboBox<String> jComboBoxDocEtu;
     private javax.swing.JComboBox<String> jComboBoxEtu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;
@@ -1993,6 +2110,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCp;
     private javax.swing.JLabel jLabelDateInsc;
     private javax.swing.JLabel jLabelDateNais;
+    private javax.swing.JLabel jLabelDocPres;
     private javax.swing.JLabel jLabelEtaPre;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMail;
@@ -2051,6 +2169,8 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCp;
     private javax.swing.JTextField jTextFieldDateInsc;
     private javax.swing.JTextField jTextFieldDateNais;
+    private javax.swing.JTextField jTextFieldDocDate;
+    private javax.swing.JTextField jTextFieldDocMotif;
     private javax.swing.JTextField jTextFieldEtaPre;
     private javax.swing.JTextField jTextFieldMail;
     private javax.swing.JTextField jTextFieldMat;
