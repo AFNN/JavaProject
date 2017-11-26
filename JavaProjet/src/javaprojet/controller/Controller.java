@@ -25,6 +25,7 @@ import javaprojet.view.Accueil_1;
 import javaprojet.view.Accueil_2;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -397,6 +398,59 @@ public class Controller {
                 }
 
             }
+            
+             else if (e.getSource() == Aca.getjButtonChoixMatiere()){
+                ResultSet resTable=null;
+                ResultSet resid=null;
+                ResultSet resEtu=null;
+                Statement stmt=null;
+                
+                int idEtu=0, idMat=0;
+
+                String[] NameEtudiant =  Aca.getjComboBoxEtudiantMat().getSelectedItem().toString().split(" ");
+                System.out.println("NomSelection: "+NameEtudiant[0]);
+
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    System.out.println("1");
+
+                    String etudiant ="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'"; 
+                    System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
+                    resEtu=stmt.executeQuery(etudiant);
+                    System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
+                    resEtu.first();
+
+                    
+                    idEtu=Integer.parseInt(resEtu.getString("MATRICULE"));
+                    System.out.println("idEtu="+idEtu);
+
+                    
+                    System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
+                    
+                    String MatriculeN="SELECT MATRICULE FROM `notes` LEFT JOIN `matiere`ON (notes.idMatiere=matiere.idMatiere)WHERE NomMat='"+Aca.getjComboBoxMatiere().getSelectedItem()+"'";
+                    resid=stmt.executeQuery(MatriculeN);
+                    resid.first();
+                    idMat = Integer.parseInt(resid.getString("MATRICULE"));
+                    System.out.println("1");
+                    System.out.println("idEtuMatricule="+idEtu);
+                    System.out.println("Matricule="+idMat);
+                    String Recup_notes_info="SELECT NOM, PRENOM, nomMat, moyenne, NomClasse FROM `etudiant` LEFT JOIN classe ON (etudiant.idClasse=classe.idClasse)  \n" +
+"						 LEFT JOIN notes ON(notes.idMatiere=classe.idMatiere1 OR notes.idMatiere=classe.idMatiere2 OR notes.idMatiere=classe.idMatiere3 OR notes.idMatiere=classe.idMatiere4)\n" +
+"						 LEFT JOIN matiere ON (matiere.idMatiere=notes.idMatiere)\n" +
+"						 WHERE etudiant.MATRICULE="+idEtu+" AND notes.MATRICULE="+idEtu+"";
+
+                    resTable=stmt.executeQuery(Recup_notes_info);
+                       
+                    
+                    //Utilisation de rs2xml.jar pour générer un tableau
+                    Aca.getjTableNotes().setModel(DbUtils.resultSetToTableModel(resTable));
+
+                }
+                catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+                }
+             }
             else if (e.getSource() == Admin.getjButtonModifyGeneral()){
                 
                 etu.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));

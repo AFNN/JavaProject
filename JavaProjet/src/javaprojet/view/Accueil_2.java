@@ -13,7 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -40,9 +42,8 @@ public class Accueil_2 extends javax.swing.JFrame {
         jTabbedPaneAdmin = new javax.swing.JTabbedPane();
         jPanelNotes = new javax.swing.JPanel();
         jPanelContentNotes = new javax.swing.JPanel();
-        jLabelNom = new javax.swing.JLabel();
-        jLabelPrenom = new javax.swing.JLabel();
-        jLabelMat = new javax.swing.JLabel();
+        jScrollPaneTable = new javax.swing.JScrollPane();
+        jTableNotes = new javax.swing.JTable();
         jPanelTitreNotes = new javax.swing.JPanel();
         jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
@@ -63,37 +64,34 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jPanelContentNotes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
-        jLabelNom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelNom.setText("Nom :");
-
-        jLabelPrenom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelPrenom.setText("Prénom :");
-
-        jLabelMat.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelMat.setText("Matricule :");
+        jTableNotes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPaneTable.setViewportView(jTableNotes);
 
         javax.swing.GroupLayout jPanelContentNotesLayout = new javax.swing.GroupLayout(jPanelContentNotes);
         jPanelContentNotes.setLayout(jPanelContentNotesLayout);
         jPanelContentNotesLayout.setHorizontalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPrenom)
-                    .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMat))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPaneTable)
+                .addContainerGap())
         );
         jPanelContentNotesLayout.setVerticalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabelMat)
-                .addGap(51, 51, 51)
-                .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentNotesLayout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addComponent(jScrollPaneTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         jLabelTitreNotes.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -124,7 +122,7 @@ public class Accueil_2 extends javax.swing.JFrame {
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreNotes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentNotes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -342,29 +340,6 @@ public class Accueil_2 extends javax.swing.JFrame {
         this.jLabelLogo = jLabelLogo;
     }
 
-    public JLabel getjLabelMat() {
-        return jLabelMat;
-    }
-
-    public void setjLabelMat(JLabel jLabelMat) {
-        this.jLabelMat = jLabelMat;
-    }
-
-    public JLabel getjLabelNom() {
-        return jLabelNom;
-    }
-
-    public void setjLabelNom(JLabel jLabelNom) {
-        this.jLabelNom = jLabelNom;
-    }
-
-    public JLabel getjLabelPrenom() {
-        return jLabelPrenom;
-    }
-
-    public void setjLabelPrenom(JLabel jLabelPrenom) {
-        this.jLabelPrenom = jLabelPrenom;
-    }
 
     public JLabel getjLabelTitreNotes() {
         return jLabelTitreNotes;
@@ -453,6 +428,22 @@ public class Accueil_2 extends javax.swing.JFrame {
     public void setjComboBoxMatiere(JComboBox<String> jComboBoxMatiere) {
         this.jComboBoxMatiere = jComboBoxMatiere;
     }
+
+    public JScrollPane getjScrollPaneTable() {
+        return jScrollPaneTable;
+    }
+
+    public void setjScrollPaneTable(JScrollPane jScrollPaneTable) {
+        this.jScrollPaneTable = jScrollPaneTable;
+    }
+
+    public JTable getjTableNotes() {
+        return jTableNotes;
+    }
+
+    public void setjTableNotes(JTable jTableNotes) {
+        this.jTableNotes = jTableNotes;
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -464,15 +455,15 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxEtudiantMat;
     private javax.swing.JComboBox<String> jComboBoxMatiere;
     private javax.swing.JLabel jLabelLogo;
-    private javax.swing.JLabel jLabelMat;
-    private javax.swing.JLabel jLabelNom;
-    private javax.swing.JLabel jLabelPrenom;
     private javax.swing.JLabel jLabelTitreNotes;
     private javax.swing.JPanel jPanelContentNotes;
     private javax.swing.JPanel jPanelGest;
     private javax.swing.JPanel jPanelNotes;
     private javax.swing.JPanel jPanelRech;
     private javax.swing.JPanel jPanelTitreNotes;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneTable;
     private javax.swing.JTabbedPane jTabbedPaneAdmin;
+    private javax.swing.JTable jTableNotes;
     // End of variables declaration//GEN-END:variables
 }
