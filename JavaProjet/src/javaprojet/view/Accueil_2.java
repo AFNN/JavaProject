@@ -47,6 +47,10 @@ public class Accueil_2 extends javax.swing.JFrame {
         jPanelTitreNotes = new javax.swing.JPanel();
         jLabelTitreNotes = new javax.swing.JLabel();
         jPanelRech = new javax.swing.JPanel();
+        jComboBoxReClasse = new javax.swing.JComboBox<>();
+        jButtonReChoixClasse = new javax.swing.JButton();
+        jButtonReChoixEtu = new javax.swing.JButton();
+        jComboBoxReEtu = new javax.swing.JComboBox<>();
         jPanelGest = new javax.swing.JPanel();
         jComboBoxMatiere = new javax.swing.JComboBox<>();
         jComboBoxEtudiantMat = new javax.swing.JComboBox<>();
@@ -140,15 +144,66 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jTabbedPaneAdmin.addTab("Modification notes", jPanelNotes);
 
+        jComboBoxReClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
+        ResultSet resClasse=null;
+        Statement stmt2=null;
+
+        try{
+            javaprojet.model.bdd.DBconnexion.connexionDB();
+            stmt2= DBconnexion.getConn().createStatement();
+            String ClassSelect="SELECT * FROM `classe`";
+            System.out.println("DEBUG / USERLOGIN REQUEST"+ClassSelect);
+            resClasse=stmt2.executeQuery(ClassSelect);
+            while(resClasse.next()){
+                jComboBoxReClasse.addItem(resClasse.getString("NomClasse"));
+            }
+        }
+        catch (SQLException SQLe) {
+            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+        }
+
+        jButtonReChoixClasse.setText("Ok");
+
+        jButtonReChoixEtu.setText("Choix");
+        jButtonReChoixEtu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReChoixEtuActionPerformed(evt);
+            }
+        });
+
+        jComboBoxReEtu.setModel(new javax.swing.DefaultComboBoxModel<>());
+
         javax.swing.GroupLayout jPanelRechLayout = new javax.swing.GroupLayout(jPanelRech);
         jPanelRech.setLayout(jPanelRechLayout);
         jPanelRechLayout.setHorizontalGroup(
             jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 805, Short.MAX_VALUE)
+            .addGroup(jPanelRechLayout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addGroup(jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelRechLayout.createSequentialGroup()
+                        .addComponent(jComboBoxReClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE))
+                    .addGroup(jPanelRechLayout.createSequentialGroup()
+                        .addComponent(jComboBoxReEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(22, 22, 22)))
+                .addGroup(jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonReChoixClasse)
+                    .addComponent(jButtonReChoixEtu))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         jPanelRechLayout.setVerticalGroup(
             jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
+            .addGroup(jPanelRechLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxReClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonReChoixClasse))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelRechLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonReChoixEtu)
+                    .addComponent(jComboBoxReEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(537, Short.MAX_VALUE))
         );
 
         jTabbedPaneAdmin.addTab("Recherche par classe", jPanelRech);
@@ -274,6 +329,10 @@ public class Accueil_2 extends javax.swing.JFrame {
     private void jButtonAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAcaActionPerformed
+
+    private void jButtonReChoixEtuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReChoixEtuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonReChoixEtuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -444,6 +503,41 @@ public class Accueil_2 extends javax.swing.JFrame {
     public void setjTableNotes(JTable jTableNotes) {
         this.jTableNotes = jTableNotes;
     }
+
+    public JComboBox<String> getjComboBoxReClasse() {
+        return jComboBoxReClasse;
+    }
+
+    public void setjComboBoxReClasse(JComboBox<String> jComboBoxReClasse) {
+        this.jComboBoxReClasse = jComboBoxReClasse;
+    }
+
+    public JComboBox<String> getjComboBoxReEtu() {
+        return jComboBoxReEtu;
+    }
+
+    public void setjComboBoxReEtu(JComboBox<String> jComboBoxReEtu) {
+        this.jComboBoxReEtu = jComboBoxReEtu;
+    }
+
+    public JButton getjButtonReChoixClasse() {
+        return jButtonReChoixClasse;
+    }
+
+    public void setjButtonReChoixClasse(JButton jButtonReChoixClasse) {
+        this.jButtonReChoixClasse = jButtonReChoixClasse;
+    }
+
+    public JButton getjButtonReChoixEtu() {
+        return jButtonReChoixEtu;
+    }
+
+    public void setjButtonReChoixEtu(JButton jButtonReChoixEtu) {
+        this.jButtonReChoixEtu = jButtonReChoixEtu;
+    }
+    
+    
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -452,8 +546,12 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonChoixMatiere;
     private javax.swing.JButton jButtonOkMatiere;
+    private javax.swing.JButton jButtonReChoixClasse;
+    private javax.swing.JButton jButtonReChoixEtu;
     private javax.swing.JComboBox<String> jComboBoxEtudiantMat;
     private javax.swing.JComboBox<String> jComboBoxMatiere;
+    private javax.swing.JComboBox<String> jComboBoxReClasse;
+    private javax.swing.JComboBox<String> jComboBoxReEtu;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelTitreNotes;
     private javax.swing.JPanel jPanelContentNotes;
@@ -461,7 +559,6 @@ public class Accueil_2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelNotes;
     private javax.swing.JPanel jPanelRech;
     private javax.swing.JPanel jPanelTitreNotes;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPaneTable;
     private javax.swing.JTabbedPane jTabbedPaneAdmin;
     private javax.swing.JTable jTableNotes;

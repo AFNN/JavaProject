@@ -38,7 +38,14 @@ public class Accueil_1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonAccueil = new javax.swing.JButton();
         jTabbedPaneAca = new javax.swing.JTabbedPane();
+        jPanelSelect = new javax.swing.JPanel();
+        jComboBoxClasse = new javax.swing.JComboBox<>();
+        jButtonokClasse = new javax.swing.JButton();
+        jComboBoxEtu = new javax.swing.JComboBox<>();
+        jButtonchoixETU = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jPanelGeneral = new javax.swing.JPanel();
         jPanelContentGen = new javax.swing.JPanel();
         jLabelNom = new javax.swing.JLabel();
@@ -144,18 +151,90 @@ public class Accueil_1 extends javax.swing.JFrame {
         jButtonDocImpr = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jPanelSelect = new javax.swing.JPanel();
-        jComboBoxClasse = new javax.swing.JComboBox<>();
-        jButtonokClasse = new javax.swing.JButton();
-        jComboBoxEtu = new javax.swing.JComboBox<>();
-        jButtonchoixETU = new javax.swing.JButton();
-        jButtonAccueil = new javax.swing.JButton();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
         jLabelLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
+
+        jButtonAccueil.setText("Accueil");
+        jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAccueilActionPerformed(evt);
+            }
+        });
+
+        jComboBoxClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
+        ResultSet res=null;
+        Statement stmt=null;
+        int nbp = 0;
+        try{
+            javaprojet.model.bdd.DBconnexion.connexionDB();
+            stmt= DBconnexion.getConn().createStatement();
+            String ClassSelect="SELECT * FROM `classe`";
+            System.out.println("DEBUG / USERLOGIN REQUEST"+ClassSelect);
+            res=stmt.executeQuery(ClassSelect);
+            while(res.next()){
+                jComboBoxClasse.addItem(res.getString("NomClasse"));
+            }
+        }
+        catch (SQLException SQLe) {
+            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+        }
+
+        jButtonokClasse.setText("OK");
+        jButtonokClasse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonokClasseActionPerformed(evt);
+            }
+        });
+
+        jButtonchoixETU.setText("CHOIX");
+        jButtonchoixETU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonchoixETUActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Selectionnez un étudiant");
+
+        javax.swing.GroupLayout jPanelSelectLayout = new javax.swing.GroupLayout(jPanelSelect);
+        jPanelSelect.setLayout(jPanelSelectLayout);
+        jPanelSelectLayout.setHorizontalGroup(
+            jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSelectLayout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelSelectLayout.createSequentialGroup()
+                        .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBoxEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonokClasse)
+                            .addComponent(jButtonchoixETU, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(340, Short.MAX_VALUE))
+        );
+        jPanelSelectLayout.setVerticalGroup(
+            jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSelectLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonokClasse))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonchoixETU))
+                .addContainerGap(486, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneAca.addTab("Selection Etudiant", jPanelSelect);
 
         jPanelGeneral.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1044,77 +1123,6 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
 
         jTabbedPaneAca.addTab("Documents", jPanelDoc);
-
-        jComboBoxClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
-        ResultSet res=null;
-        Statement stmt=null;
-        int nbp = 0;
-        try{
-            javaprojet.model.bdd.DBconnexion.connexionDB();
-            stmt= DBconnexion.getConn().createStatement();
-            String ClassSelect="SELECT * FROM `classe`";
-            System.out.println("DEBUG / USERLOGIN REQUEST"+ClassSelect);
-            res=stmt.executeQuery(ClassSelect);
-            while(res.next()){
-                jComboBoxClasse.addItem(res.getString("NomClasse"));
-            }
-        }
-        catch (SQLException SQLe) {
-            System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
-
-        }
-
-        jButtonokClasse.setText("OK");
-        jButtonokClasse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonokClasseActionPerformed(evt);
-            }
-        });
-
-        jButtonchoixETU.setText("CHOIX");
-        jButtonchoixETU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonchoixETUActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelSelectLayout = new javax.swing.GroupLayout(jPanelSelect);
-        jPanelSelect.setLayout(jPanelSelectLayout);
-        jPanelSelectLayout.setHorizontalGroup(
-            jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSelectLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBoxEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBoxClasse, 0, 105, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonokClasse)
-                    .addComponent(jButtonchoixETU, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(549, Short.MAX_VALUE))
-        );
-        jPanelSelectLayout.setVerticalGroup(
-            jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSelectLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonokClasse))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonchoixETU))
-                .addContainerGap(557, Short.MAX_VALUE))
-        );
-
-        jTabbedPaneAca.addTab("Selection Etudiant", jPanelSelect);
-
-        jButtonAccueil.setText("Accueil");
-        jButtonAccueil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAccueilActionPerformed(evt);
-            }
-        });
 
         jButtonAdmin.setText("Partie Administrative");
 
@@ -2128,6 +2136,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;

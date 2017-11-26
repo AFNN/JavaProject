@@ -85,6 +85,8 @@ public class Controller {
         Aca.getjButtonAca().addActionListener(blistener);
         Aca.getjButtonChoixMatiere().addActionListener(blistener);
         Aca.getjButtonOkMatiere().addActionListener(blistener);
+        Aca.getjButtonReChoixClasse().addActionListener(blistener);
+        Aca.getjButtonReChoixEtu().addActionListener(blistener);
      
         
         //Initialisation de la page d'accueil en visible
@@ -576,6 +578,63 @@ public class Controller {
                 }   
             }
             
+            else if (e.getSource() == Aca.getjButtonReChoixClasse()){
+                System.out.println(Aca.getjComboBoxReClasse().getSelectedItem());
+        
+                ResultSet resEtu=null;
+                ResultSet resid=null;
+                Statement stmt=null;
+                int id= 0;
+                try{
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    //PERMET DE RECUPERER L'ID DE LA CLASSSE POUR PERMETTRE DE REMPLIR LA COMBOBOX ETUDIANT
+                    String idClasse="SELECT idCLasse FROM `classe` WHERE NomClasse='"+Aca.getjComboBoxReClasse().getSelectedItem()+"'";
+                    resid=stmt.executeQuery(idClasse);
+                    resid.first();
+                    id=Integer.parseInt(resid.getString("idClasse"));
+                    System.out.println("idClasse="+id);
+                    String EtuSelect="SELECT * FROM `etudiant` WHERE idClasse="+id+"";
+                    System.out.println("DEBUG / USERLOGIN REQUEST"+EtuSelect);
+                    resEtu=stmt.executeQuery(EtuSelect);
+                    Aca.getjComboBoxReEtu().setModel(new javax.swing.DefaultComboBoxModel<>());
+                    
+                    while(resEtu.next()){
+                        Aca.getjComboBoxReEtu().addItem(resEtu.getString("NOM")+" "+resEtu.getString("PRENOM"));
+                    }
+                    stmt.close();
+                }
+                catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+
+                }
+            }
+             
+            else if (e.getSource() == Aca.getjButtonReChoixEtu()){
+                ResultSet resEtu=null;
+                ResultSet resid=null;
+                Statement stmt=null;
+                int idEtudiant=0;
+                String[] NameEtudiant= Aca.getjComboBoxReEtu().getSelectedItem().toString().split(" ");
+                System.out.println("idEtudiantSelection: "+NameEtudiant[0]);
+                
+                try {
+                    javaprojet.model.bdd.DBconnexion.connexionDB();
+                    stmt= DBconnexion.getConn().createStatement();
+                    //PERMET DE RECUPERER LE MATRICULE DE L'ETUDIANT
+                    String Matricule="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'";
+                    resid=stmt.executeQuery(Matricule);
+                    resid.first();
+                    idEtudiant=Integer.parseInt(resid.getString("MATRICULE"));
+                   
+                } catch (SQLException SQLe) {
+                    System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
+                }
+                    
+                
+                
+            }
+                
         }
     }
 }
