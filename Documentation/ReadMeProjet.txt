@@ -2,6 +2,7 @@ Pour utiliser le programme :
 BDD:
 Il faut créer une base sous phpMyAdmin avec le nom javaprojet.
 Importer le script javaprojet.sql qui se trouve dans le dossier BDD.
+Lancer le fichier Run.java
 
 Netbeans : 
 Il faut ajouter la library mysql lié a netbeans.
