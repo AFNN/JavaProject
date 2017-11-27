@@ -53,12 +53,6 @@ public class GestionCoordonnees {
             System.out.println("Echec de l'insertion dans la base : "+SQLe.getMessage());
             JOptionPane jop1 = new JOptionPane();
                  jop1.showMessageDialog(null, SQLe.getMessage(), "Erreur BDD", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
-        
-    }
-    
-   
-    
+        }    
+    }  
 }
