@@ -5,13 +5,11 @@
  */
 package javaprojet.view;
 
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JRootPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
@@ -84,10 +82,13 @@ public class Accueil extends javax.swing.JFrame {
 
         jPanelMainContent.setLayout(new java.awt.CardLayout());
 
+        jPanelContentConnexion.setBackground(new java.awt.Color(204, 204, 204));
         jPanelContentConnexion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelLogin.setText("Login :");
 
+        jLabelMdp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelMdp.setText("Password :");
 
         jButtonConnect.setText("Se connecter");
@@ -107,7 +108,7 @@ public class Accueil extends javax.swing.JFrame {
                     .addGroup(jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextFieldLogin)
                         .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         jPanelContentConnexionLayout.setVerticalGroup(
             jPanelContentConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,13 +123,14 @@ public class Accueil extends javax.swing.JFrame {
                     .addComponent(jPasswordFieldMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonConnect)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         jPanelMainContent.add(jPanelContentConnexion, "cardLogin");
 
         jPanelContentConnected.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelConnected.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelConnected.setText("Vous êtes connecté !");
 
         jButtonDiscon.setText("Se déconnecter");
@@ -143,11 +145,11 @@ public class Accueil extends javax.swing.JFrame {
         jPanelContentConnectedLayout.setHorizontalGroup(
             jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentConnectedLayout.createSequentialGroup()
-                .addContainerGap(196, Short.MAX_VALUE)
+                .addContainerGap(205, Short.MAX_VALUE)
                 .addGroup(jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonDiscon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelConnected, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         jPanelContentConnectedLayout.setVerticalGroup(
             jPanelContentConnectedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,12 +167,12 @@ public class Accueil extends javax.swing.JFrame {
         jPanelConnexion.setLayout(jPanelConnexionLayout);
         jPanelConnexionLayout.setHorizontalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConnexionLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addGroup(jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConnexionLayout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addGroup(jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanelMainContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addGap(107, 107, 107))
         );
         jPanelConnexionLayout.setVerticalGroup(
             jPanelConnexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +181,7 @@ public class Accueil extends javax.swing.JFrame {
                 .addComponent(jPanelTitreConnexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107)
                 .addComponent(jPanelMainContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         jTabbedPaneAccueil.addTab("Connexion", jPanelConnexion);
@@ -201,7 +203,7 @@ public class Accueil extends javax.swing.JFrame {
         });
 
         jLabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-ex-7.png"))); // NOI18N
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-roosevelt.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,39 +252,6 @@ public class Accueil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDisconActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Accueil().setVisible(true);
-        });
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAca;
@@ -307,154 +276,271 @@ public class Accueil extends javax.swing.JFrame {
    //Boîte du message d'erreur
     private javax.swing.JOptionPane jop;
     
+    
+    //Accesseurs
+    /**
+     * 
+     * @return jButtonAca
+     */
     public JButton getjButtonAca() {
         return jButtonAca;
     }
-
+    /**
+     * 
+     * @param jButtonAca 
+     */
     public void setjButtonAca(JButton jButtonAca) {
         this.jButtonAca = jButtonAca;
     }
-
+    /**
+     * 
+     * @return jButtonAccueil
+     */
     public JButton getjButtonAccueil() {
         return jButtonAccueil;
     }
-
+    /**
+     * 
+     * @param jButtonAccueil 
+     */
     public void setjButtonAccueil(JButton jButtonAccueil) {
         this.jButtonAccueil = jButtonAccueil;
     }
-
+    /**
+     * 
+     * @return jButtonAdmin
+     */
     public JButton getjButtonAdmin() {
         return jButtonAdmin;
     }
-
+    /**
+     * 
+     * @param jButtonAdmin 
+     */
     public void setjButtonAdmin(JButton jButtonAdmin) {
         this.jButtonAdmin = jButtonAdmin;
     }
-
+    /**
+     * 
+     * @return jButtonConnect
+     */
     public JButton getjButtonConnect() {
         return jButtonConnect;
     }
-
+    /**
+     * 
+     * @param jButtonConnect 
+     */
     public void setjButtonConnect(JButton jButtonConnect) {
         this.jButtonConnect = jButtonConnect;
     }
-
+    /**
+     * 
+     * @return jLabelConnexion
+     */
     public JLabel getjLabelConnexion() {
         return jLabelConnexion;
     }
-
+    /**
+     * 
+     * @param jLabelConnexion 
+     */
     public void setjLabelConnexion(JLabel jLabelConnexion) {
         this.jLabelConnexion = jLabelConnexion;
     }
-
+    /**
+     * 
+     * @return jLabelLogin
+     */
     public JLabel getjLabelLogin() {
         return jLabelLogin;
     }
-
+    /**
+     * 
+     * @param jLabelLogin 
+     */
     public void setjLabelLogin(JLabel jLabelLogin) {
         this.jLabelLogin = jLabelLogin;
     }
-
+    /**
+     * 
+     * @return jLabelLogo
+     */
     public JLabel getjLabelLogo() {
         return jLabelLogo;
     }
-
+    /**
+     * 
+     * @param jLabelLogo 
+     */
     public void setjLabelLogo(JLabel jLabelLogo) {
         this.jLabelLogo = jLabelLogo;
     }
-
+    /**
+     * 
+     * @return jLabelMdp
+     */
     public JLabel getjLabelMdp() {
         return jLabelMdp;
     }
-
+    /**
+     * 
+     * @param jLabelMdp 
+     */
     public void setjLabelMdp(JLabel jLabelMdp) {
         this.jLabelMdp = jLabelMdp;
     }
-
+    /**
+     * 
+     * @return jPanelConnexion
+     */
     public JPanel getjPanelConnexion() {
         return jPanelConnexion;
     }
-
+    /**
+     * 
+     * @param jPanelConnexion 
+     */
     public void setjPanelConnexion(JPanel jPanelConnexion) {
         this.jPanelConnexion = jPanelConnexion;
     }
-
+    /**
+     * 
+     * @return jPanelContentConnexion
+     */
     public JPanel getjPanelContentConnexion() {
         return jPanelContentConnexion;
     }
-
+    /**
+     * 
+     * @param jPanelContentConnexion 
+     */
     public void setjPanelContentConnexion(JPanel jPanelContentConnexion) {
         this.jPanelContentConnexion = jPanelContentConnexion;
     }
-
+    /**
+     * 
+     * @return jPanelTitreConnexion
+     */
     public JPanel getjPanelTitreConnexion() {
         return jPanelTitreConnexion;
     }
-
+    /**
+     * 
+     * @param jPanelTitreConnexion 
+     */
     public void setjPanelTitreConnexion(JPanel jPanelTitreConnexion) {
         this.jPanelTitreConnexion = jPanelTitreConnexion;
     }
-
+    /**
+     * 
+     * @return jPasswordFieldMdp
+     */
     public JPasswordField getjPasswordFieldMdp() {
         return jPasswordFieldMdp;
     }
-
+    /**
+     * 
+     * @param jPasswordFieldMdp 
+     */
     public void setjPasswordFieldMdp(JPasswordField jPasswordFieldMdp) {
         this.jPasswordFieldMdp = jPasswordFieldMdp;
     }
-
+    /**
+     * 
+     * @return jTabbedPaneAccueil
+     */
     public JTabbedPane getjTabbedPaneAccueil() {
         return jTabbedPaneAccueil;
     }
-
+    /**
+     * 
+     * @param jTabbedPaneAccueil 
+     */
     public void setjTabbedPaneAccueil(JTabbedPane jTabbedPaneAccueil) {
         this.jTabbedPaneAccueil = jTabbedPaneAccueil;
     }
-
+    /**
+     * 
+     * @return jTextFieldLogin
+     */
     public JTextField getjTextFieldLogin() {
         return jTextFieldLogin;
     }
-
+    /**
+     * 
+     * @param jTextFieldLogin 
+     */
     public void setjTextFieldLogin(JTextField jTextFieldLogin) {
         this.jTextFieldLogin = jTextFieldLogin;
     }
-
+    /**
+     * 
+     * @return jButtonDiscon
+     */
     public JButton getjButtonDiscon() {
         return jButtonDiscon;
     }
-
+    /**
+     * 
+     * @param jButtonDiscon 
+     */
     public void setjButtonDiscon(JButton jButtonDiscon) {
         this.jButtonDiscon = jButtonDiscon;
     }
-
+    /**
+     * 
+     * @return jLabelConnected
+     */
     public JLabel getjLabelConnected() {
         return jLabelConnected;
     }
-
+    /**
+     * 
+     * @param jLabelConnected 
+     */
     public void setjLabelConnected(JLabel jLabelConnected) {
         this.jLabelConnected = jLabelConnected;
     }
-
+    /**
+     * 
+     * @return jPanelContentConnected
+     */
     public JPanel getjPanelContentConnected() {
         return jPanelContentConnected;
     }
-
+    /**
+     * 
+     * @param jPanelContentConnected 
+     */
     public void setjPanelContentConnected(JPanel jPanelContentConnected) {
         this.jPanelContentConnected = jPanelContentConnected;
     }
-
+    /**
+     * 
+     * @return jPanelMainContent
+     */
     public JPanel getjPanelMainContent() {
         return jPanelMainContent;
     }
-
+    /**
+     * 
+     * @param jPanelMainContent 
+     */
     public void setjPanelMainContent(JPanel jPanelMainContent) {
         this.jPanelMainContent = jPanelMainContent;
     }
-
+    /**
+     * 
+     * @return jop
+     */
     public JOptionPane getJop() {
         return jop;
     }
-
+    /**
+     * 
+     * @param jop 
+     */
     public void setJop(JOptionPane jop) {
         this.jop = jop;
     }

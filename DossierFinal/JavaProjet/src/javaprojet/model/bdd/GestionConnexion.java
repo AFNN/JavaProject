@@ -16,7 +16,13 @@ import javax.swing.JOptionPane;
  */
 public class GestionConnexion {
     
-    
+    /**
+     * Cette méthode permet de vérifier que l'utilisateur possède les droits pour se connecter
+     * @param login
+     * @param mdp
+     * @return connection
+     * @throws SQLException 
+     */
     public static boolean  userConnection(String login,String mdp) throws SQLException{
         ResultSet resmdp=null,res=null;
         Statement stmt=null;
@@ -71,7 +77,12 @@ public class GestionConnexion {
     }
     
 
-    
+    /**
+     * Cette méthode permet de vériier si l'utilisateur est admin
+     * @param login
+     * @return admin
+     * @throws SQLException 
+     */
     
     public static boolean CheckAdmin(String login) throws SQLException{
            boolean admin=false;
@@ -95,6 +106,5 @@ public class GestionConnexion {
         }
         return admin;
     }
-   
-    
+     
 }

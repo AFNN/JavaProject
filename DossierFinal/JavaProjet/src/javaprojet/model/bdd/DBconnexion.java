@@ -91,13 +91,5 @@ public static Connection connexionDB() throws SQLException{
      */
     public static void setRs(ResultSet rs) {
         DBconnexion.rs = rs;
-    }
-    
-
-    public static void main(String[] args) throws SQLException {
-        connexionDB();
-       
-    }
-    
-    
+    }    
 }

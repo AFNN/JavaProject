@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Arnaud Fouillard <Arnaud Fouillard@EFREI>
+ * @author Arnaud Fouillard 
  */
 public class Run {
     public static void main(String[] args) {

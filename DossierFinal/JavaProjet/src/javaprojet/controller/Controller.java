@@ -1,5 +1,4 @@
 /*
-
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -37,9 +36,11 @@ import net.proteanit.sql.DbUtils;
 
 /**
  *
- * @author Arnaud Fouillard <Arnaud Fouillard@EFREI>
+ * @author Arnaud Fouillard 
  */
 public class Controller {
+    
+    // Création des instances
     BoutonListener blistener = new BoutonListener();
     Accueil Accueil = new Accueil();
     Accueil_1 Admin = new Accueil_1();
@@ -52,13 +53,11 @@ public class Controller {
     Responsable r2= new Responsable(0, "nom", "prenom", "adresse", "", "email", 0);
     Sante s = new Sante(0, "medecinTraitant", "", "vaccinations", "allergies", "remarquesMedicales");
     Notes n = new Notes(0,0,0);
-    
-    
+
+    //Variables pour la connexion
     boolean connect = false;
     boolean admin = false;
 
-  
-   
     public Controller(){
         
         // Création d'évènement sur les bouttons de la page d'accueil
@@ -94,12 +93,11 @@ public class Controller {
         Aca.getjButtonNotesModifier().addActionListener(blistener);
         Aca.getjButtonChoixLigne().addActionListener(blistener);
         Aca.getjButtonRefresh().addActionListener(blistener);
-     
-        
+            
         //Initialisation de la page d'accueil en visible
         Accueil.setVisible(true);
         
-        //Demande de confirmation pour quitter sur les 3 pages
+        //Demande de confirmation pour quitter sur la vue Accueil
         Accueil.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Accueil.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -112,6 +110,7 @@ public class Controller {
                 }
             }
         });
+        //Demande de confirmation pour quitter sur la page Accueil_1
         Admin.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Admin.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -124,7 +123,7 @@ public class Controller {
                 }
             }
         });
-        
+        //Demande de confirmation pour quitter sur la page Accueil_2
         Aca.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Aca.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -136,17 +135,15 @@ public class Controller {
                     System.exit(0);
                 }
             }
-        });
-
-	//this.Connection=Connection;
-	//Connection.getjButtonConnect().addActionListener(new BoutonListenerConnect());
-		
+        });		
     }
-    
+    /**
+     * Evènements sur tous les boutons
+     */
     public class BoutonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) { 
-             
+            
             //Si l'utilisateur clique sur un bouton "Accueil" (peut importe la page)
             if (e.getSource() == Accueil.getjButtonAccueil() || e.getSource() == Admin.getjButtonAccueil() || e.getSource() == Aca.getjButtonAccueil()){
                 Accueil.setVisible(true);
@@ -161,7 +158,8 @@ public class Controller {
                     Admin.setVisible(true);
                     Aca.setVisible(false);
                 }
-                else {
+                // Message d'erreur si l'utilisateur ne s'est pas connecté
+                else { 
                     JOptionPane.showMessageDialog(null, "Vous devez vous connecter", "Accès refusé", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -173,6 +171,7 @@ public class Controller {
                     Admin.setVisible(false);
                     Aca.setVisible(true);
                 }
+                // Message d'erreur si l'utilisateur ne s'est pas connecté
                 else {
                     JOptionPane.showMessageDialog(null, "Vous devez vous connecter", "Accès refusé", JOptionPane.ERROR_MESSAGE);
                 }     
@@ -182,17 +181,18 @@ public class Controller {
             else if (e.getSource() == Accueil.getjButtonConnect()){
                 
                 ResultSet rs=null;
+                //Connexion à la bdd
                 try {
                     connect=javaprojet.model.bdd.GestionConnexion.userConnection(Accueil.getjTextFieldLogin().getText(),Accueil.getjPasswordFieldMdp().getText());
                     System.out.println("connect = "+connect);
                     admin=javaprojet.model.bdd.GestionConnexion.CheckAdmin(Accueil.getjTextFieldLogin().getText());
                     System.out.println("admin "+admin);
-                    
+                    //Changement de cardLyout si la connexion réussi
                     if (connect == true){
                         CardLayout cl = (CardLayout)(Accueil.getjPanelMainContent().getLayout());
                         cl.next(Accueil.getjPanelMainContent());
                     }
-                    
+                    //Message d'erreur
                     else {
                         JOptionPane.showMessageDialog(null, "Connection failed", "Erreur", JOptionPane.ERROR_MESSAGE);
 			System.err.println("Utilisateur non trouve");
@@ -202,13 +202,7 @@ public class Controller {
          
                 } catch (SQLException ex) {
                     Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                String mdp = new String(Accueil.getjPasswordFieldMdp().getPassword());
-                System.out.println(mdp);
-                String login = Accueil.getjTextFieldLogin().getText();
-                System.out.println(login);
-                
+                }            
             }
             
             //Bouton retour vers panel "connexion"
@@ -241,7 +235,7 @@ public class Controller {
                     System.out.println("DEBUG / USERLOGIN REQUEST"+EtuSelect);
                     resEtu=stmt.executeQuery(EtuSelect);
                     Admin.getjComboBoxEtu().setModel(new javax.swing.DefaultComboBoxModel<>());
-                    
+                    //Affichage des résultats de la requête dans la Combobox
                     while(resEtu.next()){
                         Admin.getjComboBoxEtu().addItem(resEtu.getString("NOM")+" "+resEtu.getString("PRENOM"));
                     }
@@ -283,7 +277,7 @@ public class Controller {
                 etu.setPrenom(resEtu.getString("PRENOM"));
                 etu.setIdClasse(Integer.parseInt(resEtu.getString("idClasse")));
                 System.out.println("test requete"+resEtu.getString("PRENOM"));
-                //Associe les valeurs de cette etudiant dans l'objet identité
+                //Associe les valeurs de cet etudiant dans l'objet identité
                 i.setMatricule(idEtudiant);
                 i.setDateInscription(resEtu.getString("DateInscription"));
                 i.setDateNaissance(resEtu.getString("DateNaissance"));
@@ -292,7 +286,7 @@ public class Controller {
                 i.setSexe(resEtu.getString("Sexe"));
                 i.setVilleNaissance(resEtu.getString("VilleNaissance"));
                
-                //
+                //Associe les valeurs de cet etudiant dans l'objet coordonnées
                 c.setMatricule(idEtudiant);
                 c.setAdresse(resEtu.getString("Adresse"));
                 c.setCodePostal(Integer.parseInt(resEtu.getString("CodePostal")));
@@ -300,14 +294,16 @@ public class Controller {
                 c.setEmail(resEtu.getString("Email"));
                 c.setTeldom(resEtu.getString("Teldom"));
                 c.setTelmobile(resEtu.getString("Telmobile"));
-                //
+                
+                //Associe les valeurs de cet etudiant dans l'objet sante
                 s.setMatricule(idEtudiant);
                 s.setMedecinTraitant(resEtu.getString("MédecinTraitant"));
                 s.setTelMedecin(resEtu.getString("TelMedecin"));
                 s.setVaccinations(resEtu.getString("Vaccinations"));
                 s.setAllergies(resEtu.getString("Allergies"));
                 s.setRemarquesMedicales(resEtu.getString("RemarquesMedicales"));
-                //
+                
+                //Associe les valeurs de cet etudiant dans l'objet responsable
                 r1.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
                 r1.setNom(resEtu.getString("NomRes"));
                 r1.setPrenom(resEtu.getString("PrenomRes"));
@@ -316,15 +312,13 @@ public class Controller {
                 r1.setEmail(resEtu.getString("EmailRes"));
                 //Dans le cas d'un deuxieme responsable
                 if(resEtu.next()==true)
-                {
-                    
+                {                  
                     r2.setIdResponsable(Integer.parseInt(resEtu.getString("IdResponsable")));
                     r2.setNom(resEtu.getString("NomRes"));
                     r2.setPrenom(resEtu.getString("PrenomRes"));
                     r2.setAdresse(resEtu.getString("AdresseRes"));
                     r2.setTelephone(resEtu.getString("TelephoneRes"));
-                    r2.setEmail(resEtu.getString("Email"));
-                
+                    r2.setEmail(resEtu.getString("Email"));                
                 }
                 //si pas de responsable2 , mettre a vide les champs du reponsable deux
                 else{
@@ -333,13 +327,10 @@ public class Controller {
                     r2.setPrenom("  ");
                     r2.setAdresse("  ");
                     r2.setTelephone("  ");
-                    r2.setEmail("  ");
-                    
-                    
+                    r2.setEmail("  ");                   
                 }
                 
-                
-                
+                // Intégration des résultats dans les jTextField       
                 Admin.getjTextFieldMat().setText(Integer.toString(etu.getMatricule()));
                 Admin.getjTextFieldNom().setText(etu.getNom());
                 Admin.getjTextFieldPrenom1().setText(etu.getPrenom());
@@ -380,21 +371,13 @@ public class Controller {
                 Admin.getjTextFieldVacc().setText(s.getVaccinations());
                 Admin.getjTextFieldAll().setText(s.getAllergies());
                 Admin.getjTextFieldTelMed().setText(s.getTelMedecin());
-               
-                /*
-             
-               System.out.println(etu.getMatricule());
-               System.out.println(etu.getNom());
-               System.out.println(etu.getPrenom());
-               System.out.println(etu.getIdClasse());*/
-               System.out.println(r2.getAdresse());
-               System.out.println(etu.getPrenom());
                 }
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
         
             }
+            //Bouton pour choisir la matiere
             else if (e.getSource() == Aca.getjButtonOkMatiere()){
                 System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
                 ResultSet resEtu=null;
@@ -415,7 +398,7 @@ public class Controller {
 "                                                WHERE matiere.idMatiere="+idMatiere+"";
                     resEtu=stmt.executeQuery(Recup_etudiant_info);
                     Aca.getjComboBoxEtudiantMat().setModel(new javax.swing.DefaultComboBoxModel<>());
-                    
+                    //Affiche les résultats de la requête dans la Combobox
                     while(resEtu.next()){
                         Aca.getjComboBoxEtudiantMat().addItem(resEtu.getString("NOM")+" "+resEtu.getString("PRENOM"));
                     }
@@ -424,9 +407,8 @@ public class Controller {
                 } catch (SQLException sqlE) {
                     System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
                 }
-
             }
-            
+            //Bouton pour valider le choix
              else if (e.getSource() == Aca.getjButtonChoixMatiere()){
                 ResultSet resTable=null;
                 ResultSet resid=null;
@@ -434,7 +416,7 @@ public class Controller {
                 Statement stmt=null;
                 
                 int idEtu=0, idMat=0;
-
+                //Récupération du nom de l'atudiant selectionné
                 String[] NameEtudiant =  Aca.getjComboBoxEtudiantMat().getSelectedItem().toString().split(" ");
                 System.out.println("NomSelection: "+NameEtudiant[0]);
 
@@ -442,20 +424,14 @@ public class Controller {
                     javaprojet.model.bdd.DBconnexion.connexionDB();
                     stmt= DBconnexion.getConn().createStatement();
                     System.out.println("1");
-
+                    //Requête permettant de récupérer le matricule de l'étudiant selectionné
                     String etudiant ="SELECT MATRICULE FROM `etudiant` WHERE NOM='"+NameEtudiant[0]+"'"; 
                     System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
                     resEtu=stmt.executeQuery(etudiant);
                     System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
                     resEtu.first();
-
-                    
                     idEtu=Integer.parseInt(resEtu.getString("MATRICULE"));
-                    System.out.println("idEtu="+idEtu);
-
-                    
-                    System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
-                    
+                    //Requête permettant de récupérer le matricule de la matière selectionnée 
                     String MatriculeN="SELECT MATRICULE FROM `notes` LEFT JOIN `matiere`ON (notes.idMatiere=matiere.idMatiere)WHERE NomMat='"+Aca.getjComboBoxMatiere().getSelectedItem()+"'";
                     resid=stmt.executeQuery(MatriculeN);
                     resid.first();
@@ -469,8 +445,7 @@ public class Controller {
 "						 WHERE etudiant.MATRICULE="+idEtu+" AND notes.MATRICULE="+idEtu+"";
 
                     resTable=stmt.executeQuery(Recup_notes_info);
-                       
-                    
+  
                     //Utilisation de rs2xml.jar pour générer un tableau
                     Aca.getjTableNotes().setModel(DbUtils.resultSetToTableModel(resTable));
 
@@ -479,9 +454,9 @@ public class Controller {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
              }
-             
+             //Bouton pour choisir la ligne du tableau des notes à modifier
              else if (e.getSource() == Aca.getjButtonChoixLigne()){
-                
+                //Selection des champs de la ligne à modifier
                 DefaultTableModel model = (DefaultTableModel)Aca.getjTableNotes().getModel();
 		int row = Aca.getjTableNotes().getSelectedRow();               
 		int modelRow = Aca.getjTableNotes().convertRowIndexToModel( row );               
@@ -490,12 +465,12 @@ public class Controller {
                 String nom =  Aca.getjTableNotes().getValueAt(row, 0).toString();
                 
                 System.out.println("Note : " + note);
-                
+                //Affichage des champs dans les JTextField
                 Aca.getjTextFieldModifyNote().setText(note);
                 Aca.getjTextFieldModifyMat().setText(matiere);
                 Aca.getjTextFieldModifyNom().setText(nom);
             }
-             
+             //Bouton pour modifier les notes
              else if (e.getSource() == Aca.getjButtonNotesModifier()){
                 System.out.println("45");
                 
@@ -505,47 +480,40 @@ public class Controller {
                 ResultSet resMat=null;
                 ResultSet resNote=null;
 
-
                 Statement stmt=null;
-                try{
-                    
-                    
+                try{                  
                     javaprojet.model.bdd.DBconnexion.connexionDB();
                     stmt= DBconnexion.getConn().createStatement();
-                    
+                    //Récupération du matricule de l'étudiant à modifier
                     String nomModifier = Aca.getjTextFieldModifyNom().getText();
                     String requeteMat = "SELECT MATRICULE FROM etudiant WHERE NOM='"+nomModifier+"'";
                     resMatEtu=stmt.executeQuery(requeteMat);
                     resMatEtu.first();
                     mat=Integer.parseInt(resMatEtu.getString("MATRICULE"));
                     System.out.println("MATRICULE : " +mat);
-                    
+                    //Récupération de l'id de la matière à modifier
                     String matiereModifier = Aca.getjTextFieldModifyMat().getText();
                     String requeteIdMat = "SELECT idMatiere FROM matiere WHERE nomMat='"+matiereModifier+"'";
                     resMat=stmt.executeQuery(requeteIdMat);
                     resMat.first();
                     idMat=Integer.parseInt(resMat.getString("idMatiere"));
                     System.out.println("idMatiere : " +idMat);
-                    
+                    //Récupération dans le JTextField de la note à entrer
                     String noteModifier = Aca.getjTextFieldModifyNote().getText();
                     System.out.println("notetexte : "+Aca.getjTextFieldModifyNote().getText());
-
+                    //Affectation des paramètres d'une note
                     n.setIdMatière(idMat);
                     n.setMatricule(mat);
                     n.setMoyenne(Double.parseDouble(Aca.getjTextFieldModifyNote().getText()));
-                    
-                    GestionNotes.updateNotes(n);
-                    
+                    //Utilisation de la mméthode updateNotes
+                    GestionNotes.updateNotes(n);                   
                     stmt.close();
-                    /*
-
-                 note.setIdMatière(0);*/
                 }
                 catch (SQLException sqlE) {
                     System.out.println("Probleme lors de la recherche dans la BDD"+sqlE.getMessage());
                 } 
              }
-             
+             //Bouton pour rafraichir le tableau après une modification
             else if (e.getSource() == Aca.getjButtonRefresh()){
                 ResultSet resTable=null;
                 ResultSet resid=null;
@@ -554,6 +522,7 @@ public class Controller {
                 String[] NameEtudiantSel=null;
                 String NameEtudiant=" ";
                 int idEtu=0, idMat=0;
+                
                 if(Aca.getjComboBoxReEtu().getSelectedItem().toString()==null){
                     NameEtudiantSel =Aca.getjComboBoxEtudiantMat().getSelectedItem().toString().split(" ");
                     NameEtudiant=NameEtudiantSel[0];
@@ -565,14 +534,9 @@ public class Controller {
                     NameEtudiant=NameEtudiantSel[0];
                 }
                 else{
-                    NameEtudiant=Aca.getjTextFieldModifyNom().getText();
-                
-                }
-                
-               
-                        
+                    NameEtudiant=Aca.getjTextFieldModifyNom().getText();            
+                }                 
                 System.out.println("NomSelection: "+NameEtudiant);
-
                 try{
                     javaprojet.model.bdd.DBconnexion.connexionDB();
                     stmt= DBconnexion.getConn().createStatement();
@@ -583,12 +547,10 @@ public class Controller {
                     resEtu=stmt.executeQuery(etudiant);
                     System.out.println(Aca.getjComboBoxEtudiantMat().getSelectedItem());
                     resEtu.first();
-
-                    
+                 
                     idEtu=Integer.parseInt(resEtu.getString("MATRICULE"));
                     System.out.println("idEtu="+idEtu);
-
-                    
+               
                     System.out.println(Aca.getjComboBoxMatiere().getSelectedItem());
                     
                     String MatriculeN="SELECT MATRICULE FROM `notes` LEFT JOIN `matiere`ON (notes.idMatiere=matiere.idMatiere)WHERE NomMat='"+Aca.getjComboBoxMatiere().getSelectedItem()+"'";
@@ -613,8 +575,8 @@ public class Controller {
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
                 }
-             }
-             //permet de modifier les informations general 
+            }
+             //permet de modifier les informations generales 
             else if (e.getSource() == Admin.getjButtonModifyGeneral()){
                 
                 etu.setMatricule(Integer.parseInt(Admin.getjTextFieldMat().getText()));
@@ -675,11 +637,12 @@ public class Controller {
                 s.setRemarquesMedicales(Admin.getjTextFieldRem().getText());
                 GestionSante.updateSante(s);
             }
+            //Bouton pour éditer un pdf
             else if (e.getSource() == Admin.getjButtonDocEdit()){
                 String[] result= Admin.getjComboBoxDocEtu().getSelectedItem().toString().split(" ");
                 String date= Admin.getjTextFieldDocDate().getText();
                 String motif=Admin.getjTextFieldDocMotif().getText();
-                
+                String heure=Admin.getjTextFieldDocHeure().getText();
                 Statement stmt=null;
                 ResultSet resEtudiant=null; 
                 try{
@@ -696,7 +659,7 @@ public class Controller {
                 } catch (SQLException sqlE) {
                     System.out.println("Probleme BDD :"+sqlE.getMessage());
                 }
-                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf");
+                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf",heure);
                 Desktop desk = Desktop.getDesktop();
                 try {
                     desk.open(new File("./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf"));
@@ -726,10 +689,10 @@ public class Controller {
                                 //La fonction n'est pas supportée par votre système d'exploitation
                                 JOptionPane jop1 = new JOptionPane();
                                 jop1.showMessageDialog(null, "La fonction n'est pas supporté par votre systeme d'exploitation", "Erreur Impression", JOptionPane.ERROR_MESSAGE);
-                            }  
+                    }  
                 }   
             }
-            
+            //Bouton choix
             else if (e.getSource() == Aca.getjButtonReChoixClasse()){
                 System.out.println(Aca.getjComboBoxReClasse().getSelectedItem());
         
@@ -758,14 +721,12 @@ public class Controller {
                 }
                 catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
-
                 }
             }
-             
+             //Bouton pour choisir un étudiant
             else if (e.getSource() == Aca.getjButtonReChoixEtu()){
                 ResultSet resTable=null;
-                ResultSet resid=null;
-                
+                ResultSet resid=null;                
                 Statement stmt=null;
                 int idEtudiant=0;
                 String[] NameEtudiant= Aca.getjComboBoxReEtu().getSelectedItem().toString().split(" ");
@@ -792,12 +753,8 @@ public class Controller {
                    
                 } catch (SQLException SQLe) {
                     System.out.println("Probleme lors de la recherche dans la BDD "+SQLe.getMessage());
-                }
-                    
-                
-                
-            }
-                
+                }    
+            }            
         }
     }
 }

@@ -62,18 +62,4 @@ public class GestionEtudiant {
         }
     }
     
-    
-    /**
-     *
-     * @param args
-     * @throws SQLException
-     */
-     public static void main(String[] args) throws SQLException {
-        Etudiant e= new javaprojet.model.donnee.Etudiant(5, "Nom", "Prenom", 4);
-         
-            updateEtudiant(e);
-        
-    
-    
-    
-}}
+}

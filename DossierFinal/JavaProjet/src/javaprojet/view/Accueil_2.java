@@ -74,6 +74,8 @@ public class Accueil_2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
 
+        jPanelRech.setBackground(new java.awt.Color(102, 102, 102));
+
         jComboBoxReClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
         ResultSet resClasse=null;
         Statement stmt2=null;
@@ -138,6 +140,8 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jTabbedPaneAdmin.addTab("Recherche par classe", jPanelRech);
 
+        jPanelGest.setBackground(new java.awt.Color(102, 102, 102));
+
         jComboBoxMatiere.setModel(new javax.swing.DefaultComboBoxModel<>());
         ResultSet res=null;
         Statement stmt=null;
@@ -168,38 +172,36 @@ public class Accueil_2 extends javax.swing.JFrame {
         jPanelGest.setLayout(jPanelGestLayout);
         jPanelGestLayout.setHorizontalGroup(
             jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelGestLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGestLayout.createSequentialGroup()
+                .addContainerGap(304, Short.MAX_VALUE)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jComboBoxEtudiantMat, 0, 150, Short.MAX_VALUE)
+                    .addComponent(jComboBoxMatiere, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
                 .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxMatiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxEtudiantMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonChoixMatiere)
-                    .addComponent(jButtonOkMatiere))
-                .addContainerGap(608, Short.MAX_VALUE))
+                    .addComponent(jButtonOkMatiere)
+                    .addComponent(jButtonChoixMatiere))
+                .addGap(246, 246, 246))
         );
         jPanelGestLayout.setVerticalGroup(
             jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelGestLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxMatiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonOkMatiere))
-                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelGestLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxEtudiantMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelGestLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButtonChoixMatiere)))
-                .addContainerGap(564, Short.MAX_VALUE))
+                .addGap(159, 159, 159)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonOkMatiere)
+                    .addComponent(jComboBoxMatiere, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelGestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEtudiantMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonChoixMatiere))
+                .addContainerGap(483, Short.MAX_VALUE))
         );
 
         jTabbedPaneAdmin.addTab("Gestion par matière", jPanelGest);
 
-        jPanelNotes.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelNotes.setBackground(new java.awt.Color(102, 102, 102));
 
+        jPanelContentNotes.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentNotes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jTableNotes.setModel(new javax.swing.table.DefaultTableModel(
@@ -218,8 +220,10 @@ public class Accueil_2 extends javax.swing.JFrame {
 
         jButtonChoixLigne.setText("Valider Choix Ligne");
 
+        jLabelModifyNom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelModifyNom.setText("Nom : ");
 
+        jLabelModifyMat.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelModifyMat.setText("Matière : ");
 
         jTextFieldModifyMat.addActionListener(new java.awt.event.ActionListener() {
@@ -228,6 +232,7 @@ public class Accueil_2 extends javax.swing.JFrame {
             }
         });
 
+        jLabelNoteMoyenne.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelNoteMoyenne.setText("Moyenne : ");
 
         jButtonNotesModifier.setText("Modifier");
@@ -239,35 +244,31 @@ public class Accueil_2 extends javax.swing.JFrame {
         jPanelContentNotesLayout.setHorizontalGroup(
             jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelModifyNom, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldModifyNom, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPaneTable))
+                        .addGap(49, 49, 49)
+                        .addComponent(jButtonNotesModifier)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonRefresh))
                     .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                        .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonChoixLigne)
                             .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                                .addGap(344, 344, 344)
-                                .addComponent(jButtonChoixLigne))
-                            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabelModifyNom)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldModifyNom, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(64, 64, 64)
                                 .addComponent(jLabelModifyMat)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                                        .addComponent(jButtonNotesModifier)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButtonRefresh))
-                                    .addGroup(jPanelContentNotesLayout.createSequentialGroup()
-                                        .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(101, 101, 101)
-                                        .addComponent(jLabelNoteMoyenne)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabelNoteMoyenne)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelContentNotesLayout.createSequentialGroup()
+                .addComponent(jScrollPaneTable)
                 .addContainerGap())
         );
         jPanelContentNotesLayout.setVerticalGroup(
@@ -285,11 +286,11 @@ public class Accueil_2 extends javax.swing.JFrame {
                     .addComponent(jTextFieldModifyMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelNoteMoyenne)
                     .addComponent(jTextFieldModifyNote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanelContentNotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonNotesModifier)
                     .addComponent(jButtonRefresh))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
         jLabelTitreNotes.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -320,7 +321,7 @@ public class Accueil_2 extends javax.swing.JFrame {
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreNotes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelNotesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentNotes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -355,7 +356,7 @@ public class Accueil_2 extends javax.swing.JFrame {
         });
 
         jLabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-ex-7.png"))); // NOI18N
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-roosevelt.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -408,276 +409,424 @@ public class Accueil_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldModifyMatActionPerformed
 
+//Accesseurs
     /**
-     * @param args the command line arguments
+     * 
+     * @return jButtonAca
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Accueil_2().setVisible(true);
-        });
-    }
-
     public JButton getjButtonAca() {
         return jButtonAca;
     }
-
+    /**
+     * 
+     * @param jButtonAca 
+     */
     public void setjButtonAca(JButton jButtonAca) {
         this.jButtonAca = jButtonAca;
     }
-
+    /**
+     * 
+     * @return jButtonAccueil
+     */
     public JButton getjButtonAccueil() {
         return jButtonAccueil;
     }
-
+    /**
+     * 
+     * @param jButtonAccueil 
+     */
     public void setjButtonAccueil(JButton jButtonAccueil) {
         this.jButtonAccueil = jButtonAccueil;
     }
-
+    /**
+     * 
+     * @return jButtonAdmin
+     */
     public JButton getjButtonAdmin() {
         return jButtonAdmin;
     }
-
+    /**
+     * 
+     * @param jButtonAdmin 
+     */
     public void setjButtonAdmin(JButton jButtonAdmin) {
         this.jButtonAdmin = jButtonAdmin;
     }
-
+    /**
+     * 
+     * @return jLabelLogo
+     */
     public JLabel getjLabelLogo() {
         return jLabelLogo;
     }
-
+    /**
+     * 
+     * @param jLabelLogo 
+     */
     public void setjLabelLogo(JLabel jLabelLogo) {
         this.jLabelLogo = jLabelLogo;
     }
-
-
+    /**
+     * 
+     * @return jLabelTitreNotes
+     */
     public JLabel getjLabelTitreNotes() {
         return jLabelTitreNotes;
     }
-
+    /**
+     * 
+     * @param jLabelTitreNotes 
+     */
     public void setjLabelTitreNotes(JLabel jLabelTitreNotes) {
         this.jLabelTitreNotes = jLabelTitreNotes;
     }
-
+    /**
+     * 
+     * @return jPanelContentNotes
+     */
     public JPanel getjPanelContentNotes() {
         return jPanelContentNotes;
     }
-
+    /**
+     * 
+     * @param jPanelContentNotes 
+     */
     public void setjPanelContentNotes(JPanel jPanelContentNotes) {
         this.jPanelContentNotes = jPanelContentNotes;
     }
-
+    /**
+     * 
+     * @return jPanelGest
+     */
     public JPanel getjPanelGest() {
         return jPanelGest;
     }
-
+    /**
+     * 
+     * @param jPanelGest 
+     */
     public void setjPanelGest(JPanel jPanelGest) {
         this.jPanelGest = jPanelGest;
     }
-
+    /**
+     * 
+     * @return jPanelNotes
+     */
     public JPanel getjPanelNotes() {
         return jPanelNotes;
     }
-
+    /**
+     * 
+     * @param jPanelNotes 
+     */
     public void setjPanelNotes(JPanel jPanelNotes) {
         this.jPanelNotes = jPanelNotes;
     }
-
+    /**
+     * 
+     * @return jPanelRech
+     */
     public JPanel getjPanelRech() {
         return jPanelRech;
     }
-
+    /**
+     * 
+     * @param jPanelRech 
+     */
     public void setjPanelRech(JPanel jPanelRech) {
         this.jPanelRech = jPanelRech;
     }
-
+    /**
+     * 
+     * @return jPanelTitreNotes
+     */
     public JPanel getjPanelTitreNotes() {
         return jPanelTitreNotes;
     }
-
+    /**
+     * 
+     * @param jPanelTitreNotes 
+     */
     public void setjPanelTitreNotes(JPanel jPanelTitreNotes) {
         this.jPanelTitreNotes = jPanelTitreNotes;
     }
-
+    /**
+     * 
+     * @return jTabbedPaneAdmin
+     */
     public JTabbedPane getjTabbedPaneAdmin() {
         return jTabbedPaneAdmin;
     }
-
+    /**
+     * 
+     * @param jTabbedPaneAdmin 
+     */
     public void setjTabbedPaneAdmin(JTabbedPane jTabbedPaneAdmin) {
         this.jTabbedPaneAdmin = jTabbedPaneAdmin;
     }
-
+    /**
+     * 
+     * @return jButtonChoixMatiere
+     */
     public JButton getjButtonChoixMatiere() {
         return jButtonChoixMatiere;
     }
-
+    /**
+     * 
+     * @param jButtonChoixMatiere 
+     */
     public void setjButtonChoixMatiere(JButton jButtonChoixMatiere) {
         this.jButtonChoixMatiere = jButtonChoixMatiere;
     }
-
+    /**
+     * 
+     * @return jButtonOkMatiere
+     */
     public JButton getjButtonOkMatiere() {
         return jButtonOkMatiere;
     }
-
+    /**
+     * 
+     * @param jButtonOkMatiere 
+     */
     public void setjButtonOkMatiere(JButton jButtonOkMatiere) {
         this.jButtonOkMatiere = jButtonOkMatiere;
     }
-
+    /**
+     * 
+     * @return jComboBoxEtudiantMat
+     */
     public JComboBox<String> getjComboBoxEtudiantMat() {
         return jComboBoxEtudiantMat;
     }
-
+    /**
+     * 
+     * @param jComboBoxEtudiantMat 
+     */
     public void setjComboBoxEtudiantMat(JComboBox<String> jComboBoxEtudiantMat) {
         this.jComboBoxEtudiantMat = jComboBoxEtudiantMat;
     }
-
+    /**
+     * 
+     * @return jComboBoxMatiere
+     */
     public JComboBox<String> getjComboBoxMatiere() {
         return jComboBoxMatiere;
     }
-
+    /**
+     * 
+     * @param jComboBoxMatiere 
+     */
     public void setjComboBoxMatiere(JComboBox<String> jComboBoxMatiere) {
         this.jComboBoxMatiere = jComboBoxMatiere;
     }
-
+    /**
+     * 
+     * @return jScrollPaneTable
+     */
     public JScrollPane getjScrollPaneTable() {
         return jScrollPaneTable;
     }
-
+    /**
+     * 
+     * @param jScrollPaneTable 
+     */
     public void setjScrollPaneTable(JScrollPane jScrollPaneTable) {
         this.jScrollPaneTable = jScrollPaneTable;
     }
-
+    /**
+     * 
+     * @return jTableNotes
+     */
     public JTable getjTableNotes() {
         return jTableNotes;
     }
-
+    /**
+     * 
+     * @param jTableNotes 
+     */
     public void setjTableNotes(JTable jTableNotes) {
         this.jTableNotes = jTableNotes;
     }
-
+    /**
+     * 
+     * @return jComboBoxReClasse
+     */
     public JComboBox<String> getjComboBoxReClasse() {
         return jComboBoxReClasse;
     }
-
+    /**
+     * 
+     * @param jComboBoxReClasse 
+     */
     public void setjComboBoxReClasse(JComboBox<String> jComboBoxReClasse) {
         this.jComboBoxReClasse = jComboBoxReClasse;
     }
-
+    /**
+     * 
+     * @return jComboBoxReEtu
+     */
     public JComboBox<String> getjComboBoxReEtu() {
         return jComboBoxReEtu;
     }
-
+    /**
+     * 
+     * @param jComboBoxReEtu 
+     */
     public void setjComboBoxReEtu(JComboBox<String> jComboBoxReEtu) {
         this.jComboBoxReEtu = jComboBoxReEtu;
     }
-
+    /**
+     * 
+     * @return jButtonReChoixClasse
+     */
     public JButton getjButtonReChoixClasse() {
         return jButtonReChoixClasse;
     }
-
+    /**
+     * 
+     * @param jButtonReChoixClasse 
+     */
     public void setjButtonReChoixClasse(JButton jButtonReChoixClasse) {
         this.jButtonReChoixClasse = jButtonReChoixClasse;
     }
-
+    /**
+     * 
+     * @return jButtonReChoixEtu
+     */
     public JButton getjButtonReChoixEtu() {
         return jButtonReChoixEtu;
     }
-
+    /**
+     * 
+     * @param jButtonReChoixEtu 
+     */
     public void setjButtonReChoixEtu(JButton jButtonReChoixEtu) {
         this.jButtonReChoixEtu = jButtonReChoixEtu;
     }
-
+    /**
+     * 
+     * @return jButtonChoixLigne
+     */
     public JButton getjButtonChoixLigne() {
         return jButtonChoixLigne;
     }
-
+    /**
+     * 
+     * @param jButtonChoixLigne 
+     */
     public void setjButtonChoixLigne(JButton jButtonChoixLigne) {
         this.jButtonChoixLigne = jButtonChoixLigne;
     }
-
+    /**
+     * 
+     * @return jButtonNotesModifier
+     */
     public JButton getjButtonNotesModifier() {
         return jButtonNotesModifier;
     }
-
+    /**
+     * 
+     * @param jButtonNotesModifier 
+     */
     public void setjButtonNotesModifier(JButton jButtonNotesModifier) {
         this.jButtonNotesModifier = jButtonNotesModifier;
     }
-
+    /**
+     * 
+     * @return jLabelModifyMat
+     */
     public JLabel getjLabelModifyMat() {
         return jLabelModifyMat;
     }
-
+    /**
+     * 
+     * @param jLabelModifyMat 
+     */
     public void setjLabelModifyMat(JLabel jLabelModifyMat) {
         this.jLabelModifyMat = jLabelModifyMat;
     }
-
+    /**
+     * 
+     * @return jLabelModifyNom
+     */
     public JLabel getjLabelModifyNom() {
         return jLabelModifyNom;
     }
-
+    /**
+     * 
+     * @param jLabelModifyNom 
+     */
     public void setjLabelModifyNom(JLabel jLabelModifyNom) {
         this.jLabelModifyNom = jLabelModifyNom;
     }
-
+    /**
+     * 
+     * @return jLabelNoteMoyenne
+     */
     public JLabel getjLabelNoteMoyenne() {
         return jLabelNoteMoyenne;
     }
-
+    /**
+     * 
+     * @param jLabelNoteMoyenne 
+     */
     public void setjLabelNoteMoyenne(JLabel jLabelNoteMoyenne) {
         this.jLabelNoteMoyenne = jLabelNoteMoyenne;
     }
-
+    /**
+     * 
+     * @return jTextFieldModifyMat
+     */
     public JTextField getjTextFieldModifyMat() {
         return jTextFieldModifyMat;
     }
-
+    /**
+     * 
+     * @param jTextFieldModifyMat 
+     */
     public void setjTextFieldModifyMat(JTextField jTextFieldModifyMat) {
         this.jTextFieldModifyMat = jTextFieldModifyMat;
     }
-
+    /**
+     * 
+     * @return jTextFieldModifyNom
+     */
     public JTextField getjTextFieldModifyNom() {
         return jTextFieldModifyNom;
     }
-
+    /**
+     * 
+     * @param jTextFieldModifyNom 
+     */
     public void setjTextFieldModifyNom(JTextField jTextFieldModifyNom) {
         this.jTextFieldModifyNom = jTextFieldModifyNom;
     }
-
+    /**
+     * 
+     * @return jTextFieldModifyNote
+     */
     public JTextField getjTextFieldModifyNote() {
         return jTextFieldModifyNote;
     }
-
+    /**
+     * 
+     * @param jTextFieldModifyNote 
+     */
     public void setjTextFieldModifyNote(JTextField jTextFieldModifyNote) {
         this.jTextFieldModifyNote = jTextFieldModifyNote;
     }
-
+    /**
+     * 
+     * @return jButtonRefresh
+     */
     public JButton getjButtonRefresh() {
         return jButtonRefresh;
     }
-
+    /**
+     * 
+     * @param jButtonRefresh 
+     */
     public void setjButtonRefresh(JButton jButtonRefresh) {
         this.jButtonRefresh = jButtonRefresh;
     }

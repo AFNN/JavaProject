@@ -151,6 +151,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         jButtonDocImpr = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldDocHeure = new javax.swing.JTextField();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
         jLabelLogo = new javax.swing.JLabel();
@@ -164,6 +166,8 @@ public class Accueil_1 extends javax.swing.JFrame {
                 jButtonAccueilActionPerformed(evt);
             }
         });
+
+        jPanelSelect.setBackground(new java.awt.Color(102, 102, 102));
 
         jComboBoxClasse.setModel(new javax.swing.DefaultComboBoxModel<>());
         ResultSet res=null;
@@ -198,7 +202,8 @@ public class Accueil_1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Selectionnez un étudiant");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Selectionnez un étudiant :");
 
         javax.swing.GroupLayout jPanelSelectLayout = new javax.swing.GroupLayout(jPanelSelect);
         jPanelSelect.setLayout(jPanelSelectLayout);
@@ -231,13 +236,14 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonchoixETU))
-                .addContainerGap(486, Short.MAX_VALUE))
+                .addContainerGap(527, Short.MAX_VALUE))
         );
 
         jTabbedPaneAca.addTab("Selection Etudiant", jPanelSelect);
 
-        jPanelGeneral.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelGeneral.setBackground(new java.awt.Color(102, 102, 102));
 
+        jPanelContentGen.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentGen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jLabelNom.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -248,12 +254,6 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jLabelMat.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelMat.setText("Matricule :");
-
-        jTextFieldMat.setText("jTextField1");
-
-        jTextFieldNom.setText("jTextField2");
-
-        jTextFieldPrenom1.setText("jTextField3");
 
         jButtonModifyGeneral.setText("Modifier Information");
 
@@ -268,13 +268,13 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPrenom))
                 .addGap(77, 77, 77)
-                .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldPrenom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelContentGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldMat, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(jTextFieldNom)
+                    .addComponent(jTextFieldPrenom1))
+                .addContainerGap(382, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentGenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(314, Short.MAX_VALUE)
                 .addComponent(jButtonModifyGeneral)
                 .addGap(316, 316, 316))
         );
@@ -295,7 +295,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldPrenom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103)
                 .addComponent(jButtonModifyGeneral)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jLabelTitreGen.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -344,6 +344,8 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTabbedPaneAca.addTab("Général", jPanelGeneral);
 
+        jPanelIdentite.setBackground(new java.awt.Color(102, 102, 102));
+
         jLabelTitreIdentite.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreIdentite.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitreIdentite.setText("IDENTITE");
@@ -365,31 +367,26 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanelContentIdentite.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentIdentite.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelDateNais.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelDateNais.setText("Date de naissance : ");
 
+        jLabelVilleNais.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelVilleNais.setText("Ville de naissance :");
 
+        jLabelPaysNais.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelPaysNais.setText("Pays de naissance :");
 
+        jLabelSexe.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelSexe.setText("Sexe : ");
 
+        jLabelDateInsc.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelDateInsc.setText("Date d'inscritption : ");
 
+        jLabelEtaPre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelEtaPre.setText("Etablissement précédent : ");
-
-        jTextFieldDateNais.setText("jTextField1");
-
-        jTextFieldVilleNais.setText("jTextField1");
-
-        jTextFieldPaysNais.setText("jTextField1");
-
-        jTextFieldSexe.setText("jTextField1");
-
-        jTextFieldDateInsc.setText("jTextField1");
-
-        jTextFieldEtaPre.setText("jTextField1");
 
         jButtonModifyIdent.setText("Modifier Information");
 
@@ -397,38 +394,33 @@ public class Accueil_1 extends javax.swing.JFrame {
         jPanelContentIdentite.setLayout(jPanelContentIdentiteLayout);
         jPanelContentIdentiteLayout.setHorizontalGroup(
             jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelContentIdentiteLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelEtaPre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldEtaPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelDateInsc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldDateInsc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelSexe)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldSexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelPaysNais)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldPaysNais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelVilleNais)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldVilleNais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                        .addComponent(jLabelDateNais)
-                        .addGap(105, 105, 105)
-                        .addComponent(jTextFieldDateNais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonModifyIdent)
-                .addGap(233, 233, 233))
+                .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelContentIdentiteLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonModifyIdent))
+                    .addGroup(jPanelContentIdentiteLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentIdentiteLayout.createSequentialGroup()
+                                .addComponent(jLabelDateNais)
+                                .addGap(105, 105, 105))
+                            .addGroup(jPanelContentIdentiteLayout.createSequentialGroup()
+                                .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelEtaPre)
+                                    .addComponent(jLabelDateInsc)
+                                    .addComponent(jLabelSexe)
+                                    .addComponent(jLabelPaysNais)
+                                    .addComponent(jLabelVilleNais))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldDateNais)
+                            .addComponent(jTextFieldVilleNais)
+                            .addComponent(jTextFieldPaysNais)
+                            .addComponent(jTextFieldSexe)
+                            .addComponent(jTextFieldDateInsc)
+                            .addComponent(jTextFieldEtaPre, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))))
+                .addGap(353, 353, 353))
         );
         jPanelContentIdentiteLayout.setVerticalGroup(
             jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,9 +449,9 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentIdentiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEtaPre)
                     .addComponent(jTextFieldEtaPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(71, 71, 71)
                 .addComponent(jButtonModifyIdent)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelIdentiteLayout = new javax.swing.GroupLayout(jPanelIdentite);
@@ -469,10 +461,10 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelIdentiteLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreIdentite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
             .addGroup(jPanelIdentiteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelContentIdentite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelContentIdentite, javax.swing.GroupLayout.PREFERRED_SIZE, 796, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelIdentiteLayout.setVerticalGroup(
@@ -487,7 +479,7 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jTabbedPaneAca.addTab("Identité", jPanelIdentite);
 
-        jPanelCoord.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelCoord.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabelTitreCoord.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreCoord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -510,31 +502,26 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanelContentCoord.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentCoord.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelAdr.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelAdr.setText("Adresse : ");
 
+        jLabelCp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelCp.setText("Code postal : ");
 
+        jLabelVille.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelVille.setText("Ville : ");
 
+        jLabelTelDom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTelDom.setText("Téléphone domicile : ");
 
+        jLabelTelMob.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTelMob.setText("Téléphone mobile : ");
 
+        jLabelMail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelMail.setText("Email : ");
-
-        jTextFieldAdr.setText("jTextField1");
-
-        jTextFieldCp.setText("jTextField1");
-
-        jTextFieldVille.setText("jTextField1");
-
-        jTextFieldTelDom.setText("jTextField1");
-
-        jTextFieldTelMob.setText("jTextField1");
-
-        jTextFieldMail.setText("jTextField1");
 
         jButtonModifyCoord.setText("Modifier Information");
 
@@ -551,19 +538,19 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelTelDom)
                     .addComponent(jLabelTelMob)
                     .addComponent(jLabelMail))
-                .addGap(96, 96, 96)
+                .addGap(28, 28, 28)
                 .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTelMob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTelDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldAdr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButtonModifyCoord)
+                                .addComponent(jTextFieldAdr, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(jTextFieldCp)
+                                .addComponent(jTextFieldMail))
+                            .addComponent(jTextFieldVille, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldTelDom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldTelMob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentCoordLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonModifyCoord)
-                .addGap(266, 266, 266))
         );
         jPanelContentCoordLayout.setVerticalGroup(
             jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,12 +576,12 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelTelMob)
                     .addComponent(jTextFieldTelMob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelContentCoordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelMail)
                     .addComponent(jTextFieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(53, 53, 53)
                 .addComponent(jButtonModifyCoord)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelCoordLayout = new javax.swing.GroupLayout(jPanelCoord);
@@ -604,7 +591,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelCoordLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreCoord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
             .addGroup(jPanelCoordLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentCoord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -621,6 +608,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
 
         jTabbedPaneAca.addTab("Coordonnées", jPanelCoord);
+
+        jPanelPers.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabelTitrePers.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitrePers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -643,55 +632,48 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanelContentPers.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentPers.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelContact1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelContact1.setText("PREMIER CONTACT");
 
+        jLabelContact1Nom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact1Nom.setText("Nom : ");
 
+        jLabelContact1Prenom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact1Prenom.setText("Prénom : ");
 
+        jLabelContact1Adr.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact1Adr.setText("Adresse : ");
 
+        jLabelContact1Tel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact1Tel.setText("Téléphone : ");
 
+        jLabelContact1Mail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact1Mail.setText("Email : ");
 
+        jLabelContact2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelContact2.setText("SECOND CONTACT");
 
+        jLabelContact2Nom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact2Nom.setText("Nom : ");
 
+        jLabelContact2Prenom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact2Prenom.setText("Prénom :");
 
+        jLabelContact2Adr.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact2Adr.setText("Adresse :");
 
+        jLabelContact2Tel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact2Tel.setText("Téléphone : ");
 
+        jLabelContact2Mail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelContact2Mail.setText("Email : ");
 
-        jTextFieldContact1Nom.setText("jTextField1");
+        jButtonModifyR1.setText("Modifier information contact 1");
 
-        jTextFieldContact1Prenom.setText("jTextField1");
-
-        jTextFieldContact1Adr.setText("jTextField1");
-
-        jTextFieldContact1Tel.setText("jTextField1");
-
-        jTextFieldContact1Mail.setText("jTextField1");
-
-        jTextFieldContact2Nom.setText("jTextField1");
-
-        jTextFieldContact2Prenom.setText("jTextField1");
-
-        jTextFieldContact2Adr.setText("jTextField1");
-
-        jTextFieldContact2Tel.setText("jTextField1");
-
-        jTextFieldContact2Mail.setText("jTextField1");
-
-        jButtonModifyR1.setText("Modifier information");
-
-        jButtonModifyR2.setText("Modifier information");
+        jButtonModifyR2.setText("Modifier information contact 2");
         jButtonModifyR2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModifyR2ActionPerformed(evt);
@@ -703,20 +685,20 @@ public class Accueil_1 extends javax.swing.JFrame {
         jPanelContentPersLayout.setHorizontalGroup(
             jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelContentPersLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabelContact1))
+                .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelContentPersLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
+                        .addComponent(jLabelContact1))
+                    .addGroup(jPanelContentPersLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelContact1Nom)
                             .addComponent(jLabelContact1Prenom)
                             .addComponent(jLabelContact1Adr)
                             .addComponent(jLabelContact1Tel)
                             .addComponent(jLabelContact1Mail))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldContact1Mail)
                             .addComponent(jTextFieldContact1Tel)
                             .addComponent(jTextFieldContact1Adr)
@@ -726,31 +708,36 @@ public class Accueil_1 extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentPersLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButtonModifyR1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                        .addComponent(jButtonModifyR1)))
+                .addGap(109, 109, 109)
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelContact2)
-                    .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelContentPersLayout.createSequentialGroup()
-                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelContact2Nom)
-                                .addComponent(jLabelContact2Prenom)
-                                .addComponent(jLabelContact2Adr))
-                            .addGap(21, 21, 21)
-                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                                .addComponent(jTextFieldContact2Prenom)
-                                .addComponent(jTextFieldContact2Adr)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelContentPersLayout.createSequentialGroup()
-                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelContact2Tel)
-                                .addComponent(jLabelContact2Mail))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldContact2Mail)
-                                .addComponent(jTextFieldContact2Tel))))
-                    .addComponent(jButtonModifyR2))
-                .addGap(168, 168, 168))
+                    .addGroup(jPanelContentPersLayout.createSequentialGroup()
+                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelContact2)
+                            .addComponent(jLabelContact2Nom)
+                            .addComponent(jLabelContact2Prenom)
+                            .addComponent(jLabelContact2Adr, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentPersLayout.createSequentialGroup()
+                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonModifyR2))
+                            .addGroup(jPanelContentPersLayout.createSequentialGroup()
+                                .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelContact2Mail)
+                                    .addComponent(jLabelContact2Tel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldContact2Mail, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldContact2Tel)
+                                    .addGroup(jPanelContentPersLayout.createSequentialGroup()
+                                        .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldContact2Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldContact2Adr, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldContact2Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(160, 160, 160))))
         );
         jPanelContentPersLayout.setVerticalGroup(
             jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -793,7 +780,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModifyR1)
                     .addComponent(jButtonModifyR2))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPersLayout = new javax.swing.GroupLayout(jPanelPers);
@@ -801,13 +788,13 @@ public class Accueil_1 extends javax.swing.JFrame {
         jPanelPersLayout.setHorizontalGroup(
             jPanelPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPersLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jPanelTitrePers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
-            .addGroup(jPanelPersLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentPers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPersLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelTitrePers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
         );
         jPanelPersLayout.setVerticalGroup(
             jPanelPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,6 +807,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
 
         jTabbedPaneAca.addTab("Personne responsable", jPanelPers);
+
+        jPanelSante.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabelTitreSante.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreSante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -842,31 +831,32 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanelContentSante.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentSante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
+        jLabelNomMed.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelNomMed.setText("Nom du médecin traitant :");
 
+        jLabelPrenomMed.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelPrenomMed.setText("Prénom du médecin traitant : ");
 
+        jLabelTelMed.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTelMed.setText("Téléphone :");
 
+        jLabelVacc.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelVacc.setText("Vaccination(s) :");
 
+        jLabelAll.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelAll.setText("Allergie(s) : ");
 
+        jLabelRem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelRem.setText("Remarque(s) médicale(s) : ");
 
-        jTextFieldNomMed.setText("jTextField1");
-
-        jTextFieldPrenomMed.setText("jTextField1");
-
-        jTextFieldTelMed.setText("jTextField1");
-
-        jTextFieldVacc.setText("jTextField1");
-
-        jTextFieldAll.setText("jTextField1");
-
-        jTextFieldRem.setText("jTextField1");
+        jTextFieldNomMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomMedActionPerformed(evt);
+            }
+        });
 
         jButtonModifyMed.setText("Modifier information");
         jButtonModifyMed.addActionListener(new java.awt.event.ActionListener() {
@@ -881,36 +871,25 @@ public class Accueil_1 extends javax.swing.JFrame {
             jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentSanteLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelNomMed)
                     .addGroup(jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelRem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelAll)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelVacc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldVacc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelTelMed)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldTelMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelPrenomMed)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldPrenomMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                        .addComponent(jLabelNomMed)
-                        .addGap(120, 120, 120)
-                        .addComponent(jTextFieldNomMed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(374, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentSanteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonModifyMed)
-                .addGap(279, 279, 279))
+                        .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPrenomMed)
+                            .addComponent(jLabelTelMed)
+                            .addComponent(jLabelVacc)
+                            .addComponent(jLabelAll)
+                            .addComponent(jLabelRem))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldAll, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVacc, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldTelMed, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldPrenomMed, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldNomMed, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonModifyMed))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelContentSanteLayout.setVerticalGroup(
             jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -932,16 +911,16 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jLabelVacc)
                     .addComponent(jTextFieldVacc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAll)
                     .addComponent(jTextFieldAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelContentSanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelRem)
-                    .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jButtonModifyMed)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelSanteLayout = new javax.swing.GroupLayout(jPanelSante);
@@ -951,7 +930,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelSanteLayout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jPanelTitreSante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
             .addGroup(jPanelSanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelContentSante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -968,6 +947,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         );
 
         jTabbedPaneAca.addTab("Santé", jPanelSante);
+
+        jPanelDoc.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabelTitreDoc.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabelTitreDoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -990,6 +971,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanelContentDoc.setBackground(new java.awt.Color(102, 102, 102));
         jPanelContentDoc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jLabelDocPres.setText("Vous entrez dans le gestion des convocations d'étudiants. Vous pouvez éditer des convocations");
@@ -1012,8 +994,10 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         }
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Selectionnez un étudiant :");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Saissisez un motif :");
 
         jTextFieldDocMotif.setText("Motif de convocation");
@@ -1023,6 +1007,7 @@ public class Accueil_1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Choix de la date : ");
 
         jTextFieldDocDate.setText("Choix de la date");
@@ -1035,6 +1020,10 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jLabel5.setText("Format de la date : aaaa-mm-jj");
 
+        jLabel7.setText("Choix de l'heure :");
+
+        jTextFieldDocHeure.setText("Choix de l'heure (exemple:15h00)");
+
         javax.swing.GroupLayout jPanelContentDocLayout = new javax.swing.GroupLayout(jPanelContentDoc);
         jPanelContentDoc.setLayout(jPanelContentDocLayout);
         jPanelContentDocLayout.setHorizontalGroup(
@@ -1042,33 +1031,30 @@ public class Accueil_1 extends javax.swing.JFrame {
             .addGroup(jPanelContentDocLayout.createSequentialGroup()
                 .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(jComboBoxDocEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldDocDate)
+                            .addComponent(jTextFieldDocHeure)))
+                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addComponent(jLabelDocPres))
                     .addGroup(jPanelContentDocLayout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentDocLayout.createSequentialGroup()
-                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonDocEdit)
                             .addGroup(jPanelContentDocLayout.createSequentialGroup()
-                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel1))
-                                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
-                                        .addGap(102, 102, 102)
-                                        .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContentDocLayout.createSequentialGroup()
-                                        .addGap(54, 54, 54)
-                                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButtonDocImpr)
-                                            .addComponent(jButtonDocEdit))))))))
+                                .addComponent(jLabel4)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButtonDocImpr)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelContentDocLayout.setVerticalGroup(
@@ -1077,26 +1063,31 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(jLabelDocPres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxDocEtu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGap(23, 23, 23)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addComponent(jButtonDocEdit)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDocHeure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addComponent(jButtonDocEdit)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonDocImpr)
                     .addComponent(jLabel4))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelDocLayout = new javax.swing.GroupLayout(jPanelDoc);
@@ -1134,7 +1125,7 @@ public class Accueil_1 extends javax.swing.JFrame {
         });
 
         jLabelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-ex-7.png"))); // NOI18N
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaprojet/view/logo-roosevelt.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1199,918 +1190,1566 @@ public class Accueil_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDocMotifActionPerformed
 
+    private void jTextFieldNomMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomMedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomMedActionPerformed
+
+// Accesseuurs
     /**
-     * @param args the command line arguments
+     * 
+     * @return jButtonAca
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Accueil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Accueil_1().setVisible(true);
-        });
-    }
-
     public JButton getjButtonAca() {
         return jButtonAca;
     }
-
+    /**
+     * 
+     * @param jButtonAca 
+     */
     public void setjButtonAca(JButton jButtonAca) {
         this.jButtonAca = jButtonAca;
     }
-
+    /**
+     * 
+     * @return jButtonAccueil
+     */
     public JButton getjButtonAccueil() {
         return jButtonAccueil;
     }
-
+    /**
+     * 
+     * @param jButtonAccueil 
+     */
     public void setjButtonAccueil(JButton jButtonAccueil) {
         this.jButtonAccueil = jButtonAccueil;
     }
-
+    /**
+     * 
+     * @return jButtonAdmin
+     */
     public JButton getjButtonAdmin() {
         return jButtonAdmin;
     }
-
+    /**
+     * 
+     * @param jButtonAdmin 
+     */
     public void setjButtonAdmin(JButton jButtonAdmin) {
         this.jButtonAdmin = jButtonAdmin;
     }
-
+    /**
+     * 
+     * @return jLabelAdr
+     */
     public JLabel getjLabelAdr() {
         return jLabelAdr;
     }
-
+    /**
+     * 
+     * @param jLabelAdr 
+     */
     public void setjLabelAdr(JLabel jLabelAdr) {
         this.jLabelAdr = jLabelAdr;
     }
-
+    /**
+     * 
+     * @return jLabelAll
+     */
     public JLabel getjLabelAll() {
         return jLabelAll;
     }
-
+    /**
+     * 
+     * @param jLabelAll 
+     */
     public void setjLabelAll(JLabel jLabelAll) {
         this.jLabelAll = jLabelAll;
     }
-
+    /**
+     * 
+     * @return jLabelContact1
+     */
     public JLabel getjLabelContact1() {
         return jLabelContact1;
     }
-
+    /**
+     * 
+     * @param jLabelContact1 
+     */
     public void setjLabelContact1(JLabel jLabelContact1) {
         this.jLabelContact1 = jLabelContact1;
     }
-
+    /**
+     * 
+     * @return jLabelContact1Adr
+     */
     public JLabel getjLabelContact1Adr() {
         return jLabelContact1Adr;
     }
-
+    /**
+     * 
+     * @param jLabelContact1Adr 
+     */
     public void setjLabelContact1Adr(JLabel jLabelContact1Adr) {
         this.jLabelContact1Adr = jLabelContact1Adr;
     }
-
+    /**
+     * 
+     * @return jLabelContact1Mail
+     */
     public JLabel getjLabelContact1Mail() {
         return jLabelContact1Mail;
     }
-
+    /**
+     * 
+     * @param jLabelContact1Mail 
+     */
     public void setjLabelContact1Mail(JLabel jLabelContact1Mail) {
         this.jLabelContact1Mail = jLabelContact1Mail;
     }
-
+    /**
+     * 
+     * @return jLabelContact1Nom
+     */
     public JLabel getjLabelContact1Nom() {
         return jLabelContact1Nom;
     }
-
+    /**
+     * 
+     * @param jLabelContact1Nom 
+     */
     public void setjLabelContact1Nom(JLabel jLabelContact1Nom) {
         this.jLabelContact1Nom = jLabelContact1Nom;
     }
-
+    /**
+     * 
+     * @return jLabelContact1Prenom
+     */
     public JLabel getjLabelContact1Prenom() {
         return jLabelContact1Prenom;
     }
-
+    /**
+     * 
+     * @param jLabelContact1Prenom 
+     */
     public void setjLabelContact1Prenom(JLabel jLabelContact1Prenom) {
         this.jLabelContact1Prenom = jLabelContact1Prenom;
     }
-
+    /**
+     * 
+     * @return jLabelContact1Tel
+     */
     public JLabel getjLabelContact1Tel() {
         return jLabelContact1Tel;
     }
-
+    /**
+     * 
+     * @param jLabelContact1Tel 
+     */
     public void setjLabelContact1Tel(JLabel jLabelContact1Tel) {
         this.jLabelContact1Tel = jLabelContact1Tel;
     }
-
+    /**
+     * 
+     * @return jLabelContact2
+     */
     public JLabel getjLabelContact2() {
         return jLabelContact2;
     }
-
+    /**
+     * 
+     * @param jLabelContact2 
+     */
     public void setjLabelContact2(JLabel jLabelContact2) {
         this.jLabelContact2 = jLabelContact2;
     }
-
+    /**
+     * 
+     * @return jLabelContact2Adr
+     */
     public JLabel getjLabelContact2Adr() {
         return jLabelContact2Adr;
     }
-
+    /**
+     * 
+     * @param jLabelContact2Adr 
+     */
     public void setjLabelContact2Adr(JLabel jLabelContact2Adr) {
         this.jLabelContact2Adr = jLabelContact2Adr;
     }
-
+    /**
+     * 
+     * @return jLabelContact2Mail
+     */
     public JLabel getjLabelContact2Mail() {
         return jLabelContact2Mail;
     }
-
+    /**
+     * 
+     * @param jLabelContact2Mail 
+     */
     public void setjLabelContact2Mail(JLabel jLabelContact2Mail) {
         this.jLabelContact2Mail = jLabelContact2Mail;
     }
-
+    /**
+     * 
+     * @return jLabelContact2Nom
+     */
     public JLabel getjLabelContact2Nom() {
         return jLabelContact2Nom;
     }
-
+    /**
+     * 
+     * @param jLabelContact2Nom 
+     */
     public void setjLabelContact2Nom(JLabel jLabelContact2Nom) {
         this.jLabelContact2Nom = jLabelContact2Nom;
     }
-
+    /**
+     * 
+     * @return jLabelContact2Prenom
+     */
     public JLabel getjLabelContact2Prenom() {
         return jLabelContact2Prenom;
     }
-
+    /**
+     * 
+     * @param jLabelContact2Prenom 
+     */
     public void setjLabelContact2Prenom(JLabel jLabelContact2Prenom) {
         this.jLabelContact2Prenom = jLabelContact2Prenom;
     }
-
+    /**
+     * 
+     * @return jLabelContact2Tel
+     */
     public JLabel getjLabelContact2Tel() {
         return jLabelContact2Tel;
     }
-
+    /**
+     * 
+     * @param jLabelContact2Tel 
+     */
     public void setjLabelContact2Tel(JLabel jLabelContact2Tel) {
         this.jLabelContact2Tel = jLabelContact2Tel;
     }
-
+    /**
+     * 
+     * @return jLabelCp
+     */
     public JLabel getjLabelCp() {
         return jLabelCp;
     }
-
+    /**
+     * 
+     * @param jLabelCp 
+     */
     public void setjLabelCp(JLabel jLabelCp) {
         this.jLabelCp = jLabelCp;
     }
-
+    /**
+     * 
+     * @return jLabelDateInsc
+     */
     public JLabel getjLabelDateInsc() {
         return jLabelDateInsc;
     }
-
+    /**
+     * 
+     * @param jLabelDateInsc 
+     */
     public void setjLabelDateInsc(JLabel jLabelDateInsc) {
         this.jLabelDateInsc = jLabelDateInsc;
     }
-
+    /**
+     * 
+     * @return jLabelDateNais
+     */
     public JLabel getjLabelDateNais() {
         return jLabelDateNais;
     }
-
+    /**
+     * 
+     * @param jLabelDateNais 
+     */
     public void setjLabelDateNais(JLabel jLabelDateNais) {
         this.jLabelDateNais = jLabelDateNais;
     }
-
+    /**
+     * 
+     * @return jLabelEtaPre
+     */
     public JLabel getjLabelEtaPre() {
         return jLabelEtaPre;
     }
-
+    /**
+     * 
+     * @param jLabelEtaPre 
+     */
     public void setjLabelEtaPre(JLabel jLabelEtaPre) {
         this.jLabelEtaPre = jLabelEtaPre;
     }
-
+    /**
+     * 
+     * @return jLabelLogo
+     */
     public JLabel getjLabelLogo() {
         return jLabelLogo;
     }
-
+    /**
+     * 
+     * @param jLabelLogo 
+     */
     public void setjLabelLogo(JLabel jLabelLogo) {
         this.jLabelLogo = jLabelLogo;
     }
-
+    /**
+     * 
+     * @return jLabelMail
+     */
     public JLabel getjLabelMail() {
         return jLabelMail;
     }
-
+    /**
+     * 
+     * @param jLabelMail 
+     */
     public void setjLabelMail(JLabel jLabelMail) {
         this.jLabelMail = jLabelMail;
     }
-
+    /**
+     * 
+     * @return jLabelMat
+     */
     public JLabel getjLabelMat() {
         return jLabelMat;
     }
-
+    /**
+     * 
+     * @param jLabelMat 
+     */
     public void setjLabelMat(JLabel jLabelMat) {
         this.jLabelMat = jLabelMat;
     }
-
+    /**
+     * 
+     * @return jLabelNom
+     */
     public JLabel getjLabelNom() {
         return jLabelNom;
     }
-
+    /**
+     * 
+     * @param jLabelNom 
+     */
     public void setjLabelNom(JLabel jLabelNom) {
         this.jLabelNom = jLabelNom;
     }
-
+    /**
+     * 
+     * @return jLabelNomMed
+     */
     public JLabel getjLabelNomMed() {
         return jLabelNomMed;
     }
-
+    /**
+     * 
+     * @param jLabelNomMed 
+     */
     public void setjLabelNomMed(JLabel jLabelNomMed) {
         this.jLabelNomMed = jLabelNomMed;
     }
-
+    /**
+     * 
+     * @return jLabelPaysNais
+     */
     public JLabel getjLabelPaysNais() {
         return jLabelPaysNais;
     }
-
+    /**
+     * 
+     * @param jLabelPaysNais 
+     */
     public void setjLabelPaysNais(JLabel jLabelPaysNais) {
         this.jLabelPaysNais = jLabelPaysNais;
     }
-
+    /**
+     * 
+     * @return jLabelPrenom
+     */
     public JLabel getjLabelPrenom() {
         return jLabelPrenom;
     }
-
+    /**
+     * 
+     * @param jLabelPrenom 
+     */
     public void setjLabelPrenom(JLabel jLabelPrenom) {
         this.jLabelPrenom = jLabelPrenom;
     }
-
+    /**
+     * 
+     * @return jLabelPrenomMed
+     */
     public JLabel getjLabelPrenomMed() {
         return jLabelPrenomMed;
     }
-
+    /**
+     * 
+     * @param jLabelPrenomMed 
+     */
     public void setjLabelPrenomMed(JLabel jLabelPrenomMed) {
         this.jLabelPrenomMed = jLabelPrenomMed;
     }
-
+    /**
+     * 
+     * @return jLabelRem
+     */
     public JLabel getjLabelRem() {
         return jLabelRem;
     }
-
+    /**
+     * 
+     * @param jLabelRem 
+     */
     public void setjLabelRem(JLabel jLabelRem) {
         this.jLabelRem = jLabelRem;
     }
-
+    /**
+     * 
+     * @return jLabelSexe
+     */
     public JLabel getjLabelSexe() {
         return jLabelSexe;
     }
-
+    /**
+     * 
+     * @param jLabelSexe 
+     */
     public void setjLabelSexe(JLabel jLabelSexe) {
         this.jLabelSexe = jLabelSexe;
     }
-
+    /**
+     * 
+     * @return jLabelTelDom
+     */
     public JLabel getjLabelTelDom() {
         return jLabelTelDom;
     }
-
+    /**
+     * 
+     * @param jLabelTelDom 
+     */
     public void setjLabelTelDom(JLabel jLabelTelDom) {
         this.jLabelTelDom = jLabelTelDom;
     }
-
+    /**
+     * 
+     * @return jLabelTelMed
+     */
     public JLabel getjLabelTelMed() {
         return jLabelTelMed;
     }
-
+    /**
+     * 
+     * @param jLabelTelMed 
+     */
     public void setjLabelTelMed(JLabel jLabelTelMed) {
         this.jLabelTelMed = jLabelTelMed;
     }
-
+    /**
+     * 
+     * @return jLabelTelMob
+     */
     public JLabel getjLabelTelMob() {
         return jLabelTelMob;
     }
-
+    /**
+     * 
+     * @param jLabelTelMob 
+     */
     public void setjLabelTelMob(JLabel jLabelTelMob) {
         this.jLabelTelMob = jLabelTelMob;
     }
-
+    /**
+     * 
+     * @return jLabelTitreCoord
+     */
     public JLabel getjLabelTitreCoord() {
         return jLabelTitreCoord;
     }
-
+    /**
+     * 
+     * @param jLabelTitreCoord 
+     */
     public void setjLabelTitreCoord(JLabel jLabelTitreCoord) {
         this.jLabelTitreCoord = jLabelTitreCoord;
     }
-
+    /**
+     * 
+     * @return jLabelTitreDoc
+     */
     public JLabel getjLabelTitreDoc() {
         return jLabelTitreDoc;
     }
-
+    /**
+     * 
+     * @param jLabelTitreDoc 
+     */
     public void setjLabelTitreDoc(JLabel jLabelTitreDoc) {
         this.jLabelTitreDoc = jLabelTitreDoc;
     }
-
+    /**
+     * 
+     * @return jLabelTitreGen
+     */
     public JLabel getjLabelTitreGen() {
         return jLabelTitreGen;
     }
-
+    /**
+     * 
+     * @param jLabelTitreGen 
+     */
     public void setjLabelTitreGen(JLabel jLabelTitreGen) {
         this.jLabelTitreGen = jLabelTitreGen;
     }
-
+    /**
+     * 
+     * @return jLabelTitreIdentite
+     */
     public JLabel getjLabelTitreIdentite() {
         return jLabelTitreIdentite;
     }
-
+    /**
+     * 
+     * @param jLabelTitreIdentite 
+     */
     public void setjLabelTitreIdentite(JLabel jLabelTitreIdentite) {
         this.jLabelTitreIdentite = jLabelTitreIdentite;
     }
-
+    /**
+     * 
+     * @return jLabelTitrePers
+     */
     public JLabel getjLabelTitrePers() {
         return jLabelTitrePers;
     }
-
+    /**
+     * 
+     * @param jLabelTitrePers 
+     */
     public void setjLabelTitrePers(JLabel jLabelTitrePers) {
         this.jLabelTitrePers = jLabelTitrePers;
     }
-
+    /**
+     * 
+     * @return jLabelTitreSante
+     */
     public JLabel getjLabelTitreSante() {
         return jLabelTitreSante;
     }
-
+    /**
+     * 
+     * @param jLabelTitreSante 
+     */
     public void setjLabelTitreSante(JLabel jLabelTitreSante) {
         this.jLabelTitreSante = jLabelTitreSante;
     }
-
+    /**
+     * 
+     * @return jLabelVacc
+     */
     public JLabel getjLabelVacc() {
         return jLabelVacc;
     }
-
+    /**
+     * 
+     * @param jLabelVacc 
+     */
     public void setjLabelVacc(JLabel jLabelVacc) {
         this.jLabelVacc = jLabelVacc;
     }
-
+    /**
+     * 
+     * @return jLabelVille
+     */
     public JLabel getjLabelVille() {
         return jLabelVille;
     }
-
+    /**
+     * 
+     * @param jLabelVille 
+     */
     public void setjLabelVille(JLabel jLabelVille) {
         this.jLabelVille = jLabelVille;
     }
-
+    /** 
+     * 
+     * @return jLabelVilleNais
+     */
     public JLabel getjLabelVilleNais() {
         return jLabelVilleNais;
     }
-
+    /**
+     * 
+     * @param jLabelVilleNais 
+     */
     public void setjLabelVilleNais(JLabel jLabelVilleNais) {
         this.jLabelVilleNais = jLabelVilleNais;
     }
-
+    /**
+     * 
+     * @return jPanelContentCoord
+     */
     public JPanel getjPanelContentCoord() {
         return jPanelContentCoord;
     }
-
+    /**
+     * 
+     * @param jPanelContentCoord 
+     */
     public void setjPanelContentCoord(JPanel jPanelContentCoord) {
         this.jPanelContentCoord = jPanelContentCoord;
     }
-
+    /**
+     * 
+     * @return jPanelContentDoc
+     */
     public JPanel getjPanelContentDoc() {
         return jPanelContentDoc;
     }
-
+    /**
+     * 
+     * @param jPanelContentDoc 
+     */
     public void setjPanelContentDoc(JPanel jPanelContentDoc) {
         this.jPanelContentDoc = jPanelContentDoc;
     }
-
+    /**
+     * 
+     * @return jPanelContentGen
+     */
     public JPanel getjPanelContentGen() {
         return jPanelContentGen;
     }
-
+    /**
+     * 
+     * @param jPanelContentGen 
+     */
     public void setjPanelContentGen(JPanel jPanelContentGen) {
         this.jPanelContentGen = jPanelContentGen;
     }
-
+    /**
+     * 
+     * @return jPanelContentIdentite
+     */
     public JPanel getjPanelContentIdentite() {
         return jPanelContentIdentite;
     }
-
+    /**
+     * 
+     * @param jPanelContentIdentite 
+     */
     public void setjPanelContentIdentite(JPanel jPanelContentIdentite) {
         this.jPanelContentIdentite = jPanelContentIdentite;
     }
-
+    /**
+     * 
+     * @return jPanelContentPers
+     */
     public JPanel getjPanelContentPers() {
         return jPanelContentPers;
     }
-
+    /**
+     * 
+     * @param jPanelContentPers 
+     */
     public void setjPanelContentPers(JPanel jPanelContentPers) {
         this.jPanelContentPers = jPanelContentPers;
     }
-
+    /**
+     * 
+     * @return jPanelContentSante
+     */
     public JPanel getjPanelContentSante() {
         return jPanelContentSante;
     }
-
+    /**
+     * 
+     * @param jPanelContentSante 
+     */
     public void setjPanelContentSante(JPanel jPanelContentSante) {
         this.jPanelContentSante = jPanelContentSante;
     }
-
+    /**
+     * 
+     * @return jPanelCoord
+     */
     public JPanel getjPanelCoord() {
         return jPanelCoord;
     }
-
+    /**
+     * 
+     * @param jPanelCoord 
+     */
     public void setjPanelCoord(JPanel jPanelCoord) {
         this.jPanelCoord = jPanelCoord;
     }
-
+    /**
+     * 
+     * @return jPanelDoc
+     */
     public JPanel getjPanelDoc() {
         return jPanelDoc;
     }
-
+    /**
+     * 
+     * @param jPanelDoc 
+     */
     public void setjPanelDoc(JPanel jPanelDoc) {
         this.jPanelDoc = jPanelDoc;
     }
-
+    /**
+     * 
+     * @return jPanelGeneral
+     */
     public JPanel getjPanelGeneral() {
         return jPanelGeneral;
     }
-
+    /**
+     * 
+     * @param jPanelGeneral 
+     */
     public void setjPanelGeneral(JPanel jPanelGeneral) {
         this.jPanelGeneral = jPanelGeneral;
     }
-
+    /**
+     * 
+     * @return jPanelIdentite
+     */
     public JPanel getjPanelIdentite() {
         return jPanelIdentite;
     }
-
+    /**
+     * 
+     * @param jPanelIdentite 
+     */
     public void setjPanelIdentite(JPanel jPanelIdentite) {
         this.jPanelIdentite = jPanelIdentite;
     }
-
+    /**
+     * 
+     * @return jPanelPers
+     */
     public JPanel getjPanelPers() {
         return jPanelPers;
     }
-
+    /**
+     * 
+     * @param jPanelPers 
+     */
     public void setjPanelPers(JPanel jPanelPers) {
         this.jPanelPers = jPanelPers;
     }
-
+    /**
+     * 
+     * @return jPanelSante
+     */
     public JPanel getjPanelSante() {
         return jPanelSante;
     }
-
+    /**
+     * 
+     * @param jPanelSante 
+     */
     public void setjPanelSante(JPanel jPanelSante) {
         this.jPanelSante = jPanelSante;
     }
-
+    /**
+     * 
+     * @return jPanelTitreCoord
+     */
     public JPanel getjPanelTitreCoord() {
         return jPanelTitreCoord;
     }
-
+    /**
+     * 
+     * @param jPanelTitreCoord 
+     */
     public void setjPanelTitreCoord(JPanel jPanelTitreCoord) {
         this.jPanelTitreCoord = jPanelTitreCoord;
     }
-
+    /**
+     * 
+     * @return jPanelTitreDoc
+     */
     public JPanel getjPanelTitreDoc() {
         return jPanelTitreDoc;
     }
-
+    /**
+     * 
+     * @param jPanelTitreDoc 
+     */
     public void setjPanelTitreDoc(JPanel jPanelTitreDoc) {
         this.jPanelTitreDoc = jPanelTitreDoc;
     }
-
+    /**
+     * 
+     * @return jPanelTitreGen
+     */
     public JPanel getjPanelTitreGen() {
         return jPanelTitreGen;
     }
-
+    /**
+     * 
+     * @param jPanelTitreGen 
+     */
     public void setjPanelTitreGen(JPanel jPanelTitreGen) {
         this.jPanelTitreGen = jPanelTitreGen;
     }
-
+    /**
+     * 
+     * @return jPanelTitreIdentite
+     */
     public JPanel getjPanelTitreIdentite() {
         return jPanelTitreIdentite;
     }
-
+    /**
+     * 
+     * @param jPanelTitreIdentite 
+     */
     public void setjPanelTitreIdentite(JPanel jPanelTitreIdentite) {
         this.jPanelTitreIdentite = jPanelTitreIdentite;
     }
-
+    /**
+     * 
+     * @return jPanelTitrePers
+     */
     public JPanel getjPanelTitrePers() {
         return jPanelTitrePers;
     }
-
+    /**
+     * 
+     * @param jPanelTitrePers 
+     */
     public void setjPanelTitrePers(JPanel jPanelTitrePers) {
         this.jPanelTitrePers = jPanelTitrePers;
     }
-
+    /**
+     * 
+     * @return jPanelTitreSante
+     */
     public JPanel getjPanelTitreSante() {
         return jPanelTitreSante;
     }
-
+    /**
+     * 
+     * @param jPanelTitreSante 
+     */
     public void setjPanelTitreSante(JPanel jPanelTitreSante) {
         this.jPanelTitreSante = jPanelTitreSante;
     }
-
+    /**
+     * 
+     * @return jTabbedPaneAca
+     */
     public JTabbedPane getjTabbedPaneAdmin() {
         return jTabbedPaneAca;
     }
-
+    /**
+     * 
+     * @param jTabbedPaneAdmin 
+     */
     public void setjTabbedPaneAdmin(JTabbedPane jTabbedPaneAdmin) {
         this.jTabbedPaneAca = jTabbedPaneAdmin;
     }
-
+    /**
+     * 
+     * @return jTextFieldAdr
+     */
     public JTextField getjTextFieldAdr() {
         return jTextFieldAdr;
     }
-
+    /**
+     * 
+     * @param jTextFieldAdr 
+     */
     public void setjTextFieldAdr(JTextField jTextFieldAdr) {
         this.jTextFieldAdr = jTextFieldAdr;
     }
-
+    /**
+     * 
+     * @return jTextFieldAll
+     */
     public JTextField getjTextFieldAll() {
         return jTextFieldAll;
     }
-
+    /**
+     * 
+     * @param jTextFieldAll 
+     */
     public void setjTextFieldAll(JTextField jTextFieldAll) {
         this.jTextFieldAll = jTextFieldAll;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact1Adr
+     */
     public JTextField getjTextFieldContact1Adr() {
         return jTextFieldContact1Adr;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact1Adr 
+     */
     public void setjTextFieldContact1Adr(JTextField jTextFieldContact1Adr) {
         this.jTextFieldContact1Adr = jTextFieldContact1Adr;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact1Mail
+     */
     public JTextField getjTextFieldContact1Mail() {
         return jTextFieldContact1Mail;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact1Mail 
+     */
     public void setjTextFieldContact1Mail(JTextField jTextFieldContact1Mail) {
         this.jTextFieldContact1Mail = jTextFieldContact1Mail;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact1Nom
+     */
     public JTextField getjTextFieldContact1Nom() {
         return jTextFieldContact1Nom;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact1Nom 
+     */
     public void setjTextFieldContact1Nom(JTextField jTextFieldContact1Nom) {
         this.jTextFieldContact1Nom = jTextFieldContact1Nom;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact1Prenom
+     */
     public JTextField getjTextFieldContact1Prenom() {
         return jTextFieldContact1Prenom;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact1Prenom 
+     */
     public void setjTextFieldContact1Prenom(JTextField jTextFieldContact1Prenom) {
         this.jTextFieldContact1Prenom = jTextFieldContact1Prenom;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact1Tel
+     */
     public JTextField getjTextFieldContact1Tel() {
         return jTextFieldContact1Tel;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact1Tel 
+     */
     public void setjTextFieldContact1Tel(JTextField jTextFieldContact1Tel) {
         this.jTextFieldContact1Tel = jTextFieldContact1Tel;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact2Adr
+     */
     public JTextField getjTextFieldContact2Adr() {
         return jTextFieldContact2Adr;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact2Adr 
+     */
     public void setjTextFieldContact2Adr(JTextField jTextFieldContact2Adr) {
         this.jTextFieldContact2Adr = jTextFieldContact2Adr;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact2Mail
+     */
     public JTextField getjTextFieldContact2Mail() {
         return jTextFieldContact2Mail;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact2Mail 
+     */
     public void setjTextFieldContact2Mail(JTextField jTextFieldContact2Mail) {
         this.jTextFieldContact2Mail = jTextFieldContact2Mail;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact2Nom
+     */
     public JTextField getjTextFieldContact2Nom() {
         return jTextFieldContact2Nom;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact2Nom 
+     */
     public void setjTextFieldContact2Nom(JTextField jTextFieldContact2Nom) {
         this.jTextFieldContact2Nom = jTextFieldContact2Nom;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact2Prenom
+     */
     public JTextField getjTextFieldContact2Prenom() {
         return jTextFieldContact2Prenom;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact2Prenom 
+     */
     public void setjTextFieldContact2Prenom(JTextField jTextFieldContact2Prenom) {
         this.jTextFieldContact2Prenom = jTextFieldContact2Prenom;
     }
-
+    /**
+     * 
+     * @return jTextFieldContact2Tel
+     */
     public JTextField getjTextFieldContact2Tel() {
         return jTextFieldContact2Tel;
     }
-
+    /**
+     * 
+     * @param jTextFieldContact2Tel 
+     */
     public void setjTextFieldContact2Tel(JTextField jTextFieldContact2Tel) {
         this.jTextFieldContact2Tel = jTextFieldContact2Tel;
     }
-
+    /**
+     * 
+     * @return jTextFieldCp
+     */
     public JTextField getjTextFieldCp() {
         return jTextFieldCp;
     }
-
+    /**
+     * 
+     * @param jTextFieldCp 
+     */
     public void setjTextFieldCp(JTextField jTextFieldCp) {
         this.jTextFieldCp = jTextFieldCp;
     }
-
+    /**
+     * 
+     * @return jTextFieldDateInsc
+     */
     public JTextField getjTextFieldDateInsc() {
         return jTextFieldDateInsc;
     }
-
+    /**
+     * 
+     * @param jTextFieldDateInsc 
+     */
     public void setjTextFieldDateInsc(JTextField jTextFieldDateInsc) {
         this.jTextFieldDateInsc = jTextFieldDateInsc;
     }
-
+    /**
+     * 
+     * @return jTextFieldDateNais
+     */
     public JTextField getjTextFieldDateNais() {
         return jTextFieldDateNais;
     }
-
+    /**
+     * 
+     * @param jTextFieldDateNais 
+     */
     public void setjTextFieldDateNais(JTextField jTextFieldDateNais) {
         this.jTextFieldDateNais = jTextFieldDateNais;
     }
-
+    /**
+     * 
+     * @return jTextFieldEtaPre
+     */
     public JTextField getjTextFieldEtaPre() {
         return jTextFieldEtaPre;
     }
-
+    /**
+     * 
+     * @param jTextFieldEtaPre 
+     */
     public void setjTextFieldEtaPre(JTextField jTextFieldEtaPre) {
         this.jTextFieldEtaPre = jTextFieldEtaPre;
     }
-
+    /**
+     * 
+     * @return jTextFieldMail
+     */
     public JTextField getjTextFieldMail() {
         return jTextFieldMail;
     }
-
+    /**
+     * 
+     * @param jTextFieldMail 
+     */
     public void setjTextFieldMail(JTextField jTextFieldMail) {
         this.jTextFieldMail = jTextFieldMail;
     }
-
+    /**
+     * 
+     * @return jTextFieldMat
+     */
     public JTextField getjTextFieldMat() {
         return jTextFieldMat;
     }
-
+    /**
+     * 
+     * @param jTextFieldMat 
+     */
     public void setjTextFieldMat(JTextField jTextFieldMat) {
         this.jTextFieldMat = jTextFieldMat;
     }
-
+    /**
+     * 
+     * @return jTextFieldNom
+     */
     public JTextField getjTextFieldNom() {
         return jTextFieldNom;
     }
-
+    /**
+     * 
+     * @param jTextFieldNom 
+     */
     public void setjTextFieldNom(JTextField jTextFieldNom) {
         this.jTextFieldNom = jTextFieldNom;
     }
-
+    /**
+     * 
+     * @return jTextFieldNomMed
+     */
     public JTextField getjTextFieldNomMed() {
         return jTextFieldNomMed;
     }
-
+    /**
+     * 
+     * @param jTextFieldNomMed 
+     */
     public void setjTextFieldNomMed(JTextField jTextFieldNomMed) {
         this.jTextFieldNomMed = jTextFieldNomMed;
     }
-
+    /**
+     * 
+     * @return jTextFieldPaysNais
+     */
     public JTextField getjTextFieldPaysNais() {
         return jTextFieldPaysNais;
     }
-
+    /**
+     * 
+     * @param jTextFieldPaysNais 
+     */
     public void setjTextFieldPaysNais(JTextField jTextFieldPaysNais) {
         this.jTextFieldPaysNais = jTextFieldPaysNais;
     }
-
+    /**
+     * 
+     * @return jTextFieldPrenom1
+     */
     public JTextField getjTextFieldPrenom1() {
         return jTextFieldPrenom1;
     }
-
+    /**
+     * 
+     * @param jTextFieldPrenom1 
+     */
     public void setjTextFieldPrenom(JTextField jTextFieldPrenom1) {
         this.jTextFieldPrenom1 = jTextFieldPrenom1;
     }
-
+    /**
+     * 
+     * @return jTextFieldPrenomMed
+     */
     public JTextField getjTextFieldPrenomMed() {
         return jTextFieldPrenomMed;
     }
-
+    /**
+     * 
+     * @param jTextFieldPrenomMed 
+     */
     public void setjTextFieldPrenomMed(JTextField jTextFieldPrenomMed) {
         this.jTextFieldPrenomMed = jTextFieldPrenomMed;
     }
-
+    /**
+     * 
+     * @return jTextFieldRem
+     */
     public JTextField getjTextFieldRem() {
         return jTextFieldRem;
     }
-
+    /**
+     * 
+     * @param jTextFieldRem 
+     */
     public void setjTextFieldRem(JTextField jTextFieldRem) {
         this.jTextFieldRem = jTextFieldRem;
     }
-
+    /**
+     * 
+     * @return jTextFieldSexe
+     */
     public JTextField getjTextFieldSexe() {
         return jTextFieldSexe;
     }
-
+    /**
+     * 
+     * @param jTextFieldSexe 
+     */
     public void setjTextFieldSexe(JTextField jTextFieldSexe) {
         this.jTextFieldSexe = jTextFieldSexe;
     }
-
+    /**
+     * 
+     * @return jTextFieldTelDom
+     */
     public JTextField getjTextFieldTelDom() {
         return jTextFieldTelDom;
     }
-
+    /**
+     * 
+     * @param jTextFieldTelDom 
+     */
     public void setjTextFieldTelDom(JTextField jTextFieldTelDom) {
         this.jTextFieldTelDom = jTextFieldTelDom;
     }
-
+    /**
+     * 
+     * @return jTextFieldTelMed
+     */
     public JTextField getjTextFieldTelMed() {
         return jTextFieldTelMed;
     }
-
+    /**
+     * 
+     * @param jTextFieldTelMed 
+     */
     public void setjTextFieldTelMed(JTextField jTextFieldTelMed) {
         this.jTextFieldTelMed = jTextFieldTelMed;
     }
-
+    /**
+     * 
+     * @return jTextFieldTelMob
+     */
     public JTextField getjTextFieldTelMob() {
         return jTextFieldTelMob;
     }
-
+    /**
+     * 
+     * @param jTextFieldTelMob 
+     */
     public void setjTextFieldTelMob(JTextField jTextFieldTelMob) {
         this.jTextFieldTelMob = jTextFieldTelMob;
     }
-
+    /**
+     * 
+     * @return jTextFieldVacc
+     */
     public JTextField getjTextFieldVacc() {
         return jTextFieldVacc;
     }
-
+    /**
+     * 
+     * @param jTextFieldVacc 
+     */
     public void setjTextFieldVacc(JTextField jTextFieldVacc) {
         this.jTextFieldVacc = jTextFieldVacc;
     }
-
+    /**
+     * 
+     * @return jTextFieldVille
+     */
     public JTextField getjTextFieldVille() {
         return jTextFieldVille;
     }
-
+    /**
+     * 
+     * @param jTextFieldVille 
+     */
     public void setjTextFieldVille(JTextField jTextFieldVille) {
         this.jTextFieldVille = jTextFieldVille;
     }
-
+    /**
+     * 
+     * @return jTextFieldVilleNais
+     */
     public JTextField getjTextFieldVilleNais() {
         return jTextFieldVilleNais;
     }
-
+    /**
+     * 
+     * @param jTextFieldVilleNais 
+     */
     public void setjTextFieldVilleNais(JTextField jTextFieldVilleNais) {
         this.jTextFieldVilleNais = jTextFieldVilleNais;
     }
-
+    /**
+     * 
+     * @return jButtonchoixETU
+     */
     public JButton getjButtonchoixETU() {
         return jButtonchoixETU;
     }
-
+    /**
+     * 
+     * @param jButtonchoixETU 
+     */
     public void setjButtonchoixETU(JButton jButtonchoixETU) {
         this.jButtonchoixETU = jButtonchoixETU;
     }
-
+    /**
+     * 
+     * @return jButtonokClasse
+     */
     public JButton getjButtonokClasse() {
         return jButtonokClasse;
     }
-
+    /**
+     * 
+     * @param jButtonokClasse 
+     */
     public void setjButtonokClasse(JButton jButtonokClasse) {
         this.jButtonokClasse = jButtonokClasse;
     }
-
+    /**
+     * 
+     * @return jComboBoxClasse
+     */
     public JComboBox<String> getjComboBoxClasse() {
         return jComboBoxClasse;
     }
-
+    /**
+     * 
+     * @param jComboBoxClasse 
+     */
     public void setjComboBoxClasse(JComboBox<String> jComboBoxClasse) {
         this.jComboBoxClasse = jComboBoxClasse;
     }
-
+    /**
+     * 
+     * @return jComboBoxEtu
+     */
     public JComboBox<String> getjComboBoxEtu() {
         return jComboBoxEtu;
     }
-
+    /**
+     * 
+     * @param jComboBoxEtu 
+     */
     public void setjComboBoxEtu(JComboBox<String> jComboBoxEtu) {
         this.jComboBoxEtu = jComboBoxEtu;
     }
-
+    /**
+     * 
+     * @return jPanelSelect
+     */
     public JPanel getjPanelSelect() {
         return jPanelSelect;
     }
-
+    /**
+     * 
+     * @param jPanelSelect 
+     */
     public void setjPanelSelect(JPanel jPanelSelect) {
         this.jPanelSelect = jPanelSelect;
     }
-
+    /**
+     * 
+     * @return jTabbedPaneAca
+     */
     public JTabbedPane getjTabbedPaneAca() {
         return jTabbedPaneAca;
     }
-
+    /**
+     * 
+     * @param jTabbedPaneAca 
+     */
     public void setjTabbedPaneAca(JTabbedPane jTabbedPaneAca) {
         this.jTabbedPaneAca = jTabbedPaneAca;
     }
-
+    /**
+     * 
+     * @return jButtonModifyCoord
+     */
     public JButton getjButtonModifyCoord() {
         return jButtonModifyCoord;
     }
-
+    /**
+     * 
+     * @param jButtonModifyCoord 
+     */
     public void setjButtonModifyCoord(JButton jButtonModifyCoord) {
         this.jButtonModifyCoord = jButtonModifyCoord;
     }
-
+    /**
+     * 
+     * @return jButtonModifyGeneral
+     */
     public JButton getjButtonModifyGeneral() {
         return jButtonModifyGeneral;
     }
-
+    /**
+     * 
+     * @param jButtonModifyGeneral 
+     */
     public void setjButtonModifyGeneral(JButton jButtonModifyGeneral) {
         this.jButtonModifyGeneral = jButtonModifyGeneral;
     }
-
+    /**
+     * 
+     * @return jButtonModifyIdent
+     */
     public JButton getjButtonModifyIdent() {
         return jButtonModifyIdent;
     }
-
+    /**
+     * 
+     * @param jButtonModifyIdent 
+     */
     public void setjButtonModifyIdent(JButton jButtonModifyIdent) {
         this.jButtonModifyIdent = jButtonModifyIdent;
     }
-
+    /**
+     * 
+     * @return jButtonModifyMed
+     */
     public JButton getjButtonModifyMed() {
         return jButtonModifyMed;
     }
-
+    /**
+     * 
+     * @param jButtonModifyMed 
+     */
     public void setjButtonModifyMed(JButton jButtonModifyMed) {
         this.jButtonModifyMed = jButtonModifyMed;
     }
-
+    /**
+     * 
+     * @return jButtonModifyR1
+     */
     public JButton getjButtonModifyR1() {
         return jButtonModifyR1;
     }
-
+    /**
+     * 
+     * @param jButtonModifyR1 
+     */
     public void setjButtonModifyR1(JButton jButtonModifyR1) {
         this.jButtonModifyR1 = jButtonModifyR1;
     }
-
+    /**
+     * 
+     * @return jButtonModifyR2
+     */
     public JButton getjButtonModifyR2() {
         return jButtonModifyR2;
     }
-
+    /**
+     * 
+     * @param jButtonModifyR2 
+     */
     public void setjButtonModifyR2(JButton jButtonModifyR2) {
         this.jButtonModifyR2 = jButtonModifyR2;
     }
-
+    /**
+     * 
+     * @return jButtonDocEdit
+     */
     public JButton getjButtonDocEdit() {
         return jButtonDocEdit;
     }
-
+    /**
+     * 
+     * @param jButtonDocEdit 
+     */
     public void setjButtonDocEdit(JButton jButtonDocEdit) {
         this.jButtonDocEdit = jButtonDocEdit;
     }
-
+    /**
+     * 
+     * @return jComboBoxDocEtu
+     */
     public JComboBox<String> getjComboBoxDocEtu() {
         return jComboBoxDocEtu;
     }
-
+    /**
+     * 
+     * @param jComboBoxDocEtu 
+     */
     public void setjComboBoxDocEtu(JComboBox<String> jComboBoxDocEtu) {
         this.jComboBoxDocEtu = jComboBoxDocEtu;
     }
-
+    /**
+     * 
+     * @return jTextFieldDocDate
+     */
     public JTextField getjTextFieldDocDate() {
         return jTextFieldDocDate;
     }
-
+    /**
+     * 
+     * @param jTextFieldDocDate 
+     */
     public void setjTextFieldDocDate(JTextField jTextFieldDocDate) {
         this.jTextFieldDocDate = jTextFieldDocDate;
     }
-
+    /**
+     * 
+     * @return jTextFieldDocMotif
+     */
     public JTextField getjTextFieldDocMotif() {
         return jTextFieldDocMotif;
     }
-
+    /**
+     * 
+     * @param jTextFieldDocMotif 
+     */
     public void setjTextFieldDocMotif(JTextField jTextFieldDocMotif) {
         this.jTextFieldDocMotif = jTextFieldDocMotif;
     }
-
+    /**
+     * 
+     * @return jButtonDocImpr
+     */
     public JButton getjButtonDocImpr() {
         return jButtonDocImpr;
     }
-
+    /**
+     * 
+     * @param jButtonDocImpr 
+     */
     public void setjButtonDocImpr(JButton jButtonDocImpr) {
         this.jButtonDocImpr = jButtonDocImpr;
     }
+    /**
+     * 
+     * @return jTextFieldDocHeure
+     */
+    public JTextField getjTextFieldDocHeure() {
+        return jTextFieldDocHeure;
+    }
+    /**
+     * 
+     * @param jTextFieldDocHeure 
+     */
+    public void setjTextFieldDocHeure(JTextField jTextFieldDocHeure) {
+        this.jTextFieldDocHeure = jTextFieldDocHeure;
+    }
+    
     
     
 
@@ -2137,6 +2776,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;
@@ -2214,6 +2854,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDateInsc;
     private javax.swing.JTextField jTextFieldDateNais;
     private javax.swing.JTextField jTextFieldDocDate;
+    private javax.swing.JTextField jTextFieldDocHeure;
     private javax.swing.JTextField jTextFieldDocMotif;
     private javax.swing.JTextField jTextFieldEtaPre;
     private javax.swing.JTextField jTextFieldMail;
