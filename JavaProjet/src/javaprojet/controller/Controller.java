@@ -210,6 +210,8 @@ public class Controller {
 
                 CardLayout c2 = (CardLayout)(Accueil.getjPanelMainContent().getLayout());
                 c2.next(Accueil.getjPanelMainContent());
+                admin=false;
+                connect=false;
                 //Boîte du message d'information
                 JOptionPane.showMessageDialog(null, "Déconnection", "Information", JOptionPane.INFORMATION_MESSAGE);
             }  
@@ -659,17 +661,23 @@ public class Controller {
                 } catch (SQLException sqlE) {
                     System.out.println("Probleme BDD :"+sqlE.getMessage());
                 }
-                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf",heure);
-                Desktop desk = Desktop.getDesktop();
+                
+                
                 try {
+                    GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf",heure);
+                    Desktop desk = Desktop.getDesktop();
                     desk.open(new File("./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf"));
                 } catch (IOException Fe) {
-                    JOptionPane jop1 = new JOptionPane();
-                    jop1.showMessageDialog(null, "Probleme lors de l'ouverture du pdf"+Fe.getMessage(), "Erreur Ouverture", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Probleme lors de l'ouverture du pdf"+Fe.getMessage(), "Erreur Ouverture", JOptionPane.ERROR_MESSAGE);
                     System.out.println("Probleme lors de l'ouverture du pdf"+Fe.getMessage());
                     
+                    
+                }catch(IllegalArgumentException ill){
+                    JOptionPane.showMessageDialog(null, "Probleme au niveau du format de la date"+ill.getMessage(), "Erreur format", JOptionPane.ERROR_MESSAGE);
+                    
                 }
-                }
+                    
+             }
             //Permet d'imprimer la convocation
             else if (e.getSource() == Admin.getjButtonDocImpr()){
                 
