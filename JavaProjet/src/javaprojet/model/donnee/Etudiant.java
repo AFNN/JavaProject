@@ -26,6 +26,7 @@ public class Etudiant {
     /**
      * 
      * @param Matricule 
+     *  int matricule etudiant
      */
     public void setMatricule(int Matricule) {
         this.Matricule = Matricule;
@@ -40,6 +41,7 @@ public class Etudiant {
     /**
      * 
      * @param Nom 
+     *      String Nom etudiant 
      */
     public void setNom(String Nom) {
         this.Nom = Nom;
@@ -53,7 +55,8 @@ public class Etudiant {
     }
     /**
      * 
-     * @param Prénom 
+     * @param Prenom 
+     *  String prenom etudiant
      */
     public void setPrenom(String Prenom) {
         this.Prenom = Prenom;
@@ -68,6 +71,7 @@ public class Etudiant {
     /**
      * 
      * @param idClasse 
+     *      int IDCLASSE etudiant
      */
     public void setIdClasse(int idClasse) {
         this.idClasse = idClasse;
@@ -75,9 +79,14 @@ public class Etudiant {
     /**
      * Constructeur de l'objet Etudiant
      * @param Matricule
+     *      int matricule etudiant
      * @param Nom
+     *      String nom etudiant
      * @param Prenom
+     *      String prenom etudiant
+     * 
      * @param idClasse 
+     *      int idClasse etudiant 
      */
     public Etudiant(int Matricule, String Nom, String Prenom, int idClasse) {
         this.Matricule = Matricule;

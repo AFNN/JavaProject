@@ -26,6 +26,7 @@ public class Classe {
     /**
      * 
      * @param idClasse 
+     *  int idClasse 
      */
     public void setIdClasse(int idClasse) {
         this.idClasse = idClasse;
@@ -40,6 +41,7 @@ public class Classe {
     /**
      * 
      * @param nomClasse 
+     *  String nomClasse
      */
     public void setNomClasse(String nomClasse) {
         this.nomClasse = nomClasse;
@@ -54,6 +56,7 @@ public class Classe {
     /**
      * 
      * @param idMatiere1 
+     *  int idMatiere de la classe
      */
     public void setIdMatiere1(int idMatiere1) {
         this.idMatiere1 = idMatiere1;
@@ -68,6 +71,7 @@ public class Classe {
     /**
      * 
      * @param idMatiere2 
+     * int idMatiere de la classe
      */
     public void setIdMatiere2(int idMatiere2) {
         this.idMatiere2 = idMatiere2;
@@ -82,6 +86,7 @@ public class Classe {
     /**
      * 
      * @param idMatiere3 
+     * int idMatiere de la classe
      */
     public void setIdMatiere3(int idMatiere3) {
         this.idMatiere3 = idMatiere3;
@@ -96,6 +101,7 @@ public class Classe {
     /**
      * 
      * @param idMatiere4 
+     * int idMatiere de la classe
      */
     public void setIdMatiere4(int idMatiere4) {
         this.idMatiere4 = idMatiere4;
@@ -103,11 +109,17 @@ public class Classe {
     /**
      * Constructeur de l'objet Classe
      * @param idClasse
+     *  int idClasse
      * @param NomClasse
+     *  String NomClasse 
      * @param idMatiere1
+     * int idMatiere de la classe
      * @param idMatiere2
+     * int idMatiere de la classe
      * @param idMatiere3
+     * int idMatiere de la classe
      * @param idMatiere4 
+     * int idMatiere de la classe
      */
     
     public Classe(int idClasse, String NomClasse, int idMatiere1, int idMatiere2, int idMatiere3, int idMatiere4) {

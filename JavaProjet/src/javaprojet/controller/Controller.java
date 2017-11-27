@@ -642,7 +642,7 @@ public class Controller {
                 String[] result= Admin.getjComboBoxDocEtu().getSelectedItem().toString().split(" ");
                 String date= Admin.getjTextFieldDocDate().getText();
                 String motif=Admin.getjTextFieldDocMotif().getText();
-                
+                String heure=Admin.getjTextFieldDocHeure().getText();
                 Statement stmt=null;
                 ResultSet resEtudiant=null; 
                 try{
@@ -659,7 +659,7 @@ public class Controller {
                 } catch (SQLException sqlE) {
                     System.out.println("Probleme BDD :"+sqlE.getMessage());
                 }
-                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf");
+                GestionDocument.GestionDocument(etuDoc, motif, Date.valueOf(date),"./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf",heure);
                 Desktop desk = Desktop.getDesktop();
                 try {
                     desk.open(new File("./DocumentPDF/Convocation_"+etuDoc.getNom()+"_"+etuDoc.getPrenom()+".pdf"));

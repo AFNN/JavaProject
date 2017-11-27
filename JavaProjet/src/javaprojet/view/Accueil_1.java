@@ -151,6 +151,8 @@ public class Accueil_1 extends javax.swing.JFrame {
         jButtonDocImpr = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldDocHeure = new javax.swing.JTextField();
         jButtonAdmin = new javax.swing.JButton();
         jButtonAca = new javax.swing.JButton();
         jLabelLogo = new javax.swing.JLabel();
@@ -293,7 +295,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldPrenom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(103, 103, 103)
                 .addComponent(jButtonModifyGeneral)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jLabelTitreGen.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
@@ -449,7 +451,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldEtaPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71)
                 .addComponent(jButtonModifyIdent)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelIdentiteLayout = new javax.swing.GroupLayout(jPanelIdentite);
@@ -462,7 +464,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addContainerGap(173, Short.MAX_VALUE))
             .addGroup(jPanelIdentiteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelContentIdentite, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jPanelContentIdentite, javax.swing.GroupLayout.PREFERRED_SIZE, 796, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelIdentiteLayout.setVerticalGroup(
@@ -579,7 +581,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addComponent(jButtonModifyCoord)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelCoordLayout = new javax.swing.GroupLayout(jPanelCoord);
@@ -778,7 +780,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                 .addGroup(jPanelContentPersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModifyR1)
                     .addComponent(jButtonModifyR2))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelPersLayout = new javax.swing.GroupLayout(jPanelPers);
@@ -918,7 +920,7 @@ public class Accueil_1 extends javax.swing.JFrame {
                     .addComponent(jTextFieldRem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonModifyMed)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelSanteLayout = new javax.swing.GroupLayout(jPanelSante);
@@ -1018,6 +1020,10 @@ public class Accueil_1 extends javax.swing.JFrame {
 
         jLabel5.setText("Format de la date : aaaa-mm-jj");
 
+        jLabel7.setText("Choix de l'heure :");
+
+        jTextFieldDocHeure.setText("Choix de l'heure (exemple:15h00)");
+
         javax.swing.GroupLayout jPanelContentDocLayout = new javax.swing.GroupLayout(jPanelContentDoc);
         jPanelContentDoc.setLayout(jPanelContentDocLayout);
         jPanelContentDocLayout.setHorizontalGroup(
@@ -1030,22 +1036,26 @@ public class Accueil_1 extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
-                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonDocEdit)
-                            .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                                .addComponent(jComboBoxDocEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldDocDate))
-                            .addComponent(jButtonDocImpr)))
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldDocMotif, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(jComboBoxDocEtu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldDocDate)
+                            .addComponent(jTextFieldDocHeure)))
                     .addGroup(jPanelContentDocLayout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addComponent(jLabelDocPres))
                     .addGroup(jPanelContentDocLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)))
-                .addContainerGap(159, Short.MAX_VALUE))
+                        .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonDocEdit)
+                            .addGroup(jPanelContentDocLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButtonDocImpr)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelContentDocLayout.setVerticalGroup(
             jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1067,13 +1077,17 @@ public class Accueil_1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextFieldDocDate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonDocEdit)
-                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addComponent(jButtonDocImpr)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDocHeure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addComponent(jButtonDocEdit)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelContentDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDocImpr)
+                    .addComponent(jLabel4))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelDocLayout = new javax.swing.GroupLayout(jPanelDoc);
@@ -2721,6 +2735,21 @@ public class Accueil_1 extends javax.swing.JFrame {
     public void setjButtonDocImpr(JButton jButtonDocImpr) {
         this.jButtonDocImpr = jButtonDocImpr;
     }
+    /**
+     * 
+     * @return jTextFieldDocHeure
+     */
+    public JTextField getjTextFieldDocHeure() {
+        return jTextFieldDocHeure;
+    }
+    /**
+     * 
+     * @param jTextFieldDocHeure 
+     */
+    public void setjTextFieldDocHeure(JTextField jTextFieldDocHeure) {
+        this.jTextFieldDocHeure = jTextFieldDocHeure;
+    }
+    
     
     
 
@@ -2747,6 +2776,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAdr;
     private javax.swing.JLabel jLabelAll;
     private javax.swing.JLabel jLabelContact1;
@@ -2824,6 +2854,7 @@ public class Accueil_1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDateInsc;
     private javax.swing.JTextField jTextFieldDateNais;
     private javax.swing.JTextField jTextFieldDocDate;
+    private javax.swing.JTextField jTextFieldDocHeure;
     private javax.swing.JTextField jTextFieldDocMotif;
     private javax.swing.JTextField jTextFieldEtaPre;
     private javax.swing.JTextField jTextFieldMail;
